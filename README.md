@@ -4,6 +4,25 @@ CRIS learns an inverse of a recurring elemental equation and evaluates it inside
 
 **Start with the saved results or the small Bratu example.** Neither requires a GPU or retraining. The complete transport performance experiments use PETSc and CUDA; fitting is a separate, optional workflow.
 
+## Simulator structure
+
+Start with the grid, then the discrete problem, then the solver:
+
+| Component | Source | Responsibility |
+|---|---|---|
+| Grid | [TransportGraph](src/CORE_SCL/MeshRepresentations/TransportGraph.hpp) | Cell storage, connectivity, prescribed flow and schedule |
+| Physics | [FluxFunctors](src/TwoPhaseTransport/FluxFunctors.hpp) | Constitutive flux and its derivative |
+| Discrete problem | [TransportProblem](src/CORE_SCL/DiscreteProblem/TransportProblem.hpp) | SRDM and CRIS cell equations and Jacobian entries |
+| CRIS inverse | [LocalInverse](src/CRIS/LocalInverse.hpp) | Neural or Chebyshev inverse values and derivatives |
+| Nonlinear solver | [PetscTransportSolver](src/CORE_SCL/Solvers/Nonlinear/PetscTransportSolver.hpp) | PETSc residual/Jacobian callbacks and solver setup |
+| Simulation | [Simulation](src/TwoPhaseTransport/Simulation.hpp) | Initial state, timestep advancement and output; [CPU version](src/TwoPhaseTransport/CpuSimulation.hpp) |
+
+The entry points are `src/TwoPhaseTransport/main.cu` and `main.cpp`. CUDA evaluation lives in `src/TwoPhaseTransport/CUDA/`.
+
+A case combines a graph and initial state from `data/transport/`, a constitutive law, a choice of SRDM or CRIS, and solver controls. CRIS additionally selects an inverse from `models/transport/`. The named cases in `experiments/transport/configurations.json` assemble these inputs; `tools/run_transport.py` runs them.
+
+The supplied reservoir graphs already contain the discretized storage and flow coefficients. Mesh construction and the pressure solve precede this package's transport calculations. [Data conventions](docs/PAPER_MAP.md#data-conventions) describe the stored quantities.
+
 ## Quick start
 
 Run commands from this directory with Python 3.11 or later:

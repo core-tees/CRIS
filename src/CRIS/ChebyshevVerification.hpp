@@ -1,12 +1,12 @@
 #pragma once
-#include "transport.hpp"
+#include "CORE_SCL/DiscreteProblem/TransportProblem.hpp"
 #include <iostream>
 namespace transport {
 // Checks the derivative actually returned by the piecewise evaluator: the
 // polynomial selected at the center. It also exposes finite-difference probes
 // crossing a partition, whose secant includes unconstrained leaf-value mismatch.
 // No cells are omitted from the selected-polynomial derivative check.
-inline double verify_cheb_direction(const Problem& p,const std::vector<double>& state,
+inline double verify_cheb_direction(const TransportProblem& p,const std::vector<double>& state,
  const std::vector<double>& direction,const std::vector<double>& analytic) {
  const int n=p.g.n;const double* tree=p.model.tree.data();double best=1e100;
  std::vector<double> center_a(n),beta(n),old(n),f0(n);std::vector<int> leaf(n);

@@ -3,7 +3,7 @@
 #include <fstream>
 #include <vector>
 #include <stdexcept>
-#include "../transport/cheb.hpp"
+#include "CRIS/ChebyshevInverse.hpp"
 void check(cudaError_t e){if(e!=cudaSuccess)throw std::runtime_error(cudaGetErrorString(e));}
 std::vector<double> load(const char* f){std::ifstream s(f,std::ios::binary|std::ios::ate);if(!s)throw std::runtime_error(f);size_t n=size_t(s.tellg())/8;s.seekg(0);std::vector<double> v(n);s.read((char*)v.data(),n*8);return v;}
 CHD inline void record(const double* tree,const double* q,double* o){

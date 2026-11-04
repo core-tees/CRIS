@@ -11,7 +11,7 @@
 #include <cstdint>
 #include <memory>
 #include <omp.h>
-#include "../transport/transport.hpp"
+#include "CORE_SCL/DiscreteProblem/TransportProblem.hpp"
 double flux(double u){u=std::min(1.,std::max(0.,u));return u*u/(u*u+.4*(1-u)*(1-u));}
 double df(double u){if(u<=0||u>=1)return 0;double d=u*u+.4*(1-u)*(1-u);return .8*u*(1-u)/(d*d);}
 void field(const std::string& p,const std::vector<double>& u){std::ofstream f(p,std::ios::binary);f.write((char*)u.data(),u.size()*8);}
@@ -19,8 +19,8 @@ int main(int argc,char** argv){try{
  if(argc!=6&&argc!=7)throw std::runtime_error("tree-or-original N beta prefix max_newton [front]");
  bool front=argc==7&&std::string(argv[6])=="front";
  bool original=std::string(argv[1])=="original";int n=std::stoi(argv[2]),cap=std::stoi(argv[5]);double beta=std::stod(argv[3]);std::string prefix=argv[4];
- std::unique_ptr<transport::Model> model;
- if(!original)model=std::make_unique<transport::Model>(argv[1]);
+ std::unique_ptr<transport::LocalInverse> model;
+ if(!original)model=std::make_unique<transport::LocalInverse>(argv[1]);
  omp_set_num_threads(4);
  const double h=front?1:1000./n,dt=front?50:beta*h,atol=front?1e-6:1e-10,left=front?1:.25;int steps=front?1:int(std::llround(200./dt));if(!front&&(n%4||std::abs(steps*dt-200)>1e-8||steps%2))throw std::runtime_error("unaligned archived grid");
  std::vector<double> u(n),old(n),r(n),diag(n),sub(n),delta(n),trial(n);for(int i=0;i<n;i++)u[i]=front?0:(i<n/4?.25:.05);

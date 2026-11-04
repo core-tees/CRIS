@@ -8,12 +8,12 @@
     "sha256": "28727bf027cb018b2e9b0b41c2780055d6c80528273a0732c04779095959b061"
   },
   "CMakeLists.txt": {
-    "bytes": 3141,
-    "sha256": "ac0c8e287a4f6c54bb188f3f592895ca3d52cbc071961ef8539fe6c076c93432"
+    "bytes": 3197,
+    "sha256": "7b573bd5df85d5bab2390ac4e4557d6735961ee1cdfd48533a017cff46dd180c"
   },
   "README.md": {
-    "bytes": 5260,
-    "sha256": "3af69949ade69d816ea7f8eaaf0c28195c9b078f82dac7e62f3a70d280396708"
+    "bytes": 6955,
+    "sha256": "2aa93d46a1543df0c528155ca19d570e199108917cdeb9c30efc3d7c445ca450"
   },
   "requirements-training.txt": {
     "bytes": 34,
@@ -32,8 +32,8 @@
     "sha256": "91f32ce97b11c4dc9a648bfe7733c13759065328c678ad50b173d576c97e2923"
   },
   "docs/PAPER_MAP.md": {
-    "bytes": 3955,
-    "sha256": "26d3fd1e5ef257e88c796a01a961cc60f7710c7b176eb7b5cccc732f4e1e6df3"
+    "bytes": 4009,
+    "sha256": "5f55d6b9104d9e4b74a17e7dac094e45ab7d69ff1475470745287246b0de6542"
   },
   "docs/PLOTS.md": {
     "bytes": 2720,
@@ -2532,16 +2532,16 @@
     "sha256": "a84a642b110cdeb70d51158b6352515348d9b4c584ae02b8c1455c6d46ab5c89"
   },
   "src/accuracy/column_chebyshev.cpp": {
-    "bytes": 4042,
-    "sha256": "91dc9772fdd2973e71001bc96d35852af79c6fb3c6ee8f71f447851c5fcbc390"
+    "bytes": 4046,
+    "sha256": "7cdfcbbbcd2e3a340ce7c3c802d7f248a22377df4949eb7004b7f3b963348ba0"
   },
   "src/accuracy/column_neural.cpp": {
-    "bytes": 3981,
-    "sha256": "0be2801b5ce48ff2d8e904c873dd1f852a9b8647b4a1ece72840eb4d828fe0ad"
+    "bytes": 4014,
+    "sha256": "0ca981df1e94b3f20d51278821255281bbb861d3b2109ae240fe3b0a41e1e328"
   },
   "src/accuracy/norne_reference.cpp": {
-    "bytes": 3713,
-    "sha256": "184adaecb5eff6642bb7f0b92baf6ede0f36c3b2420d192a07fc4222f8ffb7e0"
+    "bytes": 3741,
+    "sha256": "1b63e73240c0920f11b06e843aedc8cd9f0475ad794df1d286a69b4b3f5361ef"
   },
   "src/bratu/bratu_lm_trainer.cpp": {
     "bytes": 17070,
@@ -2550,6 +2550,26 @@
   "src/bratu/bratu_objective.hpp": {
     "bytes": 1236,
     "sha256": "6040fc38954ab80a535f8dad2b0422a8a0ef009285eacc251717b8db34444345"
+  },
+  "src/CORE_SCL/BinaryIO.hpp": {
+    "bytes": 327,
+    "sha256": "18b45098b2489b60cc8003bdb7f1d0a78c05666e4848a5f0430dd7dcb5f725ea"
+  },
+  "src/CRIS/ChebyshevInverse.hpp": {
+    "bytes": 1191,
+    "sha256": "9aa222307f73086df72661b3cb6c0b0b0e124f047e4a2aea7e53f7c60ec1f01a"
+  },
+  "src/CRIS/ChebyshevVerification.hpp": {
+    "bytes": 3160,
+    "sha256": "e554818b379b291c6c7e75396a80ea90d85186c9a88bce04385a952e6ac2252d"
+  },
+  "src/CRIS/check_export.cpp": {
+    "bytes": 729,
+    "sha256": "8b9174aba1c0f8e5965f4e95492231e4d7fd8b52110f94930b07210fd7a8a893"
+  },
+  "src/CRIS/LocalInverse.hpp": {
+    "bytes": 3289,
+    "sha256": "f971631abc9cc20d0e2d6ef571b9f138a2ab49c183c30e7774f074806dafe24a"
   },
   "src/labels/labels.cu": {
     "bytes": 11535,
@@ -2560,8 +2580,8 @@
     "sha256": "082972271be3c3145a31d9e52a7c4cb3e868296a8568287e4e681553be6dea5a"
   },
   "src/labels/parity_coordinates.cu": {
-    "bytes": 1848,
-    "sha256": "37a001c0f2f46b31e10c90e90c9eb6580efb23b2f7a151b99676d85fbcced318"
+    "bytes": 1852,
+    "sha256": "bc1857e67e148e64c8ee9337145939fda81111020997bacc63c4130cb18bad65"
   },
   "src/native_lm/least_squares_objective.hpp": {
     "bytes": 4822,
@@ -2579,45 +2599,45 @@
     "bytes": 3937,
     "sha256": "cf76b9c4cd44ac0c406dbc37ec14c956695dec4f4608bf796e0ee9d284808a22"
   },
-  "src/transport/cheb.hpp": {
-    "bytes": 1191,
-    "sha256": "9aa222307f73086df72661b3cb6c0b0b0e124f047e4a2aea7e53f7c60ec1f01a"
+  "src/TwoPhaseTransport/CpuSimulation.hpp": {
+    "bytes": 6800,
+    "sha256": "dce6c558e22ab2b3bb8568a5793be37084c2a5c4c1bb727ac06731c4b785576b"
   },
-  "src/transport/cheb_verification.hpp": {
-    "bytes": 3119,
-    "sha256": "a7e5fd21eeb82c9b12addc2cd21f36c07ffce37f8fdc3d6800606a239e1003a8"
-  },
-  "src/transport/check_export.cpp": {
-    "bytes": 690,
-    "sha256": "60195dcbee86372ca517a9e82c2119b00a402dc9d00599696675d88f0c98ba0b"
-  },
-  "src/transport/cpu_main.cpp": {
-    "bytes": 15119,
-    "sha256": "66dc3543a7ece500d774aec04fd3071f15eedbea63c4f8bef279d8dfc6effc1f"
-  },
-  "src/transport/device_check.cuh": {
-    "bytes": 1707,
-    "sha256": "2fc81120fe4d05b809a00c24712a6ef9dedf7dc7541409b9310150b8d4eea992"
-  },
-  "src/transport/FluxFunctors.hpp": {
+  "src/TwoPhaseTransport/FluxFunctors.hpp": {
     "bytes": 3128,
     "sha256": "393d7e2e940757c70d9cf3e6c56475ead95c529aeaabe3905c42ee59eda6dba0"
   },
-  "src/transport/gpu_driver.cpp": {
-    "bytes": 19230,
-    "sha256": "7e64bcd03c7814b79fd4f940ca01df944bd163ed9500650ddabcdc7f7f7911da"
+  "src/TwoPhaseTransport/main.cpp": {
+    "bytes": 266,
+    "sha256": "7d4ca7866d79c30b70f80ad569287458aa474e846660183539557806a3f6b622"
   },
-  "src/transport/gpu_evaluator.cuh": {
-    "bytes": 8547,
-    "sha256": "86bb2b7dcd5917c203c5ca0c73e73ca7cd72961a53f47daf3f6419e5dc456cc3"
+  "src/TwoPhaseTransport/main.cu": {
+    "bytes": 287,
+    "sha256": "ffdfa8a2776c15eee75584eb8ee8e6bac0f6a5c339b7fced60dfbe84d9eb3aea"
   },
-  "src/transport/gpu_main.cu": {
-    "bytes": 50,
-    "sha256": "e4b9e0ea7520e0f5585925beac61e1840e2f755d847c59766e2fe097f020d77d"
+  "src/TwoPhaseTransport/Simulation.hpp": {
+    "bytes": 10883,
+    "sha256": "56350aec41fa1545510703022925cc775c2b99f782428214b6717758b3581890"
   },
-  "src/transport/transport.hpp": {
-    "bytes": 7664,
-    "sha256": "f031e9e81505a5c7c7b299694b41a28eddcb1201e9fe94559f3b7e14c0b501ba"
+  "src/CORE_SCL/DiscreteProblem/TransportProblem.hpp": {
+    "bytes": 3549,
+    "sha256": "6cb6f529b4a2087479343ef7db725d8423be2139a5c34711613adc0cb727332e"
+  },
+  "src/CORE_SCL/MeshRepresentations/TransportGraph.hpp": {
+    "bytes": 1418,
+    "sha256": "c890f0d3b9a9c3e3bf9a10dfce6877260e7561a104ac21056fc0ef6b8e03642a"
+  },
+  "src/CORE_SCL/Solvers/Nonlinear/PetscTransportSolver.hpp": {
+    "bytes": 8653,
+    "sha256": "3835308e7248d4ade79f8d5717bc2be77507379c8b9cc8c50b5dd1fa93bed3bc"
+  },
+  "src/TwoPhaseTransport/CUDA/StateChecks.cuh": {
+    "bytes": 1707,
+    "sha256": "2fc81120fe4d05b809a00c24712a6ef9dedf7dc7541409b9310150b8d4eea992"
+  },
+  "src/TwoPhaseTransport/CUDA/TransportEvaluator.cuh": {
+    "bytes": 8475,
+    "sha256": "4625b23b3edcbeec7722b72feb1352a2508826a7fee200b4d97090706bdc279a"
   },
   "training/bratu/regenerate_targets.py": {
     "bytes": 1235,

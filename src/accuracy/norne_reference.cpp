@@ -1,12 +1,12 @@
 // Accuracy-only original-balance Newton. No nonlinear local inversion.
-#include "../transport/transport.hpp"
+#include "CORE_SCL/DiscreteProblem/TransportProblem.hpp"
 #include <queue>
 #include <iostream>
 #include <iomanip>
 #include <omp.h>
 int main(int argc,char** argv){try{
  if(argc!=6)throw std::runtime_error("graph initial model max_dt output_prefix");
- omp_set_num_threads(4);transport::Problem p(argv[1],argv[3],false);p.set_flux_exponent(.8);
+ omp_set_num_threads(4);transport::TransportProblem p(argv[1],argv[3],false);p.set_flux_exponent(.8);
  int n=p.g.n;double cap=std::stod(argv[4]);std::string out=argv[5];
  std::ifstream input(argv[2],std::ios::binary);p.old=transport::read<double>(input,n);
  // Permute the GLOBAL linear system to triangular form. Only the linear

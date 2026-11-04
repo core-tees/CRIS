@@ -9,7 +9,7 @@
 #include <stdexcept>
 #include <string>
 #include <cstdint>
-#include "../transport/cheb.hpp"
+#include "CRIS/ChebyshevInverse.hpp"
 double flux(double u){u=std::min(1.,std::max(0.,u));return u*u/(u*u+.4*(1-u)*(1-u));}
 double df(double u){if(u<=0||u>=1)return 0;double d=u*u+.4*(1-u)*(1-u);return .8*u*(1-u)/(d*d);}
 void field(const std::string& p,const std::vector<double>& u){std::ofstream f(p,std::ios::binary);f.write((char*)u.data(),u.size()*8);}
