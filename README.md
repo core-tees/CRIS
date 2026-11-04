@@ -1,4 +1,4 @@
-# CRIS: code accompanying the Nature manuscript
+# CRIS (Coupled Recurrence Inverse System)
 
 CRIS learns an inverse of a recurring elemental equation and evaluates it inside a coupled nonlinear solver. This repository contains the Bratu and nonlinear transport examples, fitted inverses, benchmark inputs, and results used in the manuscript.
 
