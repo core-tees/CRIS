@@ -1,0 +1,16 @@
+{"step":1,"time":12.5,"residual_inf":4.4949023669804689e-11,"accepted":true}
+{"step":2,"time":25,"residual_inf":4.5047666985542634e-11,"accepted":true}
+{"step":3,"time":37.5,"residual_inf":7.1819841740428103e-12,"accepted":true}
+{"step":4,"time":50,"residual_inf":3.0859204080968539e-12,"accepted":true}
+{"step":5,"time":62.5,"residual_inf":1.9379081672710186e-12,"accepted":true}
+{"step":6,"time":75,"residual_inf":1.4667572711957177e-12,"accepted":true}
+{"step":7,"time":87.5,"residual_inf":1.2309042674019111e-12,"accepted":true}
+{"step":8,"time":100,"residual_inf":1.0984269049885143e-12,"accepted":true}
+{"step":9,"time":112.5,"residual_inf":1.0232301117518716e-12,"accepted":true}
+{"step":10,"time":125,"residual_inf":9.7509500474046717e-13,"accepted":true}
+{"step":11,"time":137.5,"residual_inf":9.5234237162955537e-13,"accepted":true}
+{"step":12,"time":150,"residual_inf":9.4013685725258256e-13,"accepted":true}
+{"step":13,"time":162.5,"residual_inf":9.4016461282819819e-13,"accepted":true}
+{"step":14,"time":175,"residual_inf":9.4822066865063448e-13,"accepted":true}
+{"step":15,"time":187.5,"residual_inf":9.6323643505868972e-13,"accepted":true}
+{"step":16,"time":200,"residual_inf":9.8369923318131214e-13,"accepted":true}

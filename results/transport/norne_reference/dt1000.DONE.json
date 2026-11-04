@@ -1,0 +1,20 @@
+{
+  "command": [
+    "archive:training/transport_completion_20261028/norne_reference.exe",
+    "archive:training/transport_completion_20261028/assets/norne_singular.bin",
+    "archive:training/transport_completion_20261028/assets/norne_singular.initial",
+    "archive:training/transport_completion_20261028/assets/cheb_quadratic.model",
+    "1000",
+    "archive:training/transport_completion_20261028/norne_reference_results/dt1000"
+  ],
+  "returncode": 0,
+  "summary": {
+    "complete": true,
+    "time": 1000000,
+    "accepted": 1000,
+    "cuts": 0,
+    "max_dt": 1000,
+    "atol": 1e-06,
+    "accuracy_only": true
+  }
+}

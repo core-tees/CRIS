@@ -1,0 +1,21 @@
+{
+  "job": 3216779,
+  "status": "COMPLETED",
+  "fit_workflow_seconds": [
+    30.75259938277304,
+    33.90481987409294,
+    29.127289237454534
+  ],
+  "median_fit_workflow_seconds": 30.75259938277304,
+  "original_cpu_label_seconds": 86.79625812917948,
+  "recovery_label_seconds": 84.33771963231266,
+  "validation_rmse": 1.5942367564264886e-06,
+  "training_rmse": 1.5652554417063737e-06,
+  "coefficients": 65536,
+  "leaves": 1024,
+  "samples": 4194304,
+  "cohort": "First fit from original process; fits 2 and 3 together in recovery process.",
+  "qualification": "Independent CPU and GPU polynomial checks passed at exact native coordinates. Raw cross-backend scaled derivative difference 5.04e-9 exceeds the original 1e-9 raw-parity threshold and is retained as transformation-roundoff sensitivity; value difference 7.13e-13, same leaves.",
+  "data_hashes_match": true,
+  "source": "records_final/transport_cheb_a100_cost_20261022/results/3216779"
+}

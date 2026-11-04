@@ -1,0 +1,20 @@
+[
+  "ncs_fig1_construction.pdf",
+  "ncs_fig2_mechanism.pdf",
+  "ncs_fig5_accuracy.pdf",
+  "ncs_fig3_reuse.pdf",
+  "ncs_fig4_cost.pdf",
+  "ncs_fig6_singular.pdf",
+  "ncs_ed1_roots.pdf",
+  "ncs_ed1_fold.pdf",
+  "ncs_ed2_paths.pdf",
+  "ncs_ed2_checkpoint_max.pdf",
+  "ncs_ed3_transport_overview.pdf",
+  "ncs_ed4_transport_accuracy.pdf",
+  "ncs_si_control_volume.pdf",
+  "ncs_si_continuation.pdf",
+  "ncs_si_headline_timings.tex",
+  "ncs_si_nn_timing_sequence.tex",
+  "ncs_si_transport_matrix.tex",
+  "ncs_si_edfm_single_step.tex"
+]

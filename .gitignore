@@ -1,0 +1,13 @@
+/build*/
+/runs/
+/.venv/
+__pycache__/
+*.pyc
+.mplconfig/
+/verification/
+*.obj
+*.exe
+*.o
+*.so
+*.dll
+*.log

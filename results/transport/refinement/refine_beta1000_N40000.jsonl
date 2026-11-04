@@ -1,0 +1,8 @@
+{"step":1,"time":25,"residual_inf":1.9723285504813504e-11,"accepted":true}
+{"step":2,"time":50,"residual_inf":1.2790532522011233e-11,"accepted":true}
+{"step":3,"time":75,"residual_inf":3.0500671432953652e-12,"accepted":true}
+{"step":4,"time":100,"residual_inf":1.7243428906965619e-12,"accepted":true}
+{"step":5,"time":125,"residual_inf":1.3280279653749005e-12,"accepted":true}
+{"step":6,"time":150,"residual_inf":1.1947318134808427e-12,"accepted":true}
+{"step":7,"time":175,"residual_inf":1.1866826965523103e-12,"accepted":true}
+{"step":8,"time":200,"residual_inf":1.2637391133552001e-12,"accepted":true}

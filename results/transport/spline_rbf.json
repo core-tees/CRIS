@@ -1,0 +1,61 @@
+{
+  "source": "training\\transport_spline_rbf_20261022\\recovery_20261027\\VERIFIED_OUTCOMES.txt",
+  "rows": [
+    {
+      "method": "rbf",
+      "coefficients": 4913,
+      "stop": "converged",
+      "rmse": 0.0010712821596944044,
+      "max": 0.021465397838818845
+    },
+    {
+      "method": "rbf",
+      "coefficients": 35937,
+      "stop": "converged",
+      "rmse": 0.000366924092140053,
+      "max": 0.008592330603727993
+    },
+    {
+      "method": "rbf",
+      "coefficients": 274625,
+      "stop": "converged",
+      "rmse": 0.00014467656514785234,
+      "max": 0.004942065272542928
+    },
+    {
+      "method": "rbf",
+      "coefficients": 912673,
+      "stop": "converged",
+      "rmse": 0.00010102658856876688,
+      "max": 0.004035109887955746
+    },
+    {
+      "method": "spline",
+      "coefficients": 4913,
+      "stop": "converged",
+      "rmse": 0.00018645124143227472,
+      "max": 0.003096976246018901
+    },
+    {
+      "method": "spline",
+      "coefficients": 35937,
+      "stop": "converged",
+      "rmse": 5.44631844283819e-05,
+      "max": 0.0012163554469197813
+    },
+    {
+      "method": "spline",
+      "coefficients": 274625,
+      "stop": "converged",
+      "rmse": 2.2299455119004276e-05,
+      "max": 0.0005402353287553563
+    },
+    {
+      "method": "spline",
+      "coefficients": 912673,
+      "stop": "iteration_limit",
+      "rmse": 0.000391167615574857,
+      "max": 0.08297434463100284
+    }
+  ]
+}

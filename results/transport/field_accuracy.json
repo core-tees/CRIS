@@ -1,0 +1,2593 @@
+{
+  "comparators": "All cases compare archived benchmark trajectories with completed standalone SRDM at shared actual saved times; no interpolation. Timestep histories recorded per row.",
+  "rows": [
+    {
+      "case": "edfm_quadratic",
+      "model": "nn",
+      "exponent": 2.0,
+      "comparator": "Completed original SRDM trajectory",
+      "same_timestep_history": true,
+      "accepted": 17,
+      "reference_accepted": 17,
+      "horizon": 1000000000.0,
+      "final_rmse": 5.894259477566131e-05,
+      "final_max_error": 0.0003442970144447166,
+      "final_water_cut_difference": -7.181166160752372e-05,
+      "max_common_time_water_cut_difference": 9.629229897101244e-05,
+      "common_time_fields": [
+        {
+          "time": 1000000.0,
+          "rmse": 1.0929365944928396e-05,
+          "max_error": 6.447378470719745e-05,
+          "water_cut_difference": 4.896811522325758e-10,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_nn_r1.step1.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step1.field"
+        },
+        {
+          "time": 3000000.0,
+          "rmse": 1.286415176760128e-05,
+          "max_error": 0.000142883714739344,
+          "water_cut_difference": 2.4697037196678964e-09,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_nn_r1.step2.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step2.field"
+        },
+        {
+          "time": 7000000.0,
+          "rmse": 1.483138483054005e-05,
+          "max_error": 0.00012143483305815383,
+          "water_cut_difference": 6.986106122173504e-09,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_nn_r1.step3.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step3.field"
+        },
+        {
+          "time": 15000000.0,
+          "rmse": 1.8119616532292088e-05,
+          "max_error": 0.00013891890910056048,
+          "water_cut_difference": 1.3559565300154e-08,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_nn_r1.step4.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step4.field"
+        },
+        {
+          "time": 31000000.0,
+          "rmse": 2.1253380208435402e-05,
+          "max_error": 0.00017648259895641782,
+          "water_cut_difference": 2.0328018286176663e-08,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_nn_r1.step5.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step5.field"
+        },
+        {
+          "time": 63000000.0,
+          "rmse": 2.4112062544623474e-05,
+          "max_error": 0.00018004646411384773,
+          "water_cut_difference": 2.5756280667952887e-08,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_nn_r1.step6.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step6.field"
+        },
+        {
+          "time": 100000000.0,
+          "rmse": 2.669011727890075e-05,
+          "max_error": 0.00022810741222722974,
+          "water_cut_difference": 2.7142869531202057e-08,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_nn_r1.step7.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step7.field"
+        },
+        {
+          "time": 164000000.0,
+          "rmse": 2.6040683884014067e-05,
+          "max_error": 0.00025382014235841854,
+          "water_cut_difference": 1.8841876537273664e-06,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_nn_r1.step8.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step8.field"
+        },
+        {
+          "time": 200000000.0,
+          "rmse": 2.696157300903398e-05,
+          "max_error": 0.00026149871114977685,
+          "water_cut_difference": -8.957901120295111e-07,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_nn_r1.step9.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step9.field"
+        },
+        {
+          "time": 300000000.0,
+          "rmse": 2.820212535377106e-05,
+          "max_error": 0.0002684251006364047,
+          "water_cut_difference": 1.3548777978086846e-05,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_nn_r1.step10.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step10.field"
+        },
+        {
+          "time": 400000000.0,
+          "rmse": 3.148181208345554e-05,
+          "max_error": 0.0002742747689088443,
+          "water_cut_difference": 2.0955846098014153e-05,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_nn_r1.step11.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step11.field"
+        },
+        {
+          "time": 500000000.0,
+          "rmse": 3.643932156388565e-05,
+          "max_error": 0.00027769959940648903,
+          "water_cut_difference": 3.377300960583085e-05,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_nn_r1.step12.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step12.field"
+        },
+        {
+          "time": 600000000.0,
+          "rmse": 4.290782778898395e-05,
+          "max_error": 0.00027987690203390425,
+          "water_cut_difference": -7.436717395115089e-06,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_nn_r1.step13.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step13.field"
+        },
+        {
+          "time": 700000000.0,
+          "rmse": 5.0604370771514414e-05,
+          "max_error": 0.0002813644440732288,
+          "water_cut_difference": -5.724561674680384e-05,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_nn_r1.step14.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step14.field"
+        },
+        {
+          "time": 800000000.0,
+          "rmse": 5.6422774965906534e-05,
+          "max_error": 0.0002824360021435046,
+          "water_cut_difference": -9.629229897101244e-05,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_nn_r1.step15.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step15.field"
+        },
+        {
+          "time": 900000000.0,
+          "rmse": 5.8355642172150355e-05,
+          "max_error": 0.00030361781752519246,
+          "water_cut_difference": -8.77232773672798e-05,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_nn_r1.step16.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step16.field"
+        },
+        {
+          "time": 1000000000.0,
+          "rmse": 5.894259477566131e-05,
+          "max_error": 0.0003442970144447166,
+          "water_cut_difference": -7.181166160752372e-05,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_nn_r1.step17.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step17.field"
+        }
+      ],
+      "field": "archive:output/clean_timing_update_20261027/fields/results/3222142/edfm_quadratic_nn_r1.field",
+      "reference_field": "archive:output/ncs_results_si_rewrite_20261020/evidence/edfm_quadratic_srdm/linesearch_srdm_gpu.field",
+      "graph": "archive:training/petsc_transport_20261015/paper_package/edfm_quadratic.bin",
+      "graph_sha256": "9cdf1f8e82ff73f976f1e84fab5fd5dd69b66e06ebf98a098d28103927f995bc"
+    },
+    {
+      "case": "edfm_quadratic",
+      "model": "cheb",
+      "exponent": 2.0,
+      "comparator": "Completed original SRDM trajectory",
+      "same_timestep_history": true,
+      "accepted": 17,
+      "reference_accepted": 17,
+      "horizon": 1000000000.0,
+      "final_rmse": 9.027583368076932e-06,
+      "final_max_error": 0.00013947541873404745,
+      "final_water_cut_difference": -3.995941080248144e-06,
+      "max_common_time_water_cut_difference": 6.010353088115039e-06,
+      "common_time_fields": [
+        {
+          "time": 1000000.0,
+          "rmse": 1.1313051298894252e-06,
+          "max_error": 2.3442734716883074e-05,
+          "water_cut_difference": 1.3867734285053974e-11,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_cheb_r1.step1.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step1.field"
+        },
+        {
+          "time": 3000000.0,
+          "rmse": 1.50254331570207e-06,
+          "max_error": 3.282603936338724e-05,
+          "water_cut_difference": 1.5709791248055372e-10,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_cheb_r1.step2.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step2.field"
+        },
+        {
+          "time": 7000000.0,
+          "rmse": 2.256581717355356e-06,
+          "max_error": 3.5422688871467045e-05,
+          "water_cut_difference": 7.011702714177774e-10,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_cheb_r1.step3.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step3.field"
+        },
+        {
+          "time": 15000000.0,
+          "rmse": 3.4182992661670637e-06,
+          "max_error": 4.6880970267804406e-05,
+          "water_cut_difference": 2.100605339595035e-09,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_cheb_r1.step4.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step4.field"
+        },
+        {
+          "time": 31000000.0,
+          "rmse": 5.60011990855295e-06,
+          "max_error": 5.616899268658269e-05,
+          "water_cut_difference": 4.38043719552275e-09,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_cheb_r1.step5.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step5.field"
+        },
+        {
+          "time": 63000000.0,
+          "rmse": 8.172814486908916e-06,
+          "max_error": 6.317181276392669e-05,
+          "water_cut_difference": 6.623007932008127e-09,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_cheb_r1.step6.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step6.field"
+        },
+        {
+          "time": 100000000.0,
+          "rmse": 9.283583677823507e-06,
+          "max_error": 7.893531237390672e-05,
+          "water_cut_difference": 7.609254684559091e-09,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_cheb_r1.step7.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step7.field"
+        },
+        {
+          "time": 164000000.0,
+          "rmse": 7.681460826665076e-06,
+          "max_error": 0.00010570718968883064,
+          "water_cut_difference": 5.714016696823157e-08,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_cheb_r1.step8.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step8.field"
+        },
+        {
+          "time": 200000000.0,
+          "rmse": 7.536042348731441e-06,
+          "max_error": 0.00011126790237803164,
+          "water_cut_difference": -8.1961893352335e-07,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_cheb_r1.step9.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step9.field"
+        },
+        {
+          "time": 300000000.0,
+          "rmse": 7.561341172980075e-06,
+          "max_error": 0.00012400463591200062,
+          "water_cut_difference": -2.757896835403617e-06,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_cheb_r1.step10.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step10.field"
+        },
+        {
+          "time": 400000000.0,
+          "rmse": 8.07907348916859e-06,
+          "max_error": 0.000129860839090834,
+          "water_cut_difference": -5.109813187020862e-06,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_cheb_r1.step11.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step11.field"
+        },
+        {
+          "time": 500000000.0,
+          "rmse": 8.178452614089885e-06,
+          "max_error": 0.00013331057194154727,
+          "water_cut_difference": -5.092379320725815e-06,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_cheb_r1.step12.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step12.field"
+        },
+        {
+          "time": 600000000.0,
+          "rmse": 8.428976922737953e-06,
+          "max_error": 0.00013548940947860633,
+          "water_cut_difference": -6.010353088115039e-06,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_cheb_r1.step13.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step13.field"
+        },
+        {
+          "time": 700000000.0,
+          "rmse": 8.635200050697173e-06,
+          "max_error": 0.00013697703608739342,
+          "water_cut_difference": -5.467992407415245e-06,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_cheb_r1.step14.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step14.field"
+        },
+        {
+          "time": 800000000.0,
+          "rmse": 8.73607306459369e-06,
+          "max_error": 0.00013804859926624946,
+          "water_cut_difference": -5.433072432947661e-06,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_cheb_r1.step15.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step15.field"
+        },
+        {
+          "time": 900000000.0,
+          "rmse": 8.849529234278715e-06,
+          "max_error": 0.00013885254695955584,
+          "water_cut_difference": -3.671305029651073e-06,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_cheb_r1.step16.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step16.field"
+        },
+        {
+          "time": 1000000000.0,
+          "rmse": 9.027583368076932e-06,
+          "max_error": 0.00013947541873404745,
+          "water_cut_difference": -3.995941080248144e-06,
+          "prepared_field": "results/transport/fields/edfm_quadratic/edfm_quadratic_cheb_r1.step17.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step17.field"
+        }
+      ],
+      "field": "archive:output/clean_timing_update_20261027/fields/results/3222142/edfm_quadratic_cheb_r1.field",
+      "reference_field": "archive:output/ncs_results_si_rewrite_20261020/evidence/edfm_quadratic_srdm/linesearch_srdm_gpu.field",
+      "graph": "archive:training/petsc_transport_20261015/paper_package/edfm_quadratic.bin",
+      "graph_sha256": "9cdf1f8e82ff73f976f1e84fab5fd5dd69b66e06ebf98a098d28103927f995bc"
+    },
+    {
+      "case": "edfm_quadratic",
+      "model": "srdm",
+      "exponent": 2.0,
+      "comparator": "Completed original SRDM trajectory",
+      "same_timestep_history": true,
+      "accepted": 17,
+      "reference_accepted": 17,
+      "horizon": 1000000000.0,
+      "final_rmse": 0.0,
+      "final_max_error": 0.0,
+      "final_water_cut_difference": 0.0,
+      "max_common_time_water_cut_difference": 0.0,
+      "common_time_fields": [
+        {
+          "time": 1000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step1.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step1.field"
+        },
+        {
+          "time": 3000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step2.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step2.field"
+        },
+        {
+          "time": 7000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step3.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step3.field"
+        },
+        {
+          "time": 15000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step4.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step4.field"
+        },
+        {
+          "time": 31000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step5.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step5.field"
+        },
+        {
+          "time": 63000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step6.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step6.field"
+        },
+        {
+          "time": 100000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step7.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step7.field"
+        },
+        {
+          "time": 164000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step8.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step8.field"
+        },
+        {
+          "time": 200000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step9.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step9.field"
+        },
+        {
+          "time": 300000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step10.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step10.field"
+        },
+        {
+          "time": 400000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step11.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step11.field"
+        },
+        {
+          "time": 500000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step12.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step12.field"
+        },
+        {
+          "time": 600000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step13.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step13.field"
+        },
+        {
+          "time": 700000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step14.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step14.field"
+        },
+        {
+          "time": 800000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step15.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step15.field"
+        },
+        {
+          "time": 900000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step16.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step16.field"
+        },
+        {
+          "time": 1000000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step17.field",
+          "reference_field": "results/transport/fields/edfm_quadratic/linesearch_srdm_gpu.step17.field"
+        }
+      ],
+      "field": "archive:output/ncs_results_si_rewrite_20261020/evidence/edfm_quadratic_srdm/linesearch_srdm_gpu.field",
+      "reference_field": "archive:output/ncs_results_si_rewrite_20261020/evidence/edfm_quadratic_srdm/linesearch_srdm_gpu.field",
+      "graph": "archive:training/petsc_transport_20261015/paper_package/edfm_quadratic.bin",
+      "graph_sha256": "9cdf1f8e82ff73f976f1e84fab5fd5dd69b66e06ebf98a098d28103927f995bc"
+    },
+    {
+      "case": "norne_quadratic",
+      "model": "nn",
+      "exponent": 2.0,
+      "comparator": "Completed original SRDM trajectory",
+      "same_timestep_history": true,
+      "accepted": 14,
+      "reference_accepted": 14,
+      "horizon": 1000000.0,
+      "final_rmse": 6.784287076815008e-05,
+      "final_max_error": 0.00036224352176317254,
+      "final_water_cut_difference": -9.139243459799218e-07,
+      "max_common_time_water_cut_difference": 4.22932157044531e-05,
+      "common_time_fields": [
+        {
+          "time": 10000.0,
+          "rmse": 8.843650703477083e-06,
+          "max_error": 7.806715874569825e-05,
+          "water_cut_difference": 5.3172158214949436e-11,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_nn_r1.step1.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step1.field"
+        },
+        {
+          "time": 30000.0,
+          "rmse": 1.1470927604668516e-05,
+          "max_error": 9.667743258994638e-05,
+          "water_cut_difference": 5.916937120437021e-11,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_nn_r1.step2.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step2.field"
+        },
+        {
+          "time": 70000.0,
+          "rmse": 1.4876452076161782e-05,
+          "max_error": 0.00010753483770697958,
+          "water_cut_difference": -1.1337764429678875e-07,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_nn_r1.step3.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step3.field"
+        },
+        {
+          "time": 100000.0,
+          "rmse": 1.7602060606619426e-05,
+          "max_error": 0.0001550681217130645,
+          "water_cut_difference": -2.7351097648606326e-06,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_nn_r1.step4.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step4.field"
+        },
+        {
+          "time": 180000.0,
+          "rmse": 2.0738716239557122e-05,
+          "max_error": 0.00012882171252948105,
+          "water_cut_difference": -4.22932157044531e-05,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_nn_r1.step5.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step5.field"
+        },
+        {
+          "time": 200000.0,
+          "rmse": 2.2270102259004523e-05,
+          "max_error": 0.0001466186036742645,
+          "water_cut_difference": -2.1857839435368565e-05,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_nn_r1.step6.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step6.field"
+        },
+        {
+          "time": 300000.0,
+          "rmse": 2.8644156448971327e-05,
+          "max_error": 0.0001612174768708119,
+          "water_cut_difference": -2.8652498260839376e-05,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_nn_r1.step7.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step7.field"
+        },
+        {
+          "time": 400000.0,
+          "rmse": 3.502711653184288e-05,
+          "max_error": 0.00020319714090188956,
+          "water_cut_difference": -2.1209324476800795e-05,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_nn_r1.step8.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step8.field"
+        },
+        {
+          "time": 500000.0,
+          "rmse": 4.1466987451573416e-05,
+          "max_error": 0.00028348107728692895,
+          "water_cut_difference": -2.376042444263149e-05,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_nn_r1.step9.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step9.field"
+        },
+        {
+          "time": 600000.0,
+          "rmse": 4.5911579102033343e-05,
+          "max_error": 0.00031876431877220224,
+          "water_cut_difference": -1.1411937702598962e-06,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_nn_r1.step10.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step10.field"
+        },
+        {
+          "time": 700000.0,
+          "rmse": 5.2526427339743045e-05,
+          "max_error": 0.0003384458588109318,
+          "water_cut_difference": 1.1813861044318585e-05,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_nn_r1.step11.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step11.field"
+        },
+        {
+          "time": 800000.0,
+          "rmse": 5.8320064380067274e-05,
+          "max_error": 0.0003761069945843465,
+          "water_cut_difference": 1.1269401744007368e-06,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_nn_r1.step12.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step12.field"
+        },
+        {
+          "time": 900000.0,
+          "rmse": 6.42554302047292e-05,
+          "max_error": 0.000383972972942459,
+          "water_cut_difference": 2.504692614424542e-07,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_nn_r1.step13.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step13.field"
+        },
+        {
+          "time": 1000000.0,
+          "rmse": 6.784287076815008e-05,
+          "max_error": 0.00036224352176317254,
+          "water_cut_difference": -9.139243459799218e-07,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_nn_r1.step14.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step14.field"
+        }
+      ],
+      "field": "archive:output/clean_timing_update_20261027/fields/results/3222142/norne_quadratic_nn_r1.field",
+      "reference_field": "archive:output/ncs_results_si_rewrite_20261020/evidence/norne_quadratic_srdm/linesearch_srdm.field",
+      "graph": "archive:training/petsc_transport_20261015/paper_package/norne_quadratic.bin",
+      "graph_sha256": "932750eb3d8a596cb4a9c5bf12e74f10f3a3ca1a51d3e98378d0f4b3808ca143"
+    },
+    {
+      "case": "norne_quadratic",
+      "model": "cheb",
+      "exponent": 2.0,
+      "comparator": "Completed original SRDM trajectory",
+      "same_timestep_history": true,
+      "accepted": 14,
+      "reference_accepted": 14,
+      "horizon": 1000000.0,
+      "final_rmse": 6.216487331208162e-06,
+      "final_max_error": 6.760298437502588e-05,
+      "final_water_cut_difference": -3.632786036322777e-06,
+      "max_common_time_water_cut_difference": 9.406960570224054e-06,
+      "common_time_fields": [
+        {
+          "time": 10000.0,
+          "rmse": 8.720106143469905e-07,
+          "max_error": 3.411053400813149e-05,
+          "water_cut_difference": 6.056833416712213e-19,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_cheb_r1.step1.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step1.field"
+        },
+        {
+          "time": 30000.0,
+          "rmse": 1.4144670769412319e-06,
+          "max_error": 4.099852692701142e-05,
+          "water_cut_difference": 2.4704623194971817e-18,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_cheb_r1.step2.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step2.field"
+        },
+        {
+          "time": 70000.0,
+          "rmse": 2.425521054219098e-06,
+          "max_error": 4.422356047884545e-05,
+          "water_cut_difference": -1.791886908177512e-08,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_cheb_r1.step3.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step3.field"
+        },
+        {
+          "time": 100000.0,
+          "rmse": 3.2128782685910216e-06,
+          "max_error": 4.3914917101469406e-05,
+          "water_cut_difference": -1.0259407590132094e-06,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_cheb_r1.step4.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step4.field"
+        },
+        {
+          "time": 180000.0,
+          "rmse": 3.870365069364568e-06,
+          "max_error": 3.264536537772589e-05,
+          "water_cut_difference": -7.365676650772368e-06,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_cheb_r1.step5.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step5.field"
+        },
+        {
+          "time": 200000.0,
+          "rmse": 4.128346382088345e-06,
+          "max_error": 2.9567571753097432e-05,
+          "water_cut_difference": -9.406960570224054e-06,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_cheb_r1.step6.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step6.field"
+        },
+        {
+          "time": 300000.0,
+          "rmse": 4.4340182325466305e-06,
+          "max_error": 4.100021235964313e-05,
+          "water_cut_difference": -8.43134192385353e-06,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_cheb_r1.step7.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step7.field"
+        },
+        {
+          "time": 400000.0,
+          "rmse": 4.8912409379841104e-06,
+          "max_error": 3.0577015605492974e-05,
+          "water_cut_difference": -8.305767640437445e-06,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_cheb_r1.step8.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step8.field"
+        },
+        {
+          "time": 500000.0,
+          "rmse": 5.26389282016563e-06,
+          "max_error": 4.173465965817691e-05,
+          "water_cut_difference": -6.666865087434637e-06,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_cheb_r1.step9.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step9.field"
+        },
+        {
+          "time": 600000.0,
+          "rmse": 5.6421428379966825e-06,
+          "max_error": 4.723627071279157e-05,
+          "water_cut_difference": -7.57629334036114e-06,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_cheb_r1.step10.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step10.field"
+        },
+        {
+          "time": 700000.0,
+          "rmse": 5.567080326083975e-06,
+          "max_error": 5.0565222182830105e-05,
+          "water_cut_difference": -5.674303916181067e-06,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_cheb_r1.step11.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step11.field"
+        },
+        {
+          "time": 800000.0,
+          "rmse": 5.719194417715932e-06,
+          "max_error": 5.421498023661098e-05,
+          "water_cut_difference": -4.918709458401338e-06,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_cheb_r1.step12.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step12.field"
+        },
+        {
+          "time": 900000.0,
+          "rmse": 5.965097000881463e-06,
+          "max_error": 5.941858179447923e-05,
+          "water_cut_difference": -4.0916760939424535e-06,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_cheb_r1.step13.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step13.field"
+        },
+        {
+          "time": 1000000.0,
+          "rmse": 6.216487331208162e-06,
+          "max_error": 6.760298437502588e-05,
+          "water_cut_difference": -3.632786036322777e-06,
+          "prepared_field": "results/transport/fields/norne_quadratic/norne_quadratic_cheb_r1.step14.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step14.field"
+        }
+      ],
+      "field": "archive:output/clean_timing_update_20261027/fields/results/3222142/norne_quadratic_cheb_r1.field",
+      "reference_field": "archive:output/ncs_results_si_rewrite_20261020/evidence/norne_quadratic_srdm/linesearch_srdm.field",
+      "graph": "archive:training/petsc_transport_20261015/paper_package/norne_quadratic.bin",
+      "graph_sha256": "932750eb3d8a596cb4a9c5bf12e74f10f3a3ca1a51d3e98378d0f4b3808ca143"
+    },
+    {
+      "case": "norne_quadratic",
+      "model": "srdm",
+      "exponent": 2.0,
+      "comparator": "Completed original SRDM trajectory",
+      "same_timestep_history": true,
+      "accepted": 14,
+      "reference_accepted": 14,
+      "horizon": 1000000.0,
+      "final_rmse": 0.0,
+      "final_max_error": 0.0,
+      "final_water_cut_difference": 0.0,
+      "max_common_time_water_cut_difference": 0.0,
+      "common_time_fields": [
+        {
+          "time": 10000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step1.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step1.field"
+        },
+        {
+          "time": 30000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step2.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step2.field"
+        },
+        {
+          "time": 70000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step3.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step3.field"
+        },
+        {
+          "time": 100000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step4.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step4.field"
+        },
+        {
+          "time": 180000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step5.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step5.field"
+        },
+        {
+          "time": 200000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step6.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step6.field"
+        },
+        {
+          "time": 300000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step7.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step7.field"
+        },
+        {
+          "time": 400000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step8.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step8.field"
+        },
+        {
+          "time": 500000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step9.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step9.field"
+        },
+        {
+          "time": 600000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step10.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step10.field"
+        },
+        {
+          "time": 700000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step11.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step11.field"
+        },
+        {
+          "time": 800000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step12.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step12.field"
+        },
+        {
+          "time": 900000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step13.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step13.field"
+        },
+        {
+          "time": 1000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step14.field",
+          "reference_field": "results/transport/fields/norne_quadratic/linesearch_srdm.step14.field"
+        }
+      ],
+      "field": "archive:output/ncs_results_si_rewrite_20261020/evidence/norne_quadratic_srdm/linesearch_srdm.field",
+      "reference_field": "archive:output/ncs_results_si_rewrite_20261020/evidence/norne_quadratic_srdm/linesearch_srdm.field",
+      "graph": "archive:training/petsc_transport_20261015/paper_package/norne_quadratic.bin",
+      "graph_sha256": "932750eb3d8a596cb4a9c5bf12e74f10f3a3ca1a51d3e98378d0f4b3808ca143"
+    },
+    {
+      "case": "spe10_quadratic",
+      "model": "nn",
+      "exponent": 2.0,
+      "comparator": "Completed original SRDM trajectory",
+      "same_timestep_history": false,
+      "accepted": 10,
+      "reference_accepted": 13,
+      "horizon": 20000.0,
+      "final_rmse": 0.0036525816366860765,
+      "final_max_error": 0.008916208184371888,
+      "final_water_cut_difference": -0.0013478006956511024,
+      "max_common_time_water_cut_difference": 0.0693277749423381,
+      "common_time_fields": [
+        {
+          "time": 2000.0,
+          "rmse": 0.07052585153845622,
+          "max_error": 0.14810268674317095,
+          "water_cut_difference": -0.0693277749423381,
+          "prepared_field": "results/transport/fields/spe10_quadratic/spe10_quadratic_nn_r1.step1.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step4.field"
+        },
+        {
+          "time": 4000.0,
+          "rmse": 0.03312558258232614,
+          "max_error": 0.06776459140311208,
+          "water_cut_difference": -0.03680708810869049,
+          "prepared_field": "results/transport/fields/spe10_quadratic/spe10_quadratic_nn_r1.step2.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step5.field"
+        },
+        {
+          "time": 6000.0,
+          "rmse": 0.01964166974959993,
+          "max_error": 0.04112299008959308,
+          "water_cut_difference": -0.019039188015245512,
+          "prepared_field": "results/transport/fields/spe10_quadratic/spe10_quadratic_nn_r1.step3.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step6.field"
+        },
+        {
+          "time": 8000.0,
+          "rmse": 0.013243072000408675,
+          "max_error": 0.02852916610532097,
+          "water_cut_difference": -0.010681604889598018,
+          "prepared_field": "results/transport/fields/spe10_quadratic/spe10_quadratic_nn_r1.step4.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step7.field"
+        },
+        {
+          "time": 10000.0,
+          "rmse": 0.009677783051559731,
+          "max_error": 0.021433659748176126,
+          "water_cut_difference": -0.006547136098745798,
+          "prepared_field": "results/transport/fields/spe10_quadratic/spe10_quadratic_nn_r1.step5.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step8.field"
+        },
+        {
+          "time": 12000.0,
+          "rmse": 0.007477267592630073,
+          "max_error": 0.016775104324184942,
+          "water_cut_difference": -0.004308518120892169,
+          "prepared_field": "results/transport/fields/spe10_quadratic/spe10_quadratic_nn_r1.step6.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step9.field"
+        },
+        {
+          "time": 14000.0,
+          "rmse": 0.006018625921196385,
+          "max_error": 0.01384138335579388,
+          "water_cut_difference": -0.003032029434508199,
+          "prepared_field": "results/transport/fields/spe10_quadratic/spe10_quadratic_nn_r1.step7.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step10.field"
+        },
+        {
+          "time": 16000.0,
+          "rmse": 0.004992436969444339,
+          "max_error": 0.01170791467854071,
+          "water_cut_difference": -0.0022451420364613117,
+          "prepared_field": "results/transport/fields/spe10_quadratic/spe10_quadratic_nn_r1.step8.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step11.field"
+        },
+        {
+          "time": 18000.0,
+          "rmse": 0.004233842880286258,
+          "max_error": 0.010163790111703208,
+          "water_cut_difference": -0.0017170902784683362,
+          "prepared_field": "results/transport/fields/spe10_quadratic/spe10_quadratic_nn_r1.step9.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step12.field"
+        },
+        {
+          "time": 20000.0,
+          "rmse": 0.0036525816366860765,
+          "max_error": 0.008916208184371888,
+          "water_cut_difference": -0.0013478006956511024,
+          "prepared_field": "results/transport/fields/spe10_quadratic/spe10_quadratic_nn_r1.step10.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step13.field"
+        }
+      ],
+      "field": "archive:output/clean_timing_update_20261027/fields/results/3222142/spe10_quadratic_nn_r1.field",
+      "reference_field": "archive:output/clean_timing_update_20261027/srdm_fields/linesearch_srdm.field",
+      "graph": "archive:training/petsc_transport_20261015/paper_package/spe10_quadratic.bin",
+      "graph_sha256": "0df2207be2f3bbf36ffa0e8e644b4fea0e42bb104a620811da9fda8b240fd1ca"
+    },
+    {
+      "case": "spe10_quadratic",
+      "model": "cheb",
+      "exponent": 2.0,
+      "comparator": "Completed original SRDM trajectory",
+      "same_timestep_history": false,
+      "accepted": 10,
+      "reference_accepted": 13,
+      "horizon": 20000.0,
+      "final_rmse": 0.0035685644555418657,
+      "final_max_error": 0.008832875478761548,
+      "final_water_cut_difference": -0.0012420678907176796,
+      "max_common_time_water_cut_difference": 0.06925534118811144,
+      "common_time_fields": [
+        {
+          "time": 2000.0,
+          "rmse": 0.07053594749365097,
+          "max_error": 0.1480599009150282,
+          "water_cut_difference": -0.06925534118811144,
+          "prepared_field": "results/transport/fields/spe10_quadratic/spe10_quadratic_cheb_r1.step1.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step4.field"
+        },
+        {
+          "time": 4000.0,
+          "rmse": 0.03312538167739339,
+          "max_error": 0.06772084848697635,
+          "water_cut_difference": -0.03682542837350333,
+          "prepared_field": "results/transport/fields/spe10_quadratic/spe10_quadratic_cheb_r1.step2.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step5.field"
+        },
+        {
+          "time": 6000.0,
+          "rmse": 0.019617515627850506,
+          "max_error": 0.04109813265820883,
+          "water_cut_difference": -0.019090742296420604,
+          "prepared_field": "results/transport/fields/spe10_quadratic/spe10_quadratic_cheb_r1.step3.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step6.field"
+        },
+        {
+          "time": 8000.0,
+          "rmse": 0.013195733694675,
+          "max_error": 0.028522956103708252,
+          "water_cut_difference": -0.010695256954982524,
+          "prepared_field": "results/transport/fields/spe10_quadratic/spe10_quadratic_cheb_r1.step4.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step7.field"
+        },
+        {
+          "time": 10000.0,
+          "rmse": 0.009619549877907403,
+          "max_error": 0.021429846763248106,
+          "water_cut_difference": -0.006531648610043406,
+          "prepared_field": "results/transport/fields/spe10_quadratic/spe10_quadratic_cheb_r1.step5.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step8.field"
+        },
+        {
+          "time": 12000.0,
+          "rmse": 0.00741077951700807,
+          "max_error": 0.016753885662805557,
+          "water_cut_difference": -0.004279868330340331,
+          "prepared_field": "results/transport/fields/spe10_quadratic/spe10_quadratic_cheb_r1.step6.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step9.field"
+        },
+        {
+          "time": 14000.0,
+          "rmse": 0.0059415953488390575,
+          "max_error": 0.013802725607257371,
+          "water_cut_difference": -0.0029653211208856556,
+          "prepared_field": "results/transport/fields/spe10_quadratic/spe10_quadratic_cheb_r1.step7.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step10.field"
+        },
+        {
+          "time": 16000.0,
+          "rmse": 0.004907841243881381,
+          "max_error": 0.01163250364047752,
+          "water_cut_difference": -0.002146675520995567,
+          "prepared_field": "results/transport/fields/spe10_quadratic/spe10_quadratic_cheb_r1.step8.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step11.field"
+        },
+        {
+          "time": 18000.0,
+          "rmse": 0.004147448144387827,
+          "max_error": 0.010067699823161691,
+          "water_cut_difference": -0.0016089593818495729,
+          "prepared_field": "results/transport/fields/spe10_quadratic/spe10_quadratic_cheb_r1.step9.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step12.field"
+        },
+        {
+          "time": 20000.0,
+          "rmse": 0.0035685644555418657,
+          "max_error": 0.008832875478761548,
+          "water_cut_difference": -0.0012420678907176796,
+          "prepared_field": "results/transport/fields/spe10_quadratic/spe10_quadratic_cheb_r1.step10.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step13.field"
+        }
+      ],
+      "field": "archive:output/clean_timing_update_20261027/fields/results/3222142/spe10_quadratic_cheb_r1.field",
+      "reference_field": "archive:output/clean_timing_update_20261027/srdm_fields/linesearch_srdm.field",
+      "graph": "archive:training/petsc_transport_20261015/paper_package/spe10_quadratic.bin",
+      "graph_sha256": "0df2207be2f3bbf36ffa0e8e644b4fea0e42bb104a620811da9fda8b240fd1ca"
+    },
+    {
+      "case": "spe10_quadratic",
+      "model": "srdm",
+      "exponent": 2.0,
+      "comparator": "Completed original SRDM trajectory",
+      "same_timestep_history": true,
+      "accepted": 13,
+      "reference_accepted": 13,
+      "horizon": 20000.0,
+      "final_rmse": 0.0,
+      "final_max_error": 0.0,
+      "final_water_cut_difference": 0.0,
+      "max_common_time_water_cut_difference": 0.0,
+      "common_time_fields": [
+        {
+          "time": 250.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step1.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step1.field"
+        },
+        {
+          "time": 750.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step2.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step2.field"
+        },
+        {
+          "time": 1750.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step3.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step3.field"
+        },
+        {
+          "time": 2000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step4.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step4.field"
+        },
+        {
+          "time": 4000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step5.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step5.field"
+        },
+        {
+          "time": 6000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step6.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step6.field"
+        },
+        {
+          "time": 8000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step7.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step7.field"
+        },
+        {
+          "time": 10000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step8.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step8.field"
+        },
+        {
+          "time": 12000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step9.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step9.field"
+        },
+        {
+          "time": 14000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step10.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step10.field"
+        },
+        {
+          "time": 16000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step11.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step11.field"
+        },
+        {
+          "time": 18000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step12.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step12.field"
+        },
+        {
+          "time": 20000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step13.field",
+          "reference_field": "results/transport/fields/spe10_quadratic/linesearch_srdm.step13.field"
+        }
+      ],
+      "field": "archive:output/clean_timing_update_20261027/srdm_fields/linesearch_srdm.field",
+      "reference_field": "archive:output/clean_timing_update_20261027/srdm_fields/linesearch_srdm.field",
+      "graph": "archive:training/petsc_transport_20261015/paper_package/spe10_quadratic.bin",
+      "graph_sha256": "0df2207be2f3bbf36ffa0e8e644b4fea0e42bb104a620811da9fda8b240fd1ca"
+    },
+    {
+      "case": "edfm_p08",
+      "model": "nn",
+      "exponent": 0.8,
+      "comparator": "Completed original SRDM trajectory",
+      "same_timestep_history": false,
+      "accepted": 32,
+      "reference_accepted": 45,
+      "horizon": 1000000000.0,
+      "final_rmse": 0.00015982886418548415,
+      "final_max_error": 0.000832828328001578,
+      "final_water_cut_difference": -0.00011509819763100282,
+      "max_common_time_water_cut_difference": 0.0003557659790167922,
+      "common_time_fields": [
+        {
+          "time": 10000.0,
+          "rmse": 3.0279990493772637e-06,
+          "max_error": 3.77273885973084e-05,
+          "water_cut_difference": 6.784799317806437e-12,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step1.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step1.field"
+        },
+        {
+          "time": 30000.0,
+          "rmse": 4.8496575906866e-06,
+          "max_error": 8.47637178217342e-05,
+          "water_cut_difference": 9.267750943563599e-12,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step2.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step2.field"
+        },
+        {
+          "time": 70000.0,
+          "rmse": 0.0049479436466985036,
+          "max_error": 0.06473570666861922,
+          "water_cut_difference": 7.038318589648593e-11,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step3.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step4.field"
+        },
+        {
+          "time": 150000.0,
+          "rmse": 0.0016378800430450126,
+          "max_error": 0.023985828724583547,
+          "water_cut_difference": 1.20250082577847e-10,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step4.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step5.field"
+        },
+        {
+          "time": 310000.0,
+          "rmse": 0.005223211569978007,
+          "max_error": 0.08343722528243529,
+          "water_cut_difference": 1.571326082037569e-10,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step5.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step9.field"
+        },
+        {
+          "time": 630000.0,
+          "rmse": 0.004890110142998879,
+          "max_error": 0.07051825403473533,
+          "water_cut_difference": 2.507415064517848e-10,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step6.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step11.field"
+        },
+        {
+          "time": 1270000.0,
+          "rmse": 0.0042372157994488,
+          "max_error": 0.07136696891611771,
+          "water_cut_difference": 6.88501045008993e-10,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step7.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step13.field"
+        },
+        {
+          "time": 2550000.0,
+          "rmse": 0.003288920170678925,
+          "max_error": 0.06996385757035828,
+          "water_cut_difference": 2.387204793063817e-09,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step8.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step15.field"
+        },
+        {
+          "time": 5110000.0,
+          "rmse": 0.0011257281962195837,
+          "max_error": 0.032511396705059425,
+          "water_cut_difference": 6.526364645359733e-09,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step9.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step16.field"
+        },
+        {
+          "time": 10230000.0,
+          "rmse": 0.00032836181248386957,
+          "max_error": 0.01285720102325938,
+          "water_cut_difference": 1.2530814201223716e-08,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step10.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step17.field"
+        },
+        {
+          "time": 20470000.0,
+          "rmse": 0.0031205788888807933,
+          "max_error": 0.04864857119694678,
+          "water_cut_difference": 1.7416557576615506e-08,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step11.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step23.field"
+        },
+        {
+          "time": 40950000.0,
+          "rmse": 0.004941487384630366,
+          "max_error": 0.04574073090345432,
+          "water_cut_difference": 2.0164988785090604e-08,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step12.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step25.field"
+        },
+        {
+          "time": 81910000.0,
+          "rmse": 0.002298403957791942,
+          "max_error": 0.02198717558350538,
+          "water_cut_difference": 2.172132519746829e-08,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step13.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step26.field"
+        },
+        {
+          "time": 100000000.0,
+          "rmse": 0.0017607039800733317,
+          "max_error": 0.01632320744397897,
+          "water_cut_difference": 2.1194065076337645e-08,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step14.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step27.field"
+        },
+        {
+          "time": 150000000.0,
+          "rmse": 0.0010519949085758566,
+          "max_error": 0.00916855378915582,
+          "water_cut_difference": 6.666494243091707e-07,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step15.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step28.field"
+        },
+        {
+          "time": 200000000.0,
+          "rmse": 0.0007387026797762055,
+          "max_error": 0.0061570969129450814,
+          "water_cut_difference": 2.4378298532772317e-05,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step16.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step29.field"
+        },
+        {
+          "time": 250000000.0,
+          "rmse": 0.0005727062831695574,
+          "max_error": 0.004425308419338636,
+          "water_cut_difference": 0.000124801067920937,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step17.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step30.field"
+        },
+        {
+          "time": 300000000.0,
+          "rmse": 0.00046059047691107935,
+          "max_error": 0.003280102219977099,
+          "water_cut_difference": 0.00024609456820879477,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step18.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step31.field"
+        },
+        {
+          "time": 350000000.0,
+          "rmse": 0.00038315449248784507,
+          "max_error": 0.002667932925473071,
+          "water_cut_difference": 0.0003261000212870374,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step19.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step32.field"
+        },
+        {
+          "time": 400000000.0,
+          "rmse": 0.0003242326536770237,
+          "max_error": 0.0021048830283195707,
+          "water_cut_difference": 0.0003557659790167922,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step20.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step33.field"
+        },
+        {
+          "time": 450000000.0,
+          "rmse": 0.00027815344735527387,
+          "max_error": 0.001761529308407228,
+          "water_cut_difference": 0.0003253344898874744,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step21.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step34.field"
+        },
+        {
+          "time": 500000000.0,
+          "rmse": 0.00024392757925511063,
+          "max_error": 0.001506100447939196,
+          "water_cut_difference": 0.00025406064653521465,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step22.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step35.field"
+        },
+        {
+          "time": 550000000.0,
+          "rmse": 0.0002178094812514342,
+          "max_error": 0.0013563608976437935,
+          "water_cut_difference": 0.00018170584970861325,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step23.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step36.field"
+        },
+        {
+          "time": 600000000.0,
+          "rmse": 0.0001976497423151511,
+          "max_error": 0.0012433239498446103,
+          "water_cut_difference": 0.00011059875435243116,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step24.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step37.field"
+        },
+        {
+          "time": 650000000.0,
+          "rmse": 0.00018274381186998736,
+          "max_error": 0.0011423517020537899,
+          "water_cut_difference": 4.659215090024871e-05,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step25.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step38.field"
+        },
+        {
+          "time": 700000000.0,
+          "rmse": 0.00017324702456519007,
+          "max_error": 0.0010595102831781888,
+          "water_cut_difference": 3.171166924276214e-06,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step26.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step39.field"
+        },
+        {
+          "time": 750000000.0,
+          "rmse": 0.0001673478747710734,
+          "max_error": 0.0010025779341277241,
+          "water_cut_difference": -2.8278954929628064e-05,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step27.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step40.field"
+        },
+        {
+          "time": 800000000.0,
+          "rmse": 0.0001632983616799226,
+          "max_error": 0.0009635484073250433,
+          "water_cut_difference": -4.892239804432652e-05,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step28.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step41.field"
+        },
+        {
+          "time": 850000000.0,
+          "rmse": 0.00016081898086495807,
+          "max_error": 0.0009275467055607223,
+          "water_cut_difference": -6.267113574343064e-05,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step29.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step42.field"
+        },
+        {
+          "time": 900000000.0,
+          "rmse": 0.0001595192695206986,
+          "max_error": 0.0009142382109050828,
+          "water_cut_difference": -7.817649689167983e-05,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step30.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step43.field"
+        },
+        {
+          "time": 950000000.0,
+          "rmse": 0.0001593660593325529,
+          "max_error": 0.0008719363641618294,
+          "water_cut_difference": -0.00010154973145715118,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step31.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step44.field"
+        },
+        {
+          "time": 1000000000.0,
+          "rmse": 0.00015982886418548415,
+          "max_error": 0.000832828328001578,
+          "water_cut_difference": -0.00011509819763100282,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_nn_r1.step32.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step45.field"
+        }
+      ],
+      "field": "archive:output/clean_timing_update_20261027/fields/results/3222086/edfm_p08_nn_r1.field",
+      "reference_field": "archive:output/ncs_results_si_rewrite_20261020/evidence/edfm_p08_srdm/srdm_p0_8_bt.field",
+      "graph": "archive:training/petsc_transport_20261015/paper_package/edfm_singular.bin",
+      "graph_sha256": "e07c5bc0b3e3f3e02d31144564f092c5f61ef30caa105c88e390611880506756"
+    },
+    {
+      "case": "edfm_p08",
+      "model": "cheb",
+      "exponent": 0.8,
+      "comparator": "Completed original SRDM trajectory",
+      "same_timestep_history": false,
+      "accepted": 32,
+      "reference_accepted": 45,
+      "horizon": 1000000000.0,
+      "final_rmse": 8.344868076053433e-05,
+      "final_max_error": 0.0005162334423269854,
+      "final_water_cut_difference": -9.484054038344514e-05,
+      "max_common_time_water_cut_difference": 0.00030388171012710186,
+      "common_time_fields": [
+        {
+          "time": 10000.0,
+          "rmse": 4.499115269633764e-07,
+          "max_error": 9.570412454418253e-06,
+          "water_cut_difference": 5.432650480314617e-19,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step1.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step1.field"
+        },
+        {
+          "time": 30000.0,
+          "rmse": 6.239781175587029e-07,
+          "max_error": 8.984653046661961e-06,
+          "water_cut_difference": 1.1588192652010398e-18,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step2.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step2.field"
+        },
+        {
+          "time": 70000.0,
+          "rmse": 0.004947074617805733,
+          "max_error": 0.06472606069713774,
+          "water_cut_difference": 8.06175751288982e-19,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step3.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step4.field"
+        },
+        {
+          "time": 150000.0,
+          "rmse": 0.0016378148774730944,
+          "max_error": 0.023998405721931126,
+          "water_cut_difference": 1.3723245333607927e-16,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step4.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step5.field"
+        },
+        {
+          "time": 310000.0,
+          "rmse": 0.005220895395847695,
+          "max_error": 0.08342409175254549,
+          "water_cut_difference": 3.607298435273992e-16,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step5.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step9.field"
+        },
+        {
+          "time": 630000.0,
+          "rmse": 0.004886984217723164,
+          "max_error": 0.07050544584319829,
+          "water_cut_difference": 6.68540964577176e-15,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step6.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step11.field"
+        },
+        {
+          "time": 1270000.0,
+          "rmse": 0.0042338765287843905,
+          "max_error": 0.07132029134069473,
+          "water_cut_difference": 8.053995585082079e-13,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step7.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step13.field"
+        },
+        {
+          "time": 2550000.0,
+          "rmse": 0.003285523224819776,
+          "max_error": 0.06994834616311685,
+          "water_cut_difference": 4.103477547324342e-11,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step8.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step15.field"
+        },
+        {
+          "time": 5110000.0,
+          "rmse": 0.00112314846155533,
+          "max_error": 0.032439575410947885,
+          "water_cut_difference": 2.8558900378183273e-10,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step9.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step16.field"
+        },
+        {
+          "time": 10230000.0,
+          "rmse": 0.0003252634698382478,
+          "max_error": 0.012805362688920296,
+          "water_cut_difference": 1.080785836237934e-09,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step10.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step17.field"
+        },
+        {
+          "time": 20470000.0,
+          "rmse": 0.003121943433872128,
+          "max_error": 0.04861443176533149,
+          "water_cut_difference": 2.85105400907874e-09,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step11.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step23.field"
+        },
+        {
+          "time": 40950000.0,
+          "rmse": 0.004942752248416324,
+          "max_error": 0.045751250936349575,
+          "water_cut_difference": 5.2579015222732565e-09,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step12.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step25.field"
+        },
+        {
+          "time": 81910000.0,
+          "rmse": 0.0022966874281236485,
+          "max_error": 0.02194440305673251,
+          "water_cut_difference": 7.2762218458022136e-09,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step13.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step26.field"
+        },
+        {
+          "time": 100000000.0,
+          "rmse": 0.0017575773769574117,
+          "max_error": 0.01622932819653633,
+          "water_cut_difference": 7.035858281893908e-09,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step14.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step27.field"
+        },
+        {
+          "time": 150000000.0,
+          "rmse": 0.0010453346814770874,
+          "max_error": 0.00914624401737607,
+          "water_cut_difference": 5.670211285869966e-07,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step15.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step28.field"
+        },
+        {
+          "time": 200000000.0,
+          "rmse": 0.000728399320423063,
+          "max_error": 0.006119330175498039,
+          "water_cut_difference": 2.257412558562201e-05,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step16.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step29.field"
+        },
+        {
+          "time": 250000000.0,
+          "rmse": 0.0005578957731347975,
+          "max_error": 0.0043661299948251076,
+          "water_cut_difference": 0.00011052231254281633,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step17.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step30.field"
+        },
+        {
+          "time": 300000000.0,
+          "rmse": 0.00044330492950066377,
+          "max_error": 0.003214514222441789,
+          "water_cut_difference": 0.00021727578603283199,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step18.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step31.field"
+        },
+        {
+          "time": 350000000.0,
+          "rmse": 0.0003636389501802004,
+          "max_error": 0.0026046945012361267,
+          "water_cut_difference": 0.00028220899667073807,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step19.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step32.field"
+        },
+        {
+          "time": 400000000.0,
+          "rmse": 0.0003034867786146413,
+          "max_error": 0.0020361466167626574,
+          "water_cut_difference": 0.00030388171012710186,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step20.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step33.field"
+        },
+        {
+          "time": 450000000.0,
+          "rmse": 0.00025614046098950695,
+          "max_error": 0.001721651509691724,
+          "water_cut_difference": 0.0002726009305488719,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step21.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step34.field"
+        },
+        {
+          "time": 500000000.0,
+          "rmse": 0.0002197881034588147,
+          "max_error": 0.001424493867433485,
+          "water_cut_difference": 0.00021041470183014166,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step22.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step35.field"
+        },
+        {
+          "time": 550000000.0,
+          "rmse": 0.00019101970008143364,
+          "max_error": 0.0012491548499904415,
+          "water_cut_difference": 0.00014171872232809912,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step23.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step36.field"
+        },
+        {
+          "time": 600000000.0,
+          "rmse": 0.00016765622296395215,
+          "max_error": 0.0011153938491059723,
+          "water_cut_difference": 7.840441727774428e-05,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step24.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step37.field"
+        },
+        {
+          "time": 650000000.0,
+          "rmse": 0.00014886005384192843,
+          "max_error": 0.0009998167061706642,
+          "water_cut_difference": 2.3194060285836038e-05,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step25.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step38.field"
+        },
+        {
+          "time": 700000000.0,
+          "rmse": 0.0001341895871058137,
+          "max_error": 0.0009099320977089542,
+          "water_cut_difference": -1.882975308309387e-05,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step26.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step39.field"
+        },
+        {
+          "time": 750000000.0,
+          "rmse": 0.00012219294152862855,
+          "max_error": 0.0008316453590418993,
+          "water_cut_difference": -5.04310498906646e-05,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step27.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step40.field"
+        },
+        {
+          "time": 800000000.0,
+          "rmse": 0.00011240274959463606,
+          "max_error": 0.0007466842083603265,
+          "water_cut_difference": -7.00867502231306e-05,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step28.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step41.field"
+        },
+        {
+          "time": 850000000.0,
+          "rmse": 0.00010407098216452527,
+          "max_error": 0.0006754445323967628,
+          "water_cut_difference": -8.288484136198537e-05,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step29.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step42.field"
+        },
+        {
+          "time": 900000000.0,
+          "rmse": 9.666092436006172e-05,
+          "max_error": 0.0006092499666678908,
+          "water_cut_difference": -9.019295635714908e-05,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step30.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step43.field"
+        },
+        {
+          "time": 950000000.0,
+          "rmse": 8.980310518586018e-05,
+          "max_error": 0.0005519554232585877,
+          "water_cut_difference": -9.390882988802307e-05,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step31.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step44.field"
+        },
+        {
+          "time": 1000000000.0,
+          "rmse": 8.344868076053433e-05,
+          "max_error": 0.0005162334423269854,
+          "water_cut_difference": -9.484054038344514e-05,
+          "prepared_field": "results/transport/fields/edfm_p08/edfm_p08_cheb_r1.step32.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step45.field"
+        }
+      ],
+      "field": "archive:output/clean_timing_update_20261027/fields/results/3222180/edfm_p08_cheb_r1.field",
+      "reference_field": "archive:output/ncs_results_si_rewrite_20261020/evidence/edfm_p08_srdm/srdm_p0_8_bt.field",
+      "graph": "archive:training/petsc_transport_20261015/paper_package/edfm_singular.bin",
+      "graph_sha256": "e07c5bc0b3e3f3e02d31144564f092c5f61ef30caa105c88e390611880506756"
+    },
+    {
+      "case": "edfm_p08",
+      "model": "srdm",
+      "exponent": 0.8,
+      "comparator": "Completed original SRDM trajectory",
+      "same_timestep_history": true,
+      "accepted": 45,
+      "reference_accepted": 45,
+      "horizon": 1000000000.0,
+      "final_rmse": 0.0,
+      "final_max_error": 0.0,
+      "final_water_cut_difference": 0.0,
+      "max_common_time_water_cut_difference": 0.0,
+      "common_time_fields": [
+        {
+          "time": 10000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step1.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step1.field"
+        },
+        {
+          "time": 30000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step2.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step2.field"
+        },
+        {
+          "time": 50000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step3.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step3.field"
+        },
+        {
+          "time": 70000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step4.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step4.field"
+        },
+        {
+          "time": 150000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step5.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step5.field"
+        },
+        {
+          "time": 170000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step6.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step6.field"
+        },
+        {
+          "time": 210000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step7.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step7.field"
+        },
+        {
+          "time": 290000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step8.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step8.field"
+        },
+        {
+          "time": 310000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step9.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step9.field"
+        },
+        {
+          "time": 470000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step10.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step10.field"
+        },
+        {
+          "time": 630000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step11.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step11.field"
+        },
+        {
+          "time": 950000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step12.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step12.field"
+        },
+        {
+          "time": 1270000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step13.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step13.field"
+        },
+        {
+          "time": 1910000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step14.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step14.field"
+        },
+        {
+          "time": 2550000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step15.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step15.field"
+        },
+        {
+          "time": 5110000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step16.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step16.field"
+        },
+        {
+          "time": 10230000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step17.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step17.field"
+        },
+        {
+          "time": 12790000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step18.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step18.field"
+        },
+        {
+          "time": 17910000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step19.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step19.field"
+        },
+        {
+          "time": 18230000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step20.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step20.field"
+        },
+        {
+          "time": 18870000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step21.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step21.field"
+        },
+        {
+          "time": 20150000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step22.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step22.field"
+        },
+        {
+          "time": 20470000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step23.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step23.field"
+        },
+        {
+          "time": 30710000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step24.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step24.field"
+        },
+        {
+          "time": 40950000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step25.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step25.field"
+        },
+        {
+          "time": 81910000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step26.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step26.field"
+        },
+        {
+          "time": 100000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step27.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step27.field"
+        },
+        {
+          "time": 150000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step28.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step28.field"
+        },
+        {
+          "time": 200000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step29.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step29.field"
+        },
+        {
+          "time": 250000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step30.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step30.field"
+        },
+        {
+          "time": 300000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step31.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step31.field"
+        },
+        {
+          "time": 350000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step32.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step32.field"
+        },
+        {
+          "time": 400000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step33.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step33.field"
+        },
+        {
+          "time": 450000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step34.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step34.field"
+        },
+        {
+          "time": 500000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step35.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step35.field"
+        },
+        {
+          "time": 550000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step36.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step36.field"
+        },
+        {
+          "time": 600000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step37.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step37.field"
+        },
+        {
+          "time": 650000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step38.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step38.field"
+        },
+        {
+          "time": 700000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step39.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step39.field"
+        },
+        {
+          "time": 750000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step40.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step40.field"
+        },
+        {
+          "time": 800000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step41.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step41.field"
+        },
+        {
+          "time": 850000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step42.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step42.field"
+        },
+        {
+          "time": 900000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step43.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step43.field"
+        },
+        {
+          "time": 950000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step44.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step44.field"
+        },
+        {
+          "time": 1000000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step45.field",
+          "reference_field": "results/transport/fields/edfm_p08/srdm_p0_8_bt.step45.field"
+        }
+      ],
+      "field": "archive:output/ncs_results_si_rewrite_20261020/evidence/edfm_p08_srdm/srdm_p0_8_bt.field",
+      "reference_field": "archive:output/ncs_results_si_rewrite_20261020/evidence/edfm_p08_srdm/srdm_p0_8_bt.field",
+      "graph": "archive:training/petsc_transport_20261015/paper_package/edfm_singular.bin",
+      "graph_sha256": "e07c5bc0b3e3f3e02d31144564f092c5f61ef30caa105c88e390611880506756"
+    },
+    {
+      "case": "norne_p08",
+      "model": "nn",
+      "exponent": 0.8,
+      "comparator": "Completed original SRDM trajectory",
+      "same_timestep_history": false,
+      "accepted": 14,
+      "reference_accepted": 23,
+      "horizon": 1000000.0,
+      "final_rmse": 0.008458713320027747,
+      "final_max_error": 0.04362790050723707,
+      "final_water_cut_difference": -0.006380637024274161,
+      "max_common_time_water_cut_difference": 0.026536721612158698,
+      "common_time_fields": [
+        {
+          "time": 10000.0,
+          "rmse": 0.0179097297241553,
+          "max_error": 0.12227695347219858,
+          "water_cut_difference": 9.724945165961188e-12,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_nn_r1.step1.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step2.field"
+        },
+        {
+          "time": 30000.0,
+          "rmse": 0.005836081189219776,
+          "max_error": 0.03848501647083713,
+          "water_cut_difference": 8.725729690189564e-11,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_nn_r1.step2.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step3.field"
+        },
+        {
+          "time": 70000.0,
+          "rmse": 0.0019123244130183359,
+          "max_error": 0.012141417141582345,
+          "water_cut_difference": 1.0227932770420352e-10,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_nn_r1.step3.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step4.field"
+        },
+        {
+          "time": 100000.0,
+          "rmse": 0.0010700338455243155,
+          "max_error": 0.006207395156770823,
+          "water_cut_difference": 9.496934271350366e-06,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_nn_r1.step4.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step5.field"
+        },
+        {
+          "time": 180000.0,
+          "rmse": 0.01968013311901626,
+          "max_error": 0.07572268646805222,
+          "water_cut_difference": 0.003171439566135109,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_nn_r1.step5.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step7.field"
+        },
+        {
+          "time": 200000.0,
+          "rmse": 0.017302132026229537,
+          "max_error": 0.09170273997202409,
+          "water_cut_difference": -0.0012910337439252934,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_nn_r1.step6.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step8.field"
+        },
+        {
+          "time": 300000.0,
+          "rmse": 0.02639848539748758,
+          "max_error": 0.10657922011495921,
+          "water_cut_difference": -0.026536721612158698,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_nn_r1.step7.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step11.field"
+        },
+        {
+          "time": 400000.0,
+          "rmse": 0.024855360868735812,
+          "max_error": 0.0955450170930634,
+          "water_cut_difference": -0.0248863181775702,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_nn_r1.step8.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step13.field"
+        },
+        {
+          "time": 500000.0,
+          "rmse": 0.01717547011951555,
+          "max_error": 0.04944296212545722,
+          "water_cut_difference": -0.015282851300019384,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_nn_r1.step9.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step14.field"
+        },
+        {
+          "time": 600000.0,
+          "rmse": 0.01252169591295421,
+          "max_error": 0.03387857116055304,
+          "water_cut_difference": -0.010046688941987347,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_nn_r1.step10.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step15.field"
+        },
+        {
+          "time": 700000.0,
+          "rmse": 0.013043471255754611,
+          "max_error": 0.09675639625474264,
+          "water_cut_difference": -0.009958603355219586,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_nn_r1.step11.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step18.field"
+        },
+        {
+          "time": 800000.0,
+          "rmse": 0.010068294370766633,
+          "max_error": 0.04793710529651868,
+          "water_cut_difference": -0.007335353174426351,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_nn_r1.step12.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step19.field"
+        },
+        {
+          "time": 900000.0,
+          "rmse": 0.0101393092534471,
+          "max_error": 0.07272113524427214,
+          "water_cut_difference": -0.008051517598254065,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_nn_r1.step13.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step22.field"
+        },
+        {
+          "time": 1000000.0,
+          "rmse": 0.008458713320027747,
+          "max_error": 0.04362790050723707,
+          "water_cut_difference": -0.006380637024274161,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_nn_r1.step14.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step23.field"
+        }
+      ],
+      "field": "archive:output/clean_timing_update_20261027/fields/results/3222142/norne_p08_nn_r1.field",
+      "reference_field": "archive:output/ncs_results_si_rewrite_20261020/evidence/norne_p08_srdm/norne_p08_srdm_bt.field",
+      "graph": "archive:training/petsc_transport_20261015/paper_package/norne_singular.bin",
+      "graph_sha256": "43f9f08ad84922626cae2ed70654e027a167c0ba6255ebfdc0b34693ebf93111"
+    },
+    {
+      "case": "norne_p08",
+      "model": "cheb",
+      "exponent": 0.8,
+      "comparator": "Completed original SRDM trajectory",
+      "same_timestep_history": false,
+      "accepted": 14,
+      "reference_accepted": 23,
+      "horizon": 1000000.0,
+      "final_rmse": 0.008398937859968002,
+      "final_max_error": 0.043576957073423,
+      "final_water_cut_difference": -0.006511640825552445,
+      "max_common_time_water_cut_difference": 0.026605159354068597,
+      "common_time_fields": [
+        {
+          "time": 10000.0,
+          "rmse": 0.017911024069863436,
+          "max_error": 0.12231041947426036,
+          "water_cut_difference": 7.80361670465248e-19,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step1.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step2.field"
+        },
+        {
+          "time": 30000.0,
+          "rmse": 0.005840713253271265,
+          "max_error": 0.03851089887715031,
+          "water_cut_difference": 1.1661300780147111e-18,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step2.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step3.field"
+        },
+        {
+          "time": 70000.0,
+          "rmse": 0.0019193871372747378,
+          "max_error": 0.012184766386171164,
+          "water_cut_difference": 4.807475024545e-17,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step3.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step4.field"
+        },
+        {
+          "time": 100000.0,
+          "rmse": 0.0010688561155641492,
+          "max_error": 0.006126175374962961,
+          "water_cut_difference": 8.484274355864018e-06,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step4.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step5.field"
+        },
+        {
+          "time": 180000.0,
+          "rmse": 0.019687260881801692,
+          "max_error": 0.07564386726789515,
+          "water_cut_difference": 0.0031310876896940287,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step5.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step7.field"
+        },
+        {
+          "time": 200000.0,
+          "rmse": 0.017303862587952388,
+          "max_error": 0.09164039531137486,
+          "water_cut_difference": -0.0013331275419527222,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step6.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step8.field"
+        },
+        {
+          "time": 300000.0,
+          "rmse": 0.02641080942094065,
+          "max_error": 0.10646468745431638,
+          "water_cut_difference": -0.026605159354068597,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step7.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step11.field"
+        },
+        {
+          "time": 400000.0,
+          "rmse": 0.02486865216929178,
+          "max_error": 0.09551631883763517,
+          "water_cut_difference": -0.024978982806759198,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step8.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step13.field"
+        },
+        {
+          "time": 500000.0,
+          "rmse": 0.01719011162894743,
+          "max_error": 0.04940271284714394,
+          "water_cut_difference": -0.015369511893026155,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step9.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step14.field"
+        },
+        {
+          "time": 600000.0,
+          "rmse": 0.012539284181671178,
+          "max_error": 0.0338231996754953,
+          "water_cut_difference": -0.01013517465367686,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step10.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step15.field"
+        },
+        {
+          "time": 700000.0,
+          "rmse": 0.013054403055131425,
+          "max_error": 0.09664657016892934,
+          "water_cut_difference": -0.010070085046114285,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step11.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step18.field"
+        },
+        {
+          "time": 800000.0,
+          "rmse": 0.010060889329548163,
+          "max_error": 0.047814714194955366,
+          "water_cut_difference": -0.0074602166976665,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step12.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step19.field"
+        },
+        {
+          "time": 900000.0,
+          "rmse": 0.010106031727310916,
+          "max_error": 0.07264916092077155,
+          "water_cut_difference": -0.00818219722672242,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step13.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step22.field"
+        },
+        {
+          "time": 1000000.0,
+          "rmse": 0.008398937859968002,
+          "max_error": 0.043576957073423,
+          "water_cut_difference": -0.006511640825552445,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step14.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step23.field"
+        }
+      ],
+      "field": "archive:output/clean_timing_update_20261027/fields/results/3222142/norne_p08_cheb_r1.field",
+      "reference_field": "archive:output/ncs_results_si_rewrite_20261020/evidence/norne_p08_srdm/norne_p08_srdm_bt.field",
+      "graph": "archive:training/petsc_transport_20261015/paper_package/norne_singular.bin",
+      "graph_sha256": "43f9f08ad84922626cae2ed70654e027a167c0ba6255ebfdc0b34693ebf93111"
+    },
+    {
+      "case": "norne_p08",
+      "model": "srdm",
+      "exponent": 0.8,
+      "comparator": "Completed original SRDM trajectory",
+      "same_timestep_history": true,
+      "accepted": 23,
+      "reference_accepted": 23,
+      "horizon": 1000000.0,
+      "final_rmse": 0.0,
+      "final_max_error": 0.0,
+      "final_water_cut_difference": 0.0,
+      "max_common_time_water_cut_difference": 0.0,
+      "common_time_fields": [
+        {
+          "time": 5000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step1.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step1.field"
+        },
+        {
+          "time": 10000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step2.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step2.field"
+        },
+        {
+          "time": 30000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step3.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step3.field"
+        },
+        {
+          "time": 70000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step4.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step4.field"
+        },
+        {
+          "time": 100000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step5.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step5.field"
+        },
+        {
+          "time": 140000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step6.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step6.field"
+        },
+        {
+          "time": 180000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step7.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step7.field"
+        },
+        {
+          "time": 200000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step8.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step8.field"
+        },
+        {
+          "time": 250000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step9.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step9.field"
+        },
+        {
+          "time": 275000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step10.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step10.field"
+        },
+        {
+          "time": 300000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step11.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step11.field"
+        },
+        {
+          "time": 350000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step12.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step12.field"
+        },
+        {
+          "time": 400000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step13.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step13.field"
+        },
+        {
+          "time": 500000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step14.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step14.field"
+        },
+        {
+          "time": 600000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step15.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step15.field"
+        },
+        {
+          "time": 650000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step16.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step16.field"
+        },
+        {
+          "time": 675000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step17.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step17.field"
+        },
+        {
+          "time": 700000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step18.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step18.field"
+        },
+        {
+          "time": 800000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step19.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step19.field"
+        },
+        {
+          "time": 850000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step20.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step20.field"
+        },
+        {
+          "time": 875000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step21.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step21.field"
+        },
+        {
+          "time": 900000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step22.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step22.field"
+        },
+        {
+          "time": 1000000.0,
+          "rmse": 0.0,
+          "max_error": 0.0,
+          "water_cut_difference": 0.0,
+          "prepared_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step23.field",
+          "reference_field": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step23.field"
+        }
+      ],
+      "field": "archive:output/ncs_results_si_rewrite_20261020/evidence/norne_p08_srdm/norne_p08_srdm_bt.field",
+      "reference_field": "archive:output/ncs_results_si_rewrite_20261020/evidence/norne_p08_srdm/norne_p08_srdm_bt.field",
+      "graph": "archive:training/petsc_transport_20261015/paper_package/norne_singular.bin",
+      "graph_sha256": "43f9f08ad84922626cae2ed70654e027a167c0ba6255ebfdc0b34693ebf93111"
+    }
+  ]
+}

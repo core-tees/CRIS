@@ -1,0 +1,7 @@
+{
+  "model_sha256": "41bc7e24207ec325d5eee9ccc13448b2304f58aeedcee66abecfada2f0f9f0fc",
+  "source_sha256": "57ea92c74615d54193706e699b740d802d11617fc19dd99d599c35de42477e9e",
+  "executable_sha256": "eabdb59933500e03a99c6ab7e3735cc49bc428ab5e4992f8e1c62582ebc3fb56",
+  "native_evaluator_sha256": "3fb99a258c834456a041f19ec4805a17ebf9d1e394097aa9b70c424b813e22dd",
+  "checkpoint_sha256": "9ddfc726a219fadd131300b8d42848e851bb082d1c0c1b38acfeabd7da5c8ebb"
+}

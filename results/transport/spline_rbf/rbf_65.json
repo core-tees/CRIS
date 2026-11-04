@@ -1,0 +1,47 @@
+{
+  "method": "rbf",
+  "n": 65,
+  "coefficients": 274625,
+  "basis_nnz": 232694263,
+  "basis_build_seconds": 56.866196021437645,
+  "fit": {
+    "iterations": 860,
+    "stop": "converged",
+    "relative_normal_gradient": 9.90988505744786e-10,
+    "train_rmse": 0.0001375167665836693,
+    "seconds": 15.665470205247402,
+    "unused_coefficients": 0,
+    "ridge_scaled": 1e-12
+  },
+  "scores": {
+    "transport_validation": {
+      "rmse": 0.00014467656514785234,
+      "maximum": 0.004942065272542928,
+      "p99": 0.0005691636422310059,
+      "median": 4.7038087653772376e-05,
+      "count": 65536
+    },
+    "transport_endpoint": {
+      "rmse": 0.00022948489429654587,
+      "maximum": 0.001962062876843307,
+      "p99": 0.0009159232906481425,
+      "median": 7.084286490199876e-05,
+      "count": 8192
+    },
+    "transport_quadratic": {
+      "rmse": 0.00021594789680488315,
+      "maximum": 0.0029115480162190677,
+      "p99": 0.0010229306185190713,
+      "median": 5.214591490766404e-05,
+      "count": 8192
+    },
+    "transport_singular": {
+      "rmse": 0.00012051740081740503,
+      "maximum": 0.0019555909964089624,
+      "p99": 0.0004459708565993638,
+      "median": 6.158345859902381e-05,
+      "count": 8192
+    }
+  },
+  "workflow_seconds": 75.1345135346055
+}

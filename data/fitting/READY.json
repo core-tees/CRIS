@@ -1,0 +1,62 @@
+{
+  "label_solver": "PETSc Newton/backtracking, continuation and safeguarded fallback",
+  "sets": [
+    {
+      "name": "train",
+      "count": 1048576,
+      "seed": 181001,
+      "input_sha256": "b686b1e84e009e4801888351df583c0584f56b670e69be7d07607ee5b3bb097f",
+      "labels_sha256": "67382dd5643a9d28e13c88f947546f6f47b5266c6593e59284b9f187b884c0ce",
+      "reconstructed_input_scaled_max_difference": 2.2161613516795188e-16
+    },
+    {
+      "name": "validation",
+      "count": 65536,
+      "seed": 181002,
+      "input_sha256": "2a297a3419782a1ee348e8ab1d195f8955d300bd4dc3e213d186fcc2173d7060",
+      "labels_sha256": "80ae73cd5d7ee445fd209ef67255123a0a1c5f65bfe5316a69a7a388fca0db31",
+      "reconstructed_input_scaled_max_difference": 2.1980280119888014e-16
+    },
+    {
+      "name": "test",
+      "count": 65536,
+      "seed": 181003,
+      "input_sha256": "7d15e1321ddb8575e7c08d666aa549f16fe9203d76ca54d4eca9f44173aaec05",
+      "labels_sha256": "bb62fafac3ab5df7600c294b711bb09da59d324478ac2c249bc521d6b2ad8d80",
+      "reconstructed_input_scaled_max_difference": 2.2071253672543461e-16
+    },
+    {
+      "name": "endpoint",
+      "count": 8192,
+      "seed": 181004,
+      "input_sha256": "6721485edc6acba6336a593b50dba182a6508e5d65e219750768c79d46f3ece1",
+      "labels_sha256": "bc9ebca5cc374b5b3f48ec1c661ca78c99cc1c994c3198e6ab239d7114fc0a88",
+      "reconstructed_input_scaled_max_difference": 2.172131491079723e-16
+    },
+    {
+      "name": "quadratic",
+      "count": 8192,
+      "seed": 181005,
+      "input_sha256": "8dafa0813860cba13aec636d3a21e10da081188885110db8324526f53e947eb9",
+      "labels_sha256": "940ecdfea0e79748c58155d71844898c524e2b8e5542355f7f84c491dc9bc50f",
+      "reconstructed_input_scaled_max_difference": 2.1880925327059733e-16
+    },
+    {
+      "name": "singular",
+      "count": 8192,
+      "seed": 181006,
+      "input_sha256": "d16ac1b31d18f8a564216bbfa847eead0f6f9fe235e00a96cd3630f86ed79315",
+      "labels_sha256": "5a5b8eeb99495ed752e883db584536c1d4cb65d9a8cfe1b0e2915057ad4d10a3",
+      "reconstructed_input_scaled_max_difference": 2.1777230199021897e-16
+    },
+    {
+      "name": "train_cheb",
+      "count": 4194304,
+      "seed": 181001,
+      "input_sha256": "2bc5223658b80f50a5cc092d3804a6bbf30928a8bb5b3a8b0f998c1079ae8877",
+      "labels_sha256": "69d524546701d950b2236594fde5d6c2c0b65bc2b99f1a8062fb189f794bb2af",
+      "reconstructed_input_scaled_max_difference": 2.2161613516795188e-16
+    }
+  ],
+  "withheld_test": "test"
+}

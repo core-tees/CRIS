@@ -1,0 +1,98 @@
+[
+  {
+    "complete": true,
+    "N": 256,
+    "beta": 150,
+    "accepted": 1,
+    "time": 50,
+    "accumulated_mean_absolute_defect": 0.01968311961067351,
+    "accuracy_only": true,
+    "atol": 1e-06,
+    "name": "front_leaves64",
+    "returncode": 0,
+    "command": [
+      "archive:training/transport_completion_20261028/column_accuracy.exe",
+      "archive:training/transport_completion_20261028/assets/cheb_64.tree",
+      "256",
+      "150",
+      "archive:training/transport_completion_20261028/local_results/front_leaves64",
+      "1000",
+      "front"
+    ],
+    "local_quadratic_accuracy": {
+      "rmse": 0.00026114438231335295,
+      "maximum": 0.0032912583388442496,
+      "p99": 0.0010959416179680103
+    },
+    "model_sha256": "59594fde6a0339e0567353bcd54955211e22a039b82ecdcc0c3ebf6a8fcd13ec",
+    "field_error_vs_archived_srdm": {
+      "rmse": 0.0009029604346209421,
+      "mae": 0.0007086416408617114,
+      "maximum": 0.0026032962404358706
+    }
+  },
+  {
+    "complete": true,
+    "N": 256,
+    "beta": 150,
+    "accepted": 1,
+    "time": 50,
+    "accumulated_mean_absolute_defect": 0.0015695106680596593,
+    "accuracy_only": true,
+    "atol": 1e-06,
+    "name": "front_leaves256",
+    "returncode": 0,
+    "command": [
+      "archive:training/transport_completion_20261028/column_accuracy.exe",
+      "archive:training/transport_completion_20261028/assets/cheb_256.tree",
+      "256",
+      "150",
+      "archive:training/transport_completion_20261028/local_results/front_leaves256",
+      "1000",
+      "front"
+    ],
+    "local_quadratic_accuracy": {
+      "rmse": 1.2035038559641602e-05,
+      "maximum": 0.0001314508314153029,
+      "p99": 4.469321565537126e-05
+    },
+    "model_sha256": "c6d8974ae9eaa02bf36146a3a9ad53833f8d1318e3c32173b40dfa80a9dbf533",
+    "field_error_vs_archived_srdm": {
+      "rmse": 0.0001974074832950683,
+      "mae": 0.00015094484455698562,
+      "maximum": 0.0004076265376038446
+    }
+  },
+  {
+    "complete": true,
+    "N": 256,
+    "beta": 150,
+    "accepted": 1,
+    "time": 50,
+    "accumulated_mean_absolute_defect": 0.00013587456959873734,
+    "accuracy_only": true,
+    "atol": 1e-06,
+    "name": "front_leaves1024",
+    "returncode": 0,
+    "command": [
+      "archive:training/transport_completion_20261028/column_accuracy.exe",
+      "archive:training/transport_completion_20261028/assets/cheb_1024.tree",
+      "256",
+      "150",
+      "archive:training/transport_completion_20261028/local_results/front_leaves1024",
+      "1000",
+      "front"
+    ],
+    "local_quadratic_accuracy": {
+      "rmse": 1.3049636838574193e-06,
+      "maximum": 1.7267715056390465e-05,
+      "p99": 5.1666162515684485e-06
+    },
+    "model_sha256": "cc01d4e61a5b12bd9629685b050aa4b0d56df2a8507edd71e457a19c91fbe8fa",
+    "field_error_vs_archived_srdm": {
+      "rmse": 1.4672792907867342e-05,
+      "mae": 1.3776672577565973e-05,
+      "maximum": 2.1095610657828612e-05
+    }
+  }
+]

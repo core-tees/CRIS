@@ -1,0 +1,130 @@
+{
+  "case": "EDFM quadratic single-step sweep",
+  "cells": 19299,
+  "source": "archive:training/petsc_transport_20261015/paper_package/edfm_quadratic.bin",
+  "source_sha256": "9cdf1f8e82ff73f976f1e84fab5fd5dd69b66e06ebf98a098d28103927f995bc",
+  "hash_matches_archived_manifest": true,
+  "storage_total": 25429313.488267317,
+  "inlet_throughput": 0.014712149664391274,
+  "T_adv": 1728456688.4073684,
+  "T_adv_units": "Existing benchmark time units; no new physical unit assignment",
+  "storage_definition": "Sum of the volume coefficients used directly for accumulation in the native transport graph; no additional porosity factor applied.",
+  "max_beta_per_dt": 0.018939981899576967,
+  "source_protocol": "archive:training/transport_single_step_2k_20261020/PROTOCOL.txt",
+  "sweep": [
+    {
+      "dt": 1,
+      "normalized_dt": 5.785508000905815e-10,
+      "percent_inventory": 5.7855080009058154e-08,
+      "max_cellwise_beta": 0.018939981899576967
+    },
+    {
+      "dt": 2,
+      "normalized_dt": 1.157101600181163e-09,
+      "percent_inventory": 1.1571016001811631e-07,
+      "max_cellwise_beta": 0.03787996379915393
+    },
+    {
+      "dt": 5,
+      "normalized_dt": 2.892754000452908e-09,
+      "percent_inventory": 2.892754000452908e-07,
+      "max_cellwise_beta": 0.09469990949788483
+    },
+    {
+      "dt": 10,
+      "normalized_dt": 5.785508000905816e-09,
+      "percent_inventory": 5.785508000905816e-07,
+      "max_cellwise_beta": 0.18939981899576966
+    },
+    {
+      "dt": 20,
+      "normalized_dt": 1.1571016001811631e-08,
+      "percent_inventory": 1.1571016001811632e-06,
+      "max_cellwise_beta": 0.3787996379915393
+    },
+    {
+      "dt": 50,
+      "normalized_dt": 2.8927540004529077e-08,
+      "percent_inventory": 2.8927540004529077e-06,
+      "max_cellwise_beta": 0.9469990949788484
+    },
+    {
+      "dt": 100,
+      "normalized_dt": 5.7855080009058154e-08,
+      "percent_inventory": 5.7855080009058155e-06,
+      "max_cellwise_beta": 1.8939981899576968
+    },
+    {
+      "dt": 200,
+      "normalized_dt": 1.1571016001811631e-07,
+      "percent_inventory": 1.1571016001811631e-05,
+      "max_cellwise_beta": 3.7879963799153935
+    },
+    {
+      "dt": 500,
+      "normalized_dt": 2.892754000452908e-07,
+      "percent_inventory": 2.8927540004529078e-05,
+      "max_cellwise_beta": 9.469990949788484
+    },
+    {
+      "dt": 1000,
+      "normalized_dt": 5.785508000905816e-07,
+      "percent_inventory": 5.7855080009058156e-05,
+      "max_cellwise_beta": 18.939981899576967
+    },
+    {
+      "dt": 2000,
+      "normalized_dt": 1.1571016001811632e-06,
+      "percent_inventory": 0.00011571016001811631,
+      "max_cellwise_beta": 37.879963799153934
+    },
+    {
+      "dt": 5000,
+      "normalized_dt": 2.8927540004529077e-06,
+      "percent_inventory": 0.00028927540004529076,
+      "max_cellwise_beta": 94.69990949788483
+    },
+    {
+      "dt": 10000,
+      "normalized_dt": 5.7855080009058155e-06,
+      "percent_inventory": 0.0005785508000905815,
+      "max_cellwise_beta": 189.39981899576966
+    },
+    {
+      "dt": 20000,
+      "normalized_dt": 1.1571016001811631e-05,
+      "percent_inventory": 0.001157101600181163,
+      "max_cellwise_beta": 378.7996379915393
+    },
+    {
+      "dt": 50000,
+      "normalized_dt": 2.8927540004529078e-05,
+      "percent_inventory": 0.0028927540004529077,
+      "max_cellwise_beta": 946.9990949788483
+    },
+    {
+      "dt": 100000,
+      "normalized_dt": 5.7855080009058156e-05,
+      "percent_inventory": 0.005785508000905815,
+      "max_cellwise_beta": 1893.9981899576967
+    },
+    {
+      "dt": 200000,
+      "normalized_dt": 0.00011571016001811631,
+      "percent_inventory": 0.01157101600181163,
+      "max_cellwise_beta": 3787.9963799153934
+    },
+    {
+      "dt": 500000,
+      "normalized_dt": 0.00028927540004529076,
+      "percent_inventory": 0.028927540004529077,
+      "max_cellwise_beta": 9469.990949788484
+    },
+    {
+      "dt": 1000000,
+      "normalized_dt": 0.0005785508000905815,
+      "percent_inventory": 0.05785508000905815,
+      "max_cellwise_beta": 18939.981899576967
+    }
+  ]
+}

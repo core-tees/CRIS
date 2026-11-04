@@ -1,0 +1,24 @@
+{
+  "accuracy_only": true,
+  "model": "frozen 976-parameter network, fixed p=2 export",
+  "new_training": false,
+  "nonlinear": "ordinary Newton",
+  "absolute_infinity_tolerance": 1e-10,
+  "max_newton": 1000,
+  "linear": "direct solve of globally assembled lower-bidiagonal Jacobian",
+  "timestep_cuts": false,
+  "final_time": 200,
+  "report_times": [
+    100,
+    200
+  ],
+  "length": 1000,
+  "velocity": 1,
+  "storage": 1,
+  "left_state": 0.25,
+  "right_state": 0.05,
+  "initial_front": 250,
+  "reference": "archived original-balance solution and analytic shock cell averages on each identical grid",
+  "timing_or_work_claims": false,
+  "chebyshev_records_preserved": true
+}

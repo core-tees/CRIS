@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "N": 1600,
+  "beta": 1,
+  "accepted": 320,
+  "time": 200,
+  "accumulated_mean_absolute_defect": 0.0043831988873780535,
+  "accuracy_only": true,
+  "atol": 1e-10
+}

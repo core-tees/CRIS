@@ -1,0 +1,32 @@
+{
+  "exponent": 0.8,
+  "max_dt": [
+    1000,
+    500
+  ],
+  "atol": 1e-06,
+  "nonlinear": "Original-balance global Newton with backtracking",
+  "linear": "Direct triangular solution of global Jacobian after topological permutation; no nonlinear local inversion",
+  "accuracy_only": true,
+  "report_times": [
+    10000.0,
+    30000.0,
+    70000.0,
+    100000.0,
+    180000.0,
+    200000.0,
+    300000.0,
+    400000.0,
+    500000.0,
+    600000.0,
+    700000.0,
+    800000.0,
+    900000.0,
+    1000000.0
+  ],
+  "hashes": {
+    "norne_singular.bin": "43f9f08ad84922626cae2ed70654e027a167c0ba6255ebfdc0b34693ebf93111",
+    "norne_singular.initial": "30270a385fa003c389d911e0ac6803b29a975155224a8385f43a4c815b8c12cc",
+    "norne_reference.cpp": "eb1117e2437c37730f660faec5c4a7de7c315d9396ed627e30f3d704d7dbe5da"
+  }
+}

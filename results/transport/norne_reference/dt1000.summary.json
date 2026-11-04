@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "time": 1000000,
+  "accepted": 1000,
+  "cuts": 0,
+  "max_dt": 1000,
+  "atol": 1e-06,
+  "accuracy_only": true
+}

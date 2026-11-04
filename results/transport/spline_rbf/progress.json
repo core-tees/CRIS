@@ -1,0 +1,8 @@
+{
+  "stage": "least_squares",
+  "method": "rbf",
+  "n": 97,
+  "iterations": 1792,
+  "relative_normal_gradient": 9.987086284261473e-10,
+  "seconds": 28.372651619836688
+}

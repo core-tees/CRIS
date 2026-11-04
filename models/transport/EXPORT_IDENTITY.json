@@ -1,0 +1,26 @@
+{
+  "quadratic": {
+    "checkpoint_sha256": "9ddfc726a219fadd131300b8d42848e851bb082d1c0c1b38acfeabd7da5c8ebb",
+    "parameters": 976,
+    "exponent": 2.0,
+    "model_sha256": "41bc7e24207ec325d5eee9ccc13448b2304f58aeedcee66abecfada2f0f9f0fc",
+    "value_parity": 2.475797344914099e-14,
+    "derivative_parity": 5.357492227631155e-12
+  },
+  "intermediate": {
+    "checkpoint_sha256": "9ddfc726a219fadd131300b8d42848e851bb082d1c0c1b38acfeabd7da5c8ebb",
+    "parameters": 976,
+    "exponent": 0.8,
+    "model_sha256": "a9f9011efbdcf842b5f013be36da62abc475e9f30633521a545bcb04132b8cb1",
+    "value_parity": 2.708944180085382e-14,
+    "derivative_parity": 5.115907697472721e-13
+  },
+  "singular": {
+    "checkpoint_sha256": "9ddfc726a219fadd131300b8d42848e851bb082d1c0c1b38acfeabd7da5c8ebb",
+    "parameters": 976,
+    "exponent": 0.2,
+    "model_sha256": "b378df97e6a8f273abc46607454c035c77a344be47320ba4b039dac7347b7961",
+    "value_parity": 3.608224830031759e-14,
+    "derivative_parity": 5.098144129078719e-13
+  }
+}

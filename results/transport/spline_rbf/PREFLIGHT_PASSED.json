@@ -1,0 +1,37 @@
+{
+  "device": "cuda",
+  "checks": [
+    {
+      "method": "spline",
+      "partition_error": 4.440892098500626e-16,
+      "represented_function_error": 2.4632649642253313e-08,
+      "dense_parity": 2.4632649642253313e-08,
+      "continuity_difference": 4.32263061178606e-08,
+      "solve": {
+        "iterations": 307,
+        "stop": "converged",
+        "relative_normal_gradient": 9.932295039454122e-10,
+        "train_rmse": 4.051279574935404e-09,
+        "seconds": 12.146120265126228,
+        "unused_coefficients": 0,
+        "ridge_scaled": 1e-12
+      }
+    },
+    {
+      "method": "rbf",
+      "partition_error": 8.881784197001252e-16,
+      "represented_function_error": 2.2115850109583057e-08,
+      "dense_parity": 2.2115851514709073e-08,
+      "continuity_difference": 7.142987612507312e-08,
+      "solve": {
+        "iterations": 314,
+        "stop": "converged",
+        "relative_normal_gradient": 6.882299260568394e-10,
+        "train_rmse": 4.481383270865981e-09,
+        "seconds": 0.09920264035463333,
+        "unused_coefficients": 0,
+        "ridge_scaled": 1e-12
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "lower_coupled_solution": 1.4161790490383703,
+  "upper_coupled_solution": 2.5141548129213143,
+  "upper_state_principal_inverse": 2.0749673269816933,
+  "inverse_domain_edge": 2.6103403719761817,
+  "diagonal_turning_point": 2.4596120821690586,
+  "residual_at_turn": 0.44470906162679347,
+  "negative_determinant_starts": 207,
+  "positive_corrections_and_first_step_exits": 207
+}

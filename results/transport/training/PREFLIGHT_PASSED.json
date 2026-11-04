@@ -1,0 +1,25 @@
+{
+  "evidence_gamma_error": 3.3306690738754696e-16,
+  "parameters": 976,
+  "architecture": [
+    3,
+    13,
+    13,
+    13,
+    13,
+    13,
+    13,
+    1
+  ],
+  "jacobian_max_error": 2.220446049250313e-16,
+  "gram_max_error": 2.220446049250313e-16,
+  "gradient_max_error": 4.163336342344337e-17,
+  "linear_residual": 1.2952654841263887e-15,
+  "descent_checked": true,
+  "labels": {
+    "high_precision_saturation_max_difference": 1.887379141862766e-15,
+    "max_logit_balance_residual": 3.3306690738754696e-16,
+    "beta_zero_max_error": 1.1102230246251565e-16,
+    "linear_law_residual": 1.1102230246251565e-15
+  }
+}

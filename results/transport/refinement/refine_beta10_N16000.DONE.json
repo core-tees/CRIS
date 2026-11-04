@@ -1,0 +1,59 @@
+{
+  "complete": true,
+  "N": 16000,
+  "beta": 10.0,
+  "accepted": 320,
+  "time": 200,
+  "accumulated_mean_absolute_defect": 0.01284307203026978,
+  "accuracy_only": true,
+  "atol": 1e-10,
+  "reference": "archive:training/twophasetransport/experiments/shock_refinement_large_dt_20260915/beta_10/N16000/reference_and_profiles.npz",
+  "reference_sha256": "e3c04bc830d603fd7e6063daa55d27ec95e63f88ce6e693989e787efe2ece691",
+  "name": "refine_beta10_N16000",
+  "returncode": 0,
+  "command": [
+    "archive:training/transport_completion_20261028/column_neural_accuracy.exe",
+    "archive:training/transport_completion_20261028/assets/shared976_quadratic.model",
+    "16000",
+    "10.0",
+    "archive:training/transport_completion_20261028/neural_refinement_results/refine_beta10_N16000",
+    "1000"
+  ],
+  "errors": {
+    "100": {
+      "inverse": {
+        "rmse": 0.013738776722399494,
+        "mae": 0.009303823149090448,
+        "maximum": 0.17638496017960334
+      },
+      "total": {
+        "rmse": 0.014391831233324636,
+        "mae": 0.009311416064993023,
+        "maximum": 0.19583889956640915
+      },
+      "discretization": {
+        "rmse": 0.0027741271949950565,
+        "mae": 0.00013487970549507568,
+        "maximum": 0.10577201302033508
+      }
+    },
+    "200": {
+      "inverse": {
+        "rmse": 0.022450430732653914,
+        "mae": 0.011881751033648223,
+        "maximum": 0.1995221435845933
+      },
+      "total": {
+        "rmse": 0.022866365756733942,
+        "mae": 0.011885477757668985,
+        "maximum": 0.19959640222827496
+      },
+      "discretization": {
+        "rmse": 0.0027417368079777995,
+        "mae": 0.00013371484988296912,
+        "maximum": 0.10645036434589626
+      }
+    }
+  },
+  "defect_bound_holds": true
+}

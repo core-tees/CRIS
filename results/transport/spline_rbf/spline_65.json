@@ -1,0 +1,47 @@
+{
+  "method": "spline",
+  "n": 65,
+  "coefficients": 274625,
+  "basis_nnz": 208037488,
+  "basis_build_seconds": 5.136947529390454,
+  "fit": {
+    "iterations": 482,
+    "stop": "converged",
+    "relative_normal_gradient": 9.993395311416163e-10,
+    "train_rmse": 2.1752766850689643e-05,
+    "seconds": 11.358446914702654,
+    "unused_coefficients": 0,
+    "ridge_scaled": 1e-12
+  },
+  "scores": {
+    "transport_validation": {
+      "rmse": 2.2299455119004276e-05,
+      "maximum": 0.0005402353287553563,
+      "p99": 0.0001064173782931894,
+      "median": 8.105608600983416e-09,
+      "count": 65536
+    },
+    "transport_endpoint": {
+      "rmse": 4.816503433418156e-05,
+      "maximum": 0.0005297722145429784,
+      "p99": 0.00020585421860690384,
+      "median": 2.4326256130649537e-07,
+      "count": 8192
+    },
+    "transport_quadratic": {
+      "rmse": 3.7792930855696174e-05,
+      "maximum": 0.0005323088218078809,
+      "p99": 0.0001903484320166037,
+      "median": 4.066665105370245e-09,
+      "count": 8192
+    },
+    "transport_singular": {
+      "rmse": 1.4921741590167492e-05,
+      "maximum": 0.0003461814489565951,
+      "p99": 8.053608125618169e-05,
+      "median": 1.5765430849690176e-08,
+      "count": 8192
+    }
+  },
+  "workflow_seconds": 17.830135624855757
+}

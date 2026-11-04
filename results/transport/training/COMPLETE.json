@@ -1,0 +1,34 @@
+{
+  "reason": "training_budget",
+  "iteration": 50275,
+  "accepted": 50274,
+  "seconds": 1800.0535362083465,
+  "best_validation": {
+    "mse": 8.015938645468511e-11,
+    "rmse": 8.953177450195272e-06,
+    "max_error": 0.0010233004757965736,
+    "median_absolute_error": 2.6196426835267683e-06,
+    "p99_error": 2.963314516057359e-05,
+    "below_zero": 215,
+    "above_one": 1663,
+    "minimum": -2.2009853057891604e-05,
+    "maximum": 1.000059615197302,
+    "broad_rmse": 7.77896408505538e-06,
+    "endpoint_rmse": 1.2599575481144872e-05
+  },
+  "final_validation": {
+    "mse": 8.015938645468511e-11,
+    "rmse": 8.953177450195272e-06,
+    "max_error": 0.0010233004757965736,
+    "median_absolute_error": 2.6196426835267683e-06,
+    "p99_error": 2.963314516057359e-05,
+    "below_zero": 215,
+    "above_one": 1663,
+    "minimum": -2.2009853057891604e-05,
+    "maximum": 1.000059615197302,
+    "broad_rmse": 7.77896408505538e-06,
+    "endpoint_rmse": 1.2599575481144872e-05
+  },
+  "active": 131072,
+  "peak_gpu_memory_bytes": 784935424
+}

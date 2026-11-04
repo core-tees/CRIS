@@ -1,0 +1,1215 @@
+{
+  "timing_definition": "CRIS synchronized advancement warm median (2 observations); existing SRDM complete-loop median (3 archived observations) retained by author decision. All accepted and rejected attempts counted. No audit subtraction; no SRDM reruns.",
+  "rows": [
+    {
+      "id": "edfm_quadratic_nn",
+      "name": "edfm_quadratic_nn",
+      "loop_seconds": [
+        0.9017755989999999,
+        0.9021846880000001
+      ],
+      "median_seconds": 0.9019801435,
+      "minimum_seconds": 0.9017755989999999,
+      "maximum_seconds": 0.9021846880000001,
+      "new_process_seconds": [
+        40.52005665563047,
+        14.967515088617802
+      ],
+      "same_work": true,
+      "same_timestep_history": true,
+      "identical_final_fields": true,
+      "case": "edfm_quadratic",
+      "model": "parameterized976",
+      "p": 2.0,
+      "policy": "basic",
+      "newton": 147,
+      "krylov": 956,
+      "accepted": 17,
+      "cuts": 0,
+      "source_summary": "archive:tpt_three_input_v1/simulation_v1/results/3207935/edfm_quadratic_old.summary.json",
+      "source_record": "archive:training/tpt_three_input_20261018/simulation_v1/run.py",
+      "native": {
+        "path": "archive:petsc_gpu_20261016/tpt_five_input_v1/edfm5_v1/build/petsc_transport_gpu",
+        "expected_sha256": "850671c6ca6637026327713c72d7b53a3011aa2acd9a909c63b1a39bd48cfda9",
+        "hash_evidence": "archive:tpt_three_input_v1/simulation_v1/results/3207935/EXECUTION.json",
+        "remote_audit_required": false,
+        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+      },
+      "inputs": {
+        "graph": {
+          "path": "archive:petsc_paper_20261015/edfm_quadratic.bin",
+          "sha256": "9cdf1f8e82ff73f976f1e84fab5fd5dd69b66e06ebf98a098d28103927f995bc"
+        },
+        "initial": {
+          "path": "archive:petsc_paper_20261015/edfm_quadratic.initial",
+          "sha256": "8dd60365d42b28fc3de06a2511f984a9b1eaeb61b1aa40772dab8b33b2254a3e"
+        },
+        "model": {
+          "path": "archive:petsc_paper_20261015/edfm_quadratic.model",
+          "sha256": "41bc7e24207ec325d5eee9ccc13448b2304f58aeedcee66abecfada2f0f9f0fc"
+        }
+      },
+      "control_profile": "C1d8f50c9ed",
+      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "previous_fresh_process_timing": {
+        "loop_seconds": [
+          1.353433061,
+          4.658003535,
+          3.348841505
+        ],
+        "median_seconds": 3.348841505,
+        "minimum_seconds": 1.353433061,
+        "maximum_seconds": 4.658003535
+      },
+      "timing_n": 2,
+      "timing_basis": "Synchronized timestep advancement, trajectories 2 and 3 of one process",
+      "timing_source_job": "3222142",
+      "first_trajectory_seconds": 2.16425299,
+      "all_trajectory_seconds": [
+        2.16425299,
+        0.9017755989999999,
+        0.9021846880000001
+      ],
+      "source_prefix": "archive:transport_clean_timing_20261027/results/3222142/edfm_quadratic_nn_r1",
+      "model_sha256": "41bc7e24207ec325d5eee9ccc13448b2304f58aeedcee66abecfada2f0f9f0fc",
+      "timing_breakdown": {
+        "snes_seconds": [
+          2.159682298,
+          0.897527976,
+          0.89786245
+        ],
+        "residual_seconds": [
+          0.020962797000000002,
+          0.018194885999999997,
+          0.01823361500000001
+        ],
+        "jacobian_seconds": [
+          0.03034369799999999,
+          0.026143131,
+          0.026182493000000005
+        ],
+        "newton": [
+          147,
+          147,
+          147
+        ],
+        "krylov": [
+          956,
+          956,
+          956
+        ]
+      }
+    },
+    {
+      "id": "edfm_quadratic_cheb",
+      "name": "edfm_quadratic_cheb",
+      "loop_seconds": [
+        0.93976425,
+        0.9392572409999999
+      ],
+      "median_seconds": 0.9395107454999999,
+      "minimum_seconds": 0.9392572409999999,
+      "maximum_seconds": 0.93976425,
+      "new_process_seconds": [
+        4.375251304358244,
+        2.3758633472025394
+      ],
+      "same_work": true,
+      "same_timestep_history": true,
+      "identical_final_fields": true,
+      "case": "edfm_quadratic",
+      "model": "cheb65536",
+      "p": 2.0,
+      "policy": "bt",
+      "newton": 161,
+      "krylov": 1006,
+      "accepted": 17,
+      "cuts": 0,
+      "source_summary": "archive:transport_final_20261019/results/3213859/edfm_quadratic_cheb_bt_r1.summary.json",
+      "source_record": "archive:training/transport_final_20261019/results/consolidated_20261020/RUNS.json",
+      "native": {
+        "path": "archive:transport_final_20261019/build/petsc_transport_gpu",
+        "expected_sha256": "4309a451a5a46518cefb6cb8c0dddb4677ea32e7ab68feff1ae10159d83af1b4",
+        "hash_evidence": "Prior authorized frozen-executable record; reverify current remote binary before repetition",
+        "remote_audit_required": false,
+        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+      },
+      "inputs": {
+        "graph": {
+          "path": "archive:petsc_paper_20261015/edfm_quadratic.bin",
+          "sha256": "9cdf1f8e82ff73f976f1e84fab5fd5dd69b66e06ebf98a098d28103927f995bc"
+        },
+        "initial": {
+          "path": "archive:petsc_paper_20261015/edfm_quadratic.initial",
+          "sha256": "8dd60365d42b28fc3de06a2511f984a9b1eaeb61b1aa40772dab8b33b2254a3e"
+        },
+        "model": {
+          "path": "archive:transport_final_20261019/models/cheb_quadratic.model",
+          "sha256": "d8585008899dbb0bec9931b4ae5b36b65a86f7914a6db642ab9f48c21f877c9c"
+        }
+      },
+      "control_profile": "Ce1b48e01d7",
+      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "timing_basis": "Synchronized timestep advancement, trajectories 2 and 3 of one process",
+      "timing_n": 3,
+      "first_trajectory_seconds": 1.047105229,
+      "timing_source_job": "3222142",
+      "all_trajectory_seconds": [
+        1.047105229,
+        0.93976425,
+        0.9392572409999999
+      ],
+      "source_prefix": "archive:transport_clean_timing_20261027/results/3222142/edfm_quadratic_cheb_r1",
+      "model_sha256": "d8585008899dbb0bec9931b4ae5b36b65a86f7914a6db642ab9f48c21f877c9c",
+      "timing_breakdown": {
+        "snes_seconds": [
+          1.043968022,
+          0.9367582319999999,
+          0.9362787509999999
+        ],
+        "residual_seconds": [
+          0.008155827000000003,
+          0.007135346999999999,
+          0.007153422
+        ],
+        "jacobian_seconds": [
+          0.008174397999999998,
+          0.0074766680000000005,
+          0.007470241
+        ],
+        "newton": [
+          161,
+          161,
+          161
+        ],
+        "krylov": [
+          1006,
+          1006,
+          1006
+        ]
+      }
+    },
+    {
+      "id": "edfm_quadratic_srdm",
+      "name": "edfm_quadratic_srdm",
+      "loop_seconds": [
+        28.572240932,
+        27.894111769,
+        27.904909555
+      ],
+      "median_seconds": 27.904909555,
+      "minimum_seconds": 27.894111769,
+      "maximum_seconds": 28.572240932,
+      "new_process_seconds": [
+        28.62579827569425,
+        29.500150399282575
+      ],
+      "same_work": true,
+      "same_timestep_history": true,
+      "identical_final_fields": true,
+      "case": "edfm_quadratic",
+      "model": "srdm",
+      "p": 2.0,
+      "policy": "bt",
+      "newton": 2615,
+      "krylov": 33831,
+      "accepted": 17,
+      "cuts": 0,
+      "source_summary": "archive:petsc_gpu_20261016/results/pilot-3204146/linesearch_srdm_gpu.summary.json",
+      "source_record": "archive:training/petsc_gpu_20261016/pilot.py",
+      "native": {
+        "path": "archive:petsc_gpu_20261016/build/petsc_transport_gpu",
+        "expected_sha256": "c88f10ed75bbe2d2e6503498fb2346dcfb4e0101f5d02d90e33be18865ce8086",
+        "hash_evidence": "archive:petsc_gpu_20261016/executables-3204146.sha256 (also quadratic-3204147 batch log)",
+        "remote_audit_required": false,
+        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+      },
+      "inputs": {
+        "graph": {
+          "path": "archive:petsc_paper_20261015/edfm_quadratic.bin",
+          "sha256": "9cdf1f8e82ff73f976f1e84fab5fd5dd69b66e06ebf98a098d28103927f995bc"
+        },
+        "initial": {
+          "path": "archive:petsc_paper_20261015/edfm_quadratic.initial",
+          "sha256": "8dd60365d42b28fc3de06a2511f984a9b1eaeb61b1aa40772dab8b33b2254a3e"
+        },
+        "model": {
+          "path": "archive:petsc_paper_20261015/edfm_quadratic.model",
+          "sha256": "33c596803a398744daaa678f40635088116d26f1d035ca97565b5e5f69699596"
+        }
+      },
+      "control_profile": "Ca898df707e",
+      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "timing_basis": "Three archived independent-process observations",
+      "timing_n": 3
+    },
+    {
+      "id": "norne_quadratic_nn",
+      "name": "norne_quadratic_nn",
+      "loop_seconds": [
+        1.246679967,
+        1.246869351
+      ],
+      "median_seconds": 1.246774659,
+      "minimum_seconds": 1.246679967,
+      "maximum_seconds": 1.246869351,
+      "new_process_seconds": [
+        3.141076762229204,
+        3.41052782908082
+      ],
+      "same_work": true,
+      "same_timestep_history": true,
+      "identical_final_fields": true,
+      "case": "norne_quadratic",
+      "model": "parameterized976",
+      "p": 2.0,
+      "policy": "bt",
+      "newton": 185,
+      "krylov": 1659,
+      "accepted": 14,
+      "cuts": 0,
+      "source_summary": "archive:petsc_gpu_20261016/results/quadratic-3204147/norne_quadratic/linesearch_learned.summary.json",
+      "source_record": "archive:training/petsc_gpu_20261016/quadratic_screen.py",
+      "native": {
+        "path": "archive:petsc_gpu_20261016/build/petsc_transport_gpu",
+        "expected_sha256": "c88f10ed75bbe2d2e6503498fb2346dcfb4e0101f5d02d90e33be18865ce8086",
+        "hash_evidence": "archive:petsc_gpu_20261016/executables-3204146.sha256 (also quadratic-3204147 batch log)",
+        "remote_audit_required": false,
+        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+      },
+      "inputs": {
+        "graph": {
+          "path": "archive:petsc_paper_20261015/norne_quadratic.bin",
+          "sha256": "932750eb3d8a596cb4a9c5bf12e74f10f3a3ca1a51d3e98378d0f4b3808ca143"
+        },
+        "initial": {
+          "path": "archive:petsc_paper_20261015/norne_quadratic.initial",
+          "sha256": "30270a385fa003c389d911e0ac6803b29a975155224a8385f43a4c815b8c12cc"
+        },
+        "model": {
+          "path": "archive:petsc_paper_20261015/norne_quadratic.model",
+          "sha256": "41bc7e24207ec325d5eee9ccc13448b2304f58aeedcee66abecfada2f0f9f0fc"
+        }
+      },
+      "control_profile": "Ca898df707e",
+      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "previous_fresh_process_timing": {
+        "loop_seconds": [
+          1.657462288,
+          1.954566972,
+          1.750826124
+        ],
+        "median_seconds": 1.750826124,
+        "minimum_seconds": 1.657462288,
+        "maximum_seconds": 1.954566972
+      },
+      "timing_n": 2,
+      "timing_basis": "Synchronized timestep advancement, trajectories 2 and 3 of one process",
+      "timing_source_job": "3222142",
+      "first_trajectory_seconds": 1.3279785910000004,
+      "all_trajectory_seconds": [
+        1.3279785910000004,
+        1.246679967,
+        1.246869351
+      ],
+      "source_prefix": "archive:transport_clean_timing_20261027/results/3222142/norne_quadratic_nn_r1",
+      "model_sha256": "41bc7e24207ec325d5eee9ccc13448b2304f58aeedcee66abecfada2f0f9f0fc",
+      "timing_breakdown": {
+        "snes_seconds": [
+          1.3218252689999999,
+          1.2406316570000002,
+          1.240821758
+        ],
+        "residual_seconds": [
+          0.041390247000000005,
+          0.038835379000000024,
+          0.03887933899999998
+        ],
+        "jacobian_seconds": [
+          0.05246208199999999,
+          0.05009769199999999,
+          0.050411222
+        ],
+        "newton": [
+          185,
+          185,
+          185
+        ],
+        "krylov": [
+          1659,
+          1659,
+          1659
+        ]
+      }
+    },
+    {
+      "id": "norne_quadratic_cheb",
+      "name": "norne_quadratic_cheb",
+      "loop_seconds": [
+        1.170494623,
+        1.1720592549999997
+      ],
+      "median_seconds": 1.1712769389999997,
+      "minimum_seconds": 1.170494623,
+      "maximum_seconds": 1.1720592549999997,
+      "new_process_seconds": [
+        2.1270410288125277,
+        2.0888796243816614
+      ],
+      "same_work": true,
+      "same_timestep_history": true,
+      "identical_final_fields": true,
+      "case": "norne_quadratic",
+      "model": "cheb65536",
+      "p": 2.0,
+      "policy": "bt",
+      "newton": 190,
+      "krylov": 1688,
+      "accepted": 14,
+      "cuts": 0,
+      "source_summary": "archive:transport_final_20261019/results/3213859/norne_quadratic_cheb_bt_r1.summary.json",
+      "source_record": "archive:training/transport_final_20261019/results/consolidated_20261020/RUNS.json",
+      "native": {
+        "path": "archive:transport_final_20261019/build/petsc_transport_gpu",
+        "expected_sha256": "4309a451a5a46518cefb6cb8c0dddb4677ea32e7ab68feff1ae10159d83af1b4",
+        "hash_evidence": "Prior authorized frozen-executable record; reverify current remote binary before repetition",
+        "remote_audit_required": false,
+        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+      },
+      "inputs": {
+        "graph": {
+          "path": "archive:petsc_paper_20261015/norne_quadratic.bin",
+          "sha256": "932750eb3d8a596cb4a9c5bf12e74f10f3a3ca1a51d3e98378d0f4b3808ca143"
+        },
+        "initial": {
+          "path": "archive:petsc_paper_20261015/norne_quadratic.initial",
+          "sha256": "30270a385fa003c389d911e0ac6803b29a975155224a8385f43a4c815b8c12cc"
+        },
+        "model": {
+          "path": "archive:transport_final_20261019/models/cheb_quadratic.model",
+          "sha256": "d8585008899dbb0bec9931b4ae5b36b65a86f7914a6db642ab9f48c21f877c9c"
+        }
+      },
+      "control_profile": "Ce1b48e01d7",
+      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "timing_basis": "Synchronized timestep advancement, trajectories 2 and 3 of one process",
+      "timing_n": 3,
+      "first_trajectory_seconds": 1.2063140609999998,
+      "timing_source_job": "3222142",
+      "all_trajectory_seconds": [
+        1.2063140609999998,
+        1.170494623,
+        1.1720592549999997
+      ],
+      "source_prefix": "archive:transport_clean_timing_20261027/results/3222142/norne_quadratic_cheb_r1",
+      "model_sha256": "d8585008899dbb0bec9931b4ae5b36b65a86f7914a6db642ab9f48c21f877c9c",
+      "timing_breakdown": {
+        "snes_seconds": [
+          1.201844636,
+          1.166341379,
+          1.167552775
+        ],
+        "residual_seconds": [
+          0.010798096999999996,
+          0.010758544000000012,
+          0.010810673000000008
+        ],
+        "jacobian_seconds": [
+          0.010582300999999997,
+          0.010554070000000006,
+          0.010568554
+        ],
+        "newton": [
+          190,
+          190,
+          190
+        ],
+        "krylov": [
+          1688,
+          1688,
+          1688
+        ]
+      }
+    },
+    {
+      "id": "norne_quadratic_srdm",
+      "name": "norne_quadratic_srdm",
+      "loop_seconds": [
+        2.639000821,
+        2.905258295,
+        2.835712053
+      ],
+      "median_seconds": 2.835712053,
+      "minimum_seconds": 2.639000821,
+      "maximum_seconds": 2.905258295,
+      "new_process_seconds": [
+        3.5307295080274343,
+        3.424348270520568
+      ],
+      "same_work": true,
+      "same_timestep_history": true,
+      "identical_final_fields": true,
+      "case": "norne_quadratic",
+      "model": "srdm",
+      "p": 2.0,
+      "policy": "bt",
+      "newton": 301,
+      "krylov": 3920,
+      "accepted": 14,
+      "cuts": 0,
+      "source_summary": "archive:petsc_gpu_20261016/results/quadratic-3204147/norne_quadratic/linesearch_srdm.summary.json",
+      "source_record": "archive:training/petsc_gpu_20261016/quadratic_screen.py",
+      "native": {
+        "path": "archive:petsc_gpu_20261016/build/petsc_transport_gpu",
+        "expected_sha256": "c88f10ed75bbe2d2e6503498fb2346dcfb4e0101f5d02d90e33be18865ce8086",
+        "hash_evidence": "archive:petsc_gpu_20261016/executables-3204146.sha256 (also quadratic-3204147 batch log)",
+        "remote_audit_required": false,
+        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+      },
+      "inputs": {
+        "graph": {
+          "path": "archive:petsc_paper_20261015/norne_quadratic.bin",
+          "sha256": "932750eb3d8a596cb4a9c5bf12e74f10f3a3ca1a51d3e98378d0f4b3808ca143"
+        },
+        "initial": {
+          "path": "archive:petsc_paper_20261015/norne_quadratic.initial",
+          "sha256": "30270a385fa003c389d911e0ac6803b29a975155224a8385f43a4c815b8c12cc"
+        },
+        "model": {
+          "path": "archive:petsc_paper_20261015/norne_quadratic.model",
+          "sha256": "33c596803a398744daaa678f40635088116d26f1d035ca97565b5e5f69699596"
+        }
+      },
+      "control_profile": "Ca898df707e",
+      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "timing_basis": "Three archived independent-process observations",
+      "timing_n": 3
+    },
+    {
+      "id": "spe10_quadratic_nn",
+      "name": "spe10_quadratic_nn",
+      "loop_seconds": [
+        8.958905867,
+        8.946225379
+      ],
+      "median_seconds": 8.952565623,
+      "minimum_seconds": 8.946225379,
+      "maximum_seconds": 8.958905867,
+      "new_process_seconds": [
+        19.90637493506074,
+        19.910583913326263
+      ],
+      "same_work": true,
+      "same_timestep_history": true,
+      "identical_final_fields": true,
+      "case": "spe10_quadratic",
+      "model": "parameterized976",
+      "p": 2.0,
+      "policy": "basic",
+      "newton": 165,
+      "krylov": 3515,
+      "accepted": 10,
+      "cuts": 0,
+      "source_summary": "archive:petsc_gpu_20261016/results/quadratic-3204147/spe10_quadratic/full_newton_learned.summary.json",
+      "source_record": "archive:training/petsc_gpu_20261016/quadratic_screen.py",
+      "native": {
+        "path": "archive:petsc_gpu_20261016/build/petsc_transport_gpu",
+        "expected_sha256": "c88f10ed75bbe2d2e6503498fb2346dcfb4e0101f5d02d90e33be18865ce8086",
+        "hash_evidence": "archive:petsc_gpu_20261016/executables-3204146.sha256 (also quadratic-3204147 batch log)",
+        "remote_audit_required": false,
+        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+      },
+      "inputs": {
+        "graph": {
+          "path": "archive:petsc_paper_20261015/spe10_quadratic.bin",
+          "sha256": "0df2207be2f3bbf36ffa0e8e644b4fea0e42bb104a620811da9fda8b240fd1ca"
+        },
+        "initial": {
+          "path": "archive:petsc_paper_20261015/spe10_quadratic.initial",
+          "sha256": "b0e0b67b56dca2f00f615469814a4ea29bb412e3f38aeb1105a31dd24b00535c"
+        },
+        "model": {
+          "path": "archive:petsc_paper_20261015/spe10_quadratic.model",
+          "sha256": "41bc7e24207ec325d5eee9ccc13448b2304f58aeedcee66abecfada2f0f9f0fc"
+        }
+      },
+      "control_profile": "Cb2e404dd10",
+      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "previous_fresh_process_timing": {
+        "loop_seconds": [
+          12.478853762,
+          12.588082831,
+          12.511125637
+        ],
+        "median_seconds": 12.511125637,
+        "minimum_seconds": 12.478853762,
+        "maximum_seconds": 12.588082831
+      },
+      "timing_n": 2,
+      "timing_basis": "Synchronized timestep advancement, trajectories 2 and 3 of one process",
+      "timing_source_job": "3222142",
+      "first_trajectory_seconds": 9.103342001999998,
+      "all_trajectory_seconds": [
+        9.103342001999998,
+        8.958905867,
+        8.946225379
+      ],
+      "source_prefix": "archive:transport_clean_timing_20261027/results/3222142/spe10_quadratic_nn_r1",
+      "model_sha256": "41bc7e24207ec325d5eee9ccc13448b2304f58aeedcee66abecfada2f0f9f0fc",
+      "timing_breakdown": {
+        "snes_seconds": [
+          9.01182198,
+          8.868901057999999,
+          8.856905971999998
+        ],
+        "residual_seconds": [
+          0.5522828640000002,
+          0.5532783269999998,
+          0.5526159450000001
+        ],
+        "jacobian_seconds": [
+          0.9965860640000002,
+          0.9977621199999996,
+          0.9976965790000002
+        ],
+        "newton": [
+          165,
+          165,
+          165
+        ],
+        "krylov": [
+          3515,
+          3515,
+          3515
+        ]
+      }
+    },
+    {
+      "id": "spe10_quadratic_cheb",
+      "name": "spe10_quadratic_cheb",
+      "loop_seconds": [
+        10.373322136999999,
+        10.380418608
+      ],
+      "median_seconds": 10.376870372499999,
+      "minimum_seconds": 10.373322136999999,
+      "maximum_seconds": 10.380418608,
+      "new_process_seconds": [
+        17.89026428386569,
+        18.024872716516256
+      ],
+      "same_work": true,
+      "same_timestep_history": true,
+      "identical_final_fields": true,
+      "case": "spe10_quadratic",
+      "model": "cheb65536",
+      "p": 2.0,
+      "policy": "bt",
+      "newton": 206,
+      "krylov": 5047,
+      "accepted": 10,
+      "cuts": 0,
+      "source_summary": "archive:transport_final_20261019/results/3213859/spe10_quadratic_cheb_bt_r1.summary.json",
+      "source_record": "archive:training/transport_final_20261019/results/consolidated_20261020/RUNS.json",
+      "native": {
+        "path": "archive:transport_final_20261019/build/petsc_transport_gpu",
+        "expected_sha256": "4309a451a5a46518cefb6cb8c0dddb4677ea32e7ab68feff1ae10159d83af1b4",
+        "hash_evidence": "Prior authorized frozen-executable record; reverify current remote binary before repetition",
+        "remote_audit_required": false,
+        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+      },
+      "inputs": {
+        "graph": {
+          "path": "archive:petsc_paper_20261015/spe10_quadratic.bin",
+          "sha256": "0df2207be2f3bbf36ffa0e8e644b4fea0e42bb104a620811da9fda8b240fd1ca"
+        },
+        "initial": {
+          "path": "archive:petsc_paper_20261015/spe10_quadratic.initial",
+          "sha256": "b0e0b67b56dca2f00f615469814a4ea29bb412e3f38aeb1105a31dd24b00535c"
+        },
+        "model": {
+          "path": "archive:transport_final_20261019/models/cheb_quadratic.model",
+          "sha256": "d8585008899dbb0bec9931b4ae5b36b65a86f7914a6db642ab9f48c21f877c9c"
+        }
+      },
+      "control_profile": "Ce1b48e01d7",
+      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "timing_basis": "Synchronized timestep advancement, trajectories 2 and 3 of one process",
+      "timing_n": 3,
+      "first_trajectory_seconds": 10.558254905,
+      "timing_source_job": "3222142",
+      "all_trajectory_seconds": [
+        10.558254905,
+        10.373322136999999,
+        10.380418608
+      ],
+      "source_prefix": "archive:transport_clean_timing_20261027/results/3222142/spe10_quadratic_cheb_r1",
+      "model_sha256": "d8585008899dbb0bec9931b4ae5b36b65a86f7914a6db642ab9f48c21f877c9c",
+      "timing_breakdown": {
+        "snes_seconds": [
+          10.492054163000002,
+          10.310048346,
+          10.316755489
+        ],
+        "residual_seconds": [
+          0.12878258899999998,
+          0.12512038499999995,
+          0.1258903090000001
+        ],
+        "jacobian_seconds": [
+          0.09915924199999995,
+          0.097023069,
+          0.09701987199999998
+        ],
+        "newton": [
+          206,
+          206,
+          206
+        ],
+        "krylov": [
+          5047,
+          5047,
+          5047
+        ]
+      }
+    },
+    {
+      "id": "spe10_quadratic_srdm",
+      "name": "spe10_quadratic_srdm",
+      "loop_seconds": [
+        98.757073632,
+        98.40958284,
+        98.304305373
+      ],
+      "median_seconds": 98.40958284,
+      "minimum_seconds": 98.304305373,
+      "maximum_seconds": 98.757073632,
+      "new_process_seconds": [
+        102.09244332276285,
+        102.00010433420539
+      ],
+      "same_work": true,
+      "same_timestep_history": true,
+      "identical_final_fields": true,
+      "case": "spe10_quadratic",
+      "model": "srdm",
+      "p": 2.0,
+      "policy": "bt",
+      "newton": 1004,
+      "krylov": 44240,
+      "accepted": 13,
+      "cuts": 3,
+      "source_summary": "archive:petsc_gpu_20261016/results/quadratic-3204147/spe10_quadratic/linesearch_srdm.summary.json",
+      "source_record": "archive:training/petsc_gpu_20261016/quadratic_screen.py",
+      "native": {
+        "path": "archive:petsc_gpu_20261016/build/petsc_transport_gpu",
+        "expected_sha256": "c88f10ed75bbe2d2e6503498fb2346dcfb4e0101f5d02d90e33be18865ce8086",
+        "hash_evidence": "archive:petsc_gpu_20261016/executables-3204146.sha256 (also quadratic-3204147 batch log)",
+        "remote_audit_required": false,
+        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+      },
+      "inputs": {
+        "graph": {
+          "path": "archive:petsc_paper_20261015/spe10_quadratic.bin",
+          "sha256": "0df2207be2f3bbf36ffa0e8e644b4fea0e42bb104a620811da9fda8b240fd1ca"
+        },
+        "initial": {
+          "path": "archive:petsc_paper_20261015/spe10_quadratic.initial",
+          "sha256": "b0e0b67b56dca2f00f615469814a4ea29bb412e3f38aeb1105a31dd24b00535c"
+        },
+        "model": {
+          "path": "archive:petsc_paper_20261015/spe10_quadratic.model",
+          "sha256": "33c596803a398744daaa678f40635088116d26f1d035ca97565b5e5f69699596"
+        }
+      },
+      "control_profile": "Ca898df707e",
+      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "timing_basis": "Three archived independent-process observations",
+      "timing_n": 3
+    },
+    {
+      "id": "edfm_p08_nn",
+      "name": "edfm_p08_nn",
+      "loop_seconds": [
+        1.2597191639999998,
+        1.260096654
+      ],
+      "median_seconds": 1.2599079089999998,
+      "minimum_seconds": 1.2597191639999998,
+      "maximum_seconds": 1.260096654,
+      "new_process_seconds": [
+        3.148459067568183,
+        2.587310643866658
+      ],
+      "same_work": true,
+      "same_timestep_history": true,
+      "identical_final_fields": true,
+      "case": "edfm_singular",
+      "model": "parameterized976",
+      "p": 0.8,
+      "policy": "basic",
+      "newton": 233,
+      "krylov": 1266,
+      "accepted": 32,
+      "cuts": 0,
+      "source_summary": "archive:transport_final_20261019/results/3213859/edfm_singular_shared_basic_p08_r1.summary.json",
+      "source_record": "archive:training/transport_final_20261019/results/consolidated_20261020/RUNS.json",
+      "native": {
+        "path": "archive:transport_final_20261019/build/petsc_transport_gpu",
+        "expected_sha256": "4309a451a5a46518cefb6cb8c0dddb4677ea32e7ab68feff1ae10159d83af1b4",
+        "hash_evidence": "Prior authorized frozen-executable record; reverify current remote binary before repetition",
+        "remote_audit_required": false,
+        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+      },
+      "inputs": {
+        "graph": {
+          "path": "archive:petsc_paper_20261015/edfm_singular.bin",
+          "sha256": "e07c5bc0b3e3f3e02d31144564f092c5f61ef30caa105c88e390611880506756"
+        },
+        "initial": {
+          "path": "archive:petsc_paper_20261015/edfm_singular.initial",
+          "sha256": "8dd60365d42b28fc3de06a2511f984a9b1eaeb61b1aa40772dab8b33b2254a3e"
+        },
+        "model": {
+          "path": "archive:transport_final_20261019/models/shared976_intermediate.model",
+          "sha256": "a9f9011efbdcf842b5f013be36da62abc475e9f30633521a545bcb04132b8cb1"
+        }
+      },
+      "control_profile": "C30ef0f4f22",
+      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "previous_fresh_process_timing": {
+        "loop_seconds": [
+          2.264192596,
+          2.039857032,
+          1.620703223
+        ],
+        "median_seconds": 2.039857032,
+        "minimum_seconds": 1.620703223,
+        "maximum_seconds": 2.264192596
+      },
+      "timing_n": 2,
+      "timing_basis": "Synchronized timestep advancement, trajectories 2 and 3 of one process",
+      "timing_source_job": "3222086",
+      "first_trajectory_seconds": 2.4362745589999997,
+      "all_trajectory_seconds": [
+        2.4362745589999997,
+        1.2597191639999998,
+        1.260096654
+      ],
+      "source_prefix": "archive:transport_clean_timing_20261027/results/3222086/edfm_p08_nn_r1",
+      "model_sha256": "a9f9011efbdcf842b5f013be36da62abc475e9f30633521a545bcb04132b8cb1",
+      "timing_breakdown": {
+        "snes_seconds": [
+          2.427874181,
+          1.2518084000000005,
+          1.252194853
+        ],
+        "residual_seconds": [
+          0.03326659999999999,
+          0.029429511999999988,
+          0.029445169000000004
+        ],
+        "jacobian_seconds": [
+          0.04738891500000003,
+          0.04154043899999997,
+          0.04156709
+        ],
+        "newton": [
+          233,
+          233,
+          233
+        ],
+        "krylov": [
+          1266,
+          1266,
+          1266
+        ]
+      }
+    },
+    {
+      "id": "edfm_p08_cheb",
+      "name": "edfm_p08_cheb",
+      "loop_seconds": [
+        1.3685729130000002,
+        1.2155059660000003
+      ],
+      "median_seconds": 1.2920394395000003,
+      "minimum_seconds": 1.2155059660000003,
+      "maximum_seconds": 1.3685729130000002,
+      "new_process_seconds": [
+        2.4707787334918976,
+        2.21799773350358
+      ],
+      "same_work": true,
+      "same_timestep_history": true,
+      "identical_final_fields": true,
+      "case": "edfm_singular",
+      "model": "cheb65536",
+      "p": 0.8,
+      "policy": "basic",
+      "newton": 238,
+      "krylov": 1256,
+      "accepted": 32,
+      "cuts": 0,
+      "source_summary": "archive:transport_final_20261019/results/3213859/edfm_singular_cheb_basic_p08_r1.summary.json",
+      "source_record": "archive:training/transport_final_20261019/results/consolidated_20261020/RUNS.json",
+      "native": {
+        "path": "archive:transport_final_20261019/build/petsc_transport_gpu",
+        "expected_sha256": "4309a451a5a46518cefb6cb8c0dddb4677ea32e7ab68feff1ae10159d83af1b4",
+        "hash_evidence": "Prior authorized frozen-executable record; reverify current remote binary before repetition",
+        "remote_audit_required": false,
+        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+      },
+      "inputs": {
+        "graph": {
+          "path": "archive:petsc_paper_20261015/edfm_singular.bin",
+          "sha256": "e07c5bc0b3e3f3e02d31144564f092c5f61ef30caa105c88e390611880506756"
+        },
+        "initial": {
+          "path": "archive:petsc_paper_20261015/edfm_singular.initial",
+          "sha256": "8dd60365d42b28fc3de06a2511f984a9b1eaeb61b1aa40772dab8b33b2254a3e"
+        },
+        "model": {
+          "path": "archive:transport_final_20261019/models/cheb_intermediate.model",
+          "sha256": "39efd26af1a891d2c6ca98827e54f806c803f6aed6085a627275c02124d8123a"
+        }
+      },
+      "control_profile": "C30ef0f4f22",
+      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "timing_basis": "Synchronized timestep advancement, trajectories 2 and 3 of one process",
+      "timing_n": 3,
+      "first_trajectory_seconds": 3.60227443,
+      "timing_source_job": "3222180",
+      "all_trajectory_seconds": [
+        3.60227443,
+        1.3685729130000002,
+        1.2155059660000003
+      ],
+      "source_prefix": "archive:transport_clean_timing_20261027/results/3222180/edfm_p08_cheb_r1",
+      "model_sha256": "39efd26af1a891d2c6ca98827e54f806c803f6aed6085a627275c02124d8123a",
+      "timing_breakdown": {
+        "snes_seconds": [
+          3.5962772139999997,
+          1.3629882730000002,
+          1.2099794789999994
+        ],
+        "residual_seconds": [
+          0.011539119000000006,
+          0.010132733000000001,
+          0.010429810999999997
+        ],
+        "jacobian_seconds": [
+          0.014942501000000002,
+          0.012538170999999997,
+          0.012505698000000006
+        ],
+        "newton": [
+          238,
+          238,
+          238
+        ],
+        "krylov": [
+          1256,
+          1256,
+          1256
+        ]
+      }
+    },
+    {
+      "id": "edfm_p08_srdm",
+      "name": "edfm_p08_srdm",
+      "loop_seconds": [
+        43.057956371,
+        41.247433686,
+        41.06544909
+      ],
+      "median_seconds": 41.247433686,
+      "minimum_seconds": 41.06544909,
+      "maximum_seconds": 43.057956371,
+      "new_process_seconds": [
+        41.776637544855475,
+        41.69255365617573
+      ],
+      "same_work": true,
+      "same_timestep_history": true,
+      "identical_final_fields": true,
+      "case": "edfm_singular",
+      "model": "srdm",
+      "p": 0.8,
+      "policy": "bt",
+      "newton": 6603,
+      "krylov": 40510,
+      "accepted": 45,
+      "cuts": 13,
+      "source_summary": "archive:petsc_gpu_20261016/exponent_screen_v1/results/3204386/srdm_p0_8_bt.summary.json",
+      "source_record": "archive:training/petsc_gpu_20261016/exponent_records/results/3204386/runs.json",
+      "native": {
+        "path": "archive:petsc_gpu_20261016/exponent_screen_v1/build/petsc_transport_gpu",
+        "expected_sha256": "67650aa4d6593826d61c1436142eb4719206d565a2bb1e88c2ef4293f361e73b",
+        "hash_evidence": "archive:training/petsc_gpu_20261016/exponent_records/executables-3204386.sha256",
+        "remote_audit_required": false,
+        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+      },
+      "inputs": {
+        "graph": {
+          "path": "archive:petsc_paper_20261015/edfm_singular.bin",
+          "sha256": "e07c5bc0b3e3f3e02d31144564f092c5f61ef30caa105c88e390611880506756"
+        },
+        "initial": {
+          "path": "archive:petsc_paper_20261015/edfm_singular.initial",
+          "sha256": "8dd60365d42b28fc3de06a2511f984a9b1eaeb61b1aa40772dab8b33b2254a3e"
+        },
+        "model": {
+          "path": "archive:petsc_paper_20261015/edfm_singular.model",
+          "sha256": "9efa451b5c49830640b47945830a628167639f715eaff55457911a389254eb96"
+        }
+      },
+      "control_profile": "C3c02347928",
+      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "timing_basis": "Three archived independent-process observations",
+      "timing_n": 3
+    },
+    {
+      "id": "norne_p08_nn",
+      "name": "norne_p08_nn",
+      "loop_seconds": [
+        1.4531792390000002,
+        1.452928413
+      ],
+      "median_seconds": 1.453053826,
+      "minimum_seconds": 1.452928413,
+      "maximum_seconds": 1.4531792390000002,
+      "new_process_seconds": [
+        2.6900077778846025,
+        3.0605990309268236
+      ],
+      "same_work": true,
+      "same_timestep_history": true,
+      "identical_final_fields": true,
+      "case": "norne_singular",
+      "model": "parameterized976",
+      "p": 0.8,
+      "policy": "bt",
+      "newton": 186,
+      "krylov": 2006,
+      "accepted": 14,
+      "cuts": 0,
+      "source_summary": "archive:transport_additions_20261020/results/norne_p08_shared_bt.summary.json",
+      "source_record": "archive:transport_additions_20261020/downloaded/results/RUNS.json",
+      "native": {
+        "path": "archive:transport_final_20261019/build/petsc_transport_gpu",
+        "expected_sha256": "4309a451a5a46518cefb6cb8c0dddb4677ea32e7ab68feff1ae10159d83af1b4",
+        "hash_evidence": "Prior authorized frozen-executable record; reverify current remote binary before repetition",
+        "remote_audit_required": false,
+        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+      },
+      "inputs": {
+        "graph": {
+          "path": "archive:petsc_paper_20261015/norne_singular.bin",
+          "sha256": "43f9f08ad84922626cae2ed70654e027a167c0ba6255ebfdc0b34693ebf93111"
+        },
+        "initial": {
+          "path": "archive:petsc_paper_20261015/norne_singular.initial",
+          "sha256": "30270a385fa003c389d911e0ac6803b29a975155224a8385f43a4c815b8c12cc"
+        },
+        "model": {
+          "path": "archive:transport_final_20261019/models/shared976_intermediate.model",
+          "sha256": "a9f9011efbdcf842b5f013be36da62abc475e9f30633521a545bcb04132b8cb1"
+        }
+      },
+      "control_profile": "permissive_max_linear_failures_100000_converged_maxits_true",
+      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "previous_fresh_process_timing": {
+        "loop_seconds": [
+          2.033958693,
+          1.95504374,
+          2.203902951
+        ],
+        "median_seconds": 2.033958693,
+        "minimum_seconds": 1.95504374,
+        "maximum_seconds": 2.203902951
+      },
+      "timing_n": 2,
+      "timing_basis": "Synchronized timestep advancement, trajectories 2 and 3 of one process",
+      "timing_source_job": "3222142",
+      "first_trajectory_seconds": 1.5439706119999999,
+      "all_trajectory_seconds": [
+        1.5439706119999999,
+        1.4531792390000002,
+        1.452928413
+      ],
+      "source_prefix": "archive:transport_clean_timing_20261027/results/3222142/norne_p08_nn_r1",
+      "model_sha256": "a9f9011efbdcf842b5f013be36da62abc475e9f30633521a545bcb04132b8cb1",
+      "timing_breakdown": {
+        "snes_seconds": [
+          1.5376616900000002,
+          1.447072648,
+          1.446779543
+        ],
+        "residual_seconds": [
+          0.043186914999999985,
+          0.038771002000000006,
+          0.03868777899999998
+        ],
+        "jacobian_seconds": [
+          0.054798938000000026,
+          0.05156819500000001,
+          0.05155671100000002
+        ],
+        "newton": [
+          186,
+          186,
+          186
+        ],
+        "krylov": [
+          2006,
+          2006,
+          2006
+        ]
+      }
+    },
+    {
+      "id": "norne_p08_cheb",
+      "name": "norne_p08_cheb",
+      "loop_seconds": [
+        1.120202142,
+        1.1213899279999997
+      ],
+      "median_seconds": 1.1207960349999997,
+      "minimum_seconds": 1.120202142,
+      "maximum_seconds": 1.1213899279999997,
+      "new_process_seconds": [
+        2.0739803928881884,
+        2.1935554072260857
+      ],
+      "same_work": true,
+      "same_timestep_history": true,
+      "identical_final_fields": true,
+      "case": "norne_singular",
+      "model": "cheb65536",
+      "p": 0.8,
+      "policy": "bt",
+      "newton": 176,
+      "krylov": 1628,
+      "accepted": 14,
+      "cuts": 0,
+      "source_summary": "archive:transport_additions_20261020/results/norne_p08_cheb_bt.summary.json",
+      "source_record": "archive:transport_additions_20261020/downloaded/results/RUNS.json",
+      "native": {
+        "path": "archive:transport_final_20261019/build/petsc_transport_gpu",
+        "expected_sha256": "4309a451a5a46518cefb6cb8c0dddb4677ea32e7ab68feff1ae10159d83af1b4",
+        "hash_evidence": "Prior authorized frozen-executable record; reverify current remote binary before repetition",
+        "remote_audit_required": false,
+        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+      },
+      "inputs": {
+        "graph": {
+          "path": "archive:petsc_paper_20261015/norne_singular.bin",
+          "sha256": "43f9f08ad84922626cae2ed70654e027a167c0ba6255ebfdc0b34693ebf93111"
+        },
+        "initial": {
+          "path": "archive:petsc_paper_20261015/norne_singular.initial",
+          "sha256": "30270a385fa003c389d911e0ac6803b29a975155224a8385f43a4c815b8c12cc"
+        },
+        "model": {
+          "path": "archive:transport_final_20261019/models/cheb_intermediate.model",
+          "sha256": "39efd26af1a891d2c6ca98827e54f806c803f6aed6085a627275c02124d8123a"
+        }
+      },
+      "control_profile": "permissive_max_linear_failures_100000_converged_maxits_true",
+      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "timing_basis": "Synchronized timestep advancement, trajectories 2 and 3 of one process",
+      "timing_n": 3,
+      "first_trajectory_seconds": 1.1554196800000003,
+      "timing_source_job": "3222142",
+      "all_trajectory_seconds": [
+        1.1554196800000003,
+        1.120202142,
+        1.1213899279999997
+      ],
+      "source_prefix": "archive:transport_clean_timing_20261027/results/3222142/norne_p08_cheb_r1",
+      "model_sha256": "39efd26af1a891d2c6ca98827e54f806c803f6aed6085a627275c02124d8123a",
+      "timing_breakdown": {
+        "snes_seconds": [
+          1.150943934,
+          1.11605748,
+          1.1168609660000002
+        ],
+        "residual_seconds": [
+          0.009898860999999993,
+          0.009880919000000005,
+          0.009886178999999995
+        ],
+        "jacobian_seconds": [
+          0.010137938999999997,
+          0.010091928000000005,
+          0.010116916999999998
+        ],
+        "newton": [
+          176,
+          176,
+          176
+        ],
+        "krylov": [
+          1628,
+          1628,
+          1628
+        ]
+      }
+    },
+    {
+      "id": "norne_p08_srdm",
+      "name": "norne_p08_srdm",
+      "loop_seconds": [
+        60.763924224,
+        62.832133493,
+        63.786242849
+      ],
+      "median_seconds": 62.832133493,
+      "minimum_seconds": 60.763924224,
+      "maximum_seconds": 63.786242849,
+      "new_process_seconds": [
+        68.16590509191155,
+        71.86366130039096
+      ],
+      "same_work": true,
+      "same_timestep_history": true,
+      "identical_final_fields": true,
+      "case": "norne_singular",
+      "model": "srdm",
+      "p": 0.8,
+      "policy": "bt",
+      "newton": 5421,
+      "krylov": 93075,
+      "accepted": 23,
+      "cuts": 9,
+      "source_summary": "archive:transport_additions_20261020/results/norne_p08_srdm_bt.summary.json",
+      "source_record": "archive:transport_additions_20261020/downloaded/results/RUNS.json",
+      "native": {
+        "path": "archive:transport_final_20261019/build/petsc_transport_gpu",
+        "expected_sha256": "4309a451a5a46518cefb6cb8c0dddb4677ea32e7ab68feff1ae10159d83af1b4",
+        "hash_evidence": "Prior authorized frozen-executable record; reverify current remote binary before repetition",
+        "remote_audit_required": false,
+        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+      },
+      "inputs": {
+        "graph": {
+          "path": "archive:petsc_paper_20261015/norne_singular.bin",
+          "sha256": "43f9f08ad84922626cae2ed70654e027a167c0ba6255ebfdc0b34693ebf93111"
+        },
+        "initial": {
+          "path": "archive:petsc_paper_20261015/norne_singular.initial",
+          "sha256": "30270a385fa003c389d911e0ac6803b29a975155224a8385f43a4c815b8c12cc"
+        },
+        "model": {
+          "path": "archive:transport_final_20261019/models/shared976_intermediate.model",
+          "sha256": "a9f9011efbdcf842b5f013be36da62abc475e9f30633521a545bcb04132b8cb1"
+        }
+      },
+      "control_profile": "permissive_max_linear_failures_100000_converged_maxits_true",
+      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "timing_basis": "Three archived independent-process observations",
+      "timing_n": 3
+    }
+  ]
+}
