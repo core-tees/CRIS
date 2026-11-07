@@ -1,66 +1,58 @@
-# Constructing the elemental inverses
+# Constructing and using an inverse
 
-## Transport
+The supplied data contain independent elemental input/root pairs. Complete simulation trajectories are not used for training. Fitted models in `models/` allow all simulation examples to run without retraining.
 
-Install the plotting dependencies and a PyTorch build suitable for the intended device:
+## Generate targets
 
-```bash
-python -m pip install -r requirements-training.txt
-```
-
-`data/fitting/` contains the exact saved input sets and the corresponding PETSc-generated targets. The fixed splits are: 1,048,576 training inputs, 65,536 validation inputs, 65,536 withheld test inputs, and 8,192 inputs in each endpoint/quadratic/singular set. Chebyshev and the spline/RBF comparison use a 4,194,304-input fitting pool.
-
-`python tools/reproduce.py transport-local --alternatives` recomputes validation, endpoint and fixed-exponent errors from all the saved approximators. It runs on the CPU without retraining and leaves the withheld test set unused.
-
-To regenerate targets at the saved inputs with the native solver:
+Build `labels_cpu` or `labels_gpu` as described in [BUILD.md](BUILD.md).
 
 ```bash
-python training/transport/prepare_data.py --solver build-gpu/labels_gpu --from-saved data/fitting --out runs/regenerated_targets --chebyshev
+python training/transport/prepare_data.py --solver build-linux/labels_cpu --out runs/targets --from-saved data/fitting --smoke
 ```
 
-The scalar local solver uses Newton with backtracking, continuation for unresolved inputs, and a safeguarded fallback. It records the resulting roots and residuals. `--smoke` requests only 256 inputs per split. Omitting `--from-saved` reconstructs the seeded sampling design; the saved arrays are the authoritative paper inputs.
+This small example generates 256 inputs per split. Omit `--smoke` for the full dataset; add `--chebyshev` to generate the larger Chebyshev pool. `--from-saved data/fitting` uses the exact supplied inputs. To regenerate the seeded sampling design, omit that option and install the training dependencies (the Sobol sampler uses PyTorch).
 
-Fit the network:
+## Neural fit
+
+Install PyTorch with `python -m pip install -r requirements-training.txt`. A short CPU example:
 
 ```bash
-python training/transport/train_impl.py --data data/fitting --out runs/transport_nn --width 13 --method br --seconds 1800 --active 65536 --growth
+python training/transport/train_impl.py --data runs/targets --out runs/network --device cpu --active 64 --seconds 20 --width 13 --method lm
+python tools/export_transport.py --checkpoint runs/network/best.npz --out runs/exported_models
 ```
 
-The network has three inputs, six width-13 hidden layers and 976 parameters. The frozen checkpoint and its training records are supplied. A new fit is a separate realization; use its retained validation-selected checkpoint for deployment.
+This demonstrates the pipeline; its short budget is not intended to recover the published accuracy. For the reported architecture and full fitting budget:
 
 ```bash
-python tools/export_transport.py --checkpoint models/transport/network.npz --out runs/exported_models --verify-paper
+python training/transport/train_impl.py --data data/fitting --out runs/network_full --device cuda --active 65536 --seconds 1800 --width 13 --method br --growth
 ```
 
-This command reproduces the three frozen exports and checks their value/derivative agreement. To export a newly trained checkpoint, give its path and omit `--verify-paper`.
+The six width-13 hidden layers give 976 parameters. Export folds the chosen constitutive exponent into the first layer and checks values and derivatives against the three-input checkpoint. The quadratic, intermediate and singular exports all derive from the same fit. Use `--verify-paper` with the bundled checkpoint to check the frozen exports.
 
-Fit adaptive Chebyshev polynomials:
+## Chebyshev fit
+
+A small adaptive fit on the supplied data:
 
 ```bash
-python training/transport/fit_chebyshev.py --data data/fitting --out runs/chebyshev_fit --parity build-gpu/parity_coordinates
+python training/transport/fit_chebyshev.py --data data/fitting --samples 4096 --leaves 4 --out runs/chebyshev
+python tools/export_chebyshev.py --tree runs/chebyshev/inverse.tree --exponent 2 --out runs/chebyshev/quadratic.model
 ```
 
-The frozen protocol fits three repetitions, each reaching 1,024 cubic leaves (65,536 coefficients), with saved stages at 64, 256 and 1,024 leaves. The workflow records fitting, transfer, validation and checkpoint time. Native value/derivative checks use identical floating-point input coordinates on CPU and GPU.
+The fitter selects the leaf with the largest training squared error and chooses the best median-coordinate split. Each leaf has a tensor-product cubic polynomial fitted by linear least squares. CPU fitting uses rank-revealing least squares; `--device cuda` uses GPU QR. For the full-size construction, omit `--samples` and use `--leaves 1024 --device cuda`. The frozen model remains supplied for exact comparison with the paper.
 
-Fit the alternative fixed bases:
+## Evaluate and simulate
 
 ```bash
-python training/transport/fit_spline_rbf.py --local-check --out runs/basis_check
-python training/transport/fit_spline_rbf.py --data data/fitting --out runs/spline_rbf
+python experiments/transport/local_accuracy.py --network runs/network/best.npz --tree runs/chebyshev/inverse.tree --out runs/local_errors
+python tools/run_transport.py --case column --method chebyshev --model runs/chebyshev/quadratic.model --steps 1 --out runs/new_chebyshev
 ```
 
-The screen uses grids 17, 33, 65 and 97 for tensor cubic B-splines and normalized compact Wendland RBFs. Each fit has the recorded 2,000-iteration / 480-second limit. Saved coefficients and all eight outcomes are in `results/transport/spline_rbf/`. A limit stop reports an unfinished optimization, not a bound on the approximation family.
+Select the corresponding exponent when exporting and running a model. Local evaluation reports independent saturation errors; the simulation reports convergence and work. A short or coarse fit need not match the accuracy or convergence of the bundled models.
 
 ## Bratu
 
-`data/bratu/` supplies the sampled lower-branch inputs and labels; `models/bratu/` supplies six retained supervised fitting stages. The selected analytic inverse is also available in `experiments/bratu/inverse.py`.
+`training/bratu/regenerate_targets.py` generates labels at the supplied Bratu inputs using the native target solver. With the optional native trainer built:
 
 ```bash
 build-train/bratu_lm_trainer --train data/bratu/train.bin --validation data/bratu/validation.bin --run-dir runs/bratu_training --weight 0 --max-accepted 10000 --threads 16
 ```
-
-The binary dataset starts with `BRATUD01` and a 64-bit sample count, followed by rows of four little-endian doubles: `a`, `beta`, root, and local root slope. `training/bratu/regenerate_targets.py` regenerates labels at those same inputs using `labels_cpu` or `labels_gpu`.
-
-## Saved formats
-
-Transport fitting `.npz` files contain `raw` (five native scalar inputs), `x` (three transformed network inputs), `y` (root targets), `logit` (root coordinate) and `endpoint` (sampling membership). Native raw inputs use `[alpha, beta, wetting exponent, nonwetting exponent, M]`; the paper fixes the wetting exponent to 2 and `M` to 0.4. The solver's label output has root, root coordinate, normalized residual and derivative columns.

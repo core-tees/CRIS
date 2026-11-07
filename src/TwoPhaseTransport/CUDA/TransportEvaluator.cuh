@@ -55,15 +55,15 @@ __global__ void output_kernel(GraphView g,Scaling s,const double* u,const double
   int i=blockIdx.x*blockDim.x+threadIdx.x;if(i>=g.n)return;
   r[i]=u[i]-(s.outlo+s.outscale*(y[i]+1.));if(grad)da[i]=s.outscale*dy[i]/(g.out[i]+DBL_MIN);
 }
-__global__ void original_kernel(GraphView g,const double* u,const double* old,const double* f,double dt,double rate,double equilibrium,double width,int reaction_type,double* r){
+__global__ void original_kernel(GraphView g,const double* u,const double* old,const double* f,double dt,double* r){
   int i=blockIdx.x*blockDim.x+threadIdx.x;if(i>=g.n)return;double incoming=g.inj[i];
   for(long long k=g.ptr[i];k<g.ptr[i+1];k++)incoming+=g.q[k]*f[g.up[k]];
-  r[i]=u[i]-old[i]+dt/g.vol[i]*(g.out[i]*f[i]-incoming)+(rate==0?0.:dt*rate*(reaction_type==2?-u[i]*(1.-u[i]):tanh((u[i]-equilibrium)/width)));
+  r[i]=u[i]-old[i]+dt/g.vol[i]*(g.out[i]*f[i]-incoming);
 }
-__global__ void matrix_kernel(GraphView g,const double* u,const double* df,const double* da,double dt,bool learned,double rate,double equilibrium,double width,int reaction_type,double* values){
+__global__ void matrix_kernel(GraphView g,const double* u,const double* df,const double* da,double dt,bool learned,double* values){
   int i=blockIdx.x*blockDim.x+threadIdx.x;if(i>=g.n)return;long long start=i+g.ptr[i];
-  double t=rate==0?0.:tanh((u[i]-equilibrium)/width);
-  values[start]=learned?1.:1.+dt/g.vol[i]*g.out[i]*df[i]+dt*rate*(reaction_type==2?2.*u[i]-1.:(1.-t*t)/width);
+
+  values[start]=learned?1.:1.+dt/g.vol[i]*g.out[i]*df[i];
   for(long long k=g.ptr[i];k<g.ptr[i+1];k++)values[i+1+k]=-(learned?da[i]:dt/g.vol[i])*g.q[k]*df[g.up[k]];
 }
 // Matrices are batch-by-feature, column major. Dense layers are FP64 cuBLAS GEMMs.
@@ -114,8 +114,8 @@ struct Evaluator {
         std::swap(x,y);std::swap(dx,dy);
       }
       output_kernel<<<blocks,256,0,stream>>>(g,s,u,x,dx,residual,da.p,grad);
-    }else original_kernel<<<blocks,256,0,stream>>>(g,u,old.p,f.p,cpu.dt,cpu.reaction_rate,cpu.reaction_equilibrium,cpu.reaction_width,cpu.reaction_type,residual);
-    if(grad)matrix_kernel<<<blocks,256,0,stream>>>(g,u,df.p,da.p,cpu.dt,cpu.learned,cpu.reaction_rate,cpu.reaction_equilibrium,cpu.reaction_width,cpu.reaction_type,coo.p);
+    }else original_kernel<<<blocks,256,0,stream>>>(g,u,old.p,f.p,cpu.dt,residual);
+    if(grad)matrix_kernel<<<blocks,256,0,stream>>>(g,u,df.p,da.p,cpu.dt,cpu.learned,coo.p);
     cuda_check(cudaGetLastError());
   }
 };

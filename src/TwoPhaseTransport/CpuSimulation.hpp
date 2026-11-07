@@ -5,12 +5,10 @@
 PetscErrorCode run() {
   PetscFunctionBeginUser;
   PetscMPIInt ranks;PetscCallMPI(MPI_Comm_size(PETSC_COMM_WORLD,&ranks));
-  PetscCheck(ranks==1,PETSC_COMM_WORLD,PETSC_ERR_SUP,"Initial verification driver requires one MPI rank");
+  PetscCheck(ranks==1,PETSC_COMM_WORLD,PETSC_ERR_SUP,"Transport driver requires one MPI rank");
   char graph[4096]="",model[4096]="",method[32]="srdm",prefix[4096]="transport",initialfile[4096]="";
   PetscBool check=PETSC_FALSE;PetscInt threads=8,maxsteps=100000,maxcuts=12;
   PetscReal factor=1,initial=0,flux_exponent=2.;PetscBool exponent_set=PETSC_FALSE;
-  PetscReal reaction_rate=0,reaction_equilibrium=.5,reaction_width=.01;
-  PetscInt reaction_type=1;
   PetscCall(PetscOptionsGetString(nullptr,nullptr,"-graph",graph,sizeof(graph),nullptr));
   PetscCall(PetscOptionsGetString(nullptr,nullptr,"-model",model,sizeof(model),nullptr));
   PetscCall(PetscOptionsGetString(nullptr,nullptr,"-method",method,sizeof(method),nullptr));
@@ -23,17 +21,10 @@ PetscErrorCode run() {
   PetscCall(PetscOptionsGetReal(nullptr,nullptr,"-dt_scale",&factor,nullptr));
   PetscCall(PetscOptionsGetReal(nullptr,nullptr,"-initial",&initial,nullptr));
   PetscCall(PetscOptionsGetReal(nullptr,nullptr,"-flux_exponent",&flux_exponent,&exponent_set));
-  PetscCall(PetscOptionsGetReal(nullptr,nullptr,"-reaction_rate",&reaction_rate,nullptr));
-  PetscCall(PetscOptionsGetReal(nullptr,nullptr,"-reaction_equilibrium",&reaction_equilibrium,nullptr));
-  PetscCall(PetscOptionsGetReal(nullptr,nullptr,"-reaction_width",&reaction_width,nullptr));
-  PetscCall(PetscOptionsGetInt(nullptr,nullptr,"-reaction_type",&reaction_type,nullptr));
-  PetscCheck(reaction_type==1||reaction_type==2,PETSC_COMM_SELF,PETSC_ERR_ARG_OUTOFRANGE,"Unknown reaction type");
   PetscCheck(std::string(method)=="srdm"||std::string(method)=="learned",PETSC_COMM_SELF,PETSC_ERR_ARG_WRONG,"Unknown method");
   PetscCheck(threads>0 && factor>0 && maxsteps>=0 && maxcuts>=0,PETSC_COMM_SELF,PETSC_ERR_ARG_OUTOFRANGE,"Invalid execution controls");
   omp_set_num_threads(threads); Context c(graph,model,std::string(method)=="learned");
   if(exponent_set)c.p.set_flux_exponent(flux_exponent);
-  c.p.set_reaction(reaction_rate,reaction_equilibrium,reaction_width);
-  c.p.reaction_type=reaction_type;
   Vec x,r;Mat J;SNES snes;PetscInt n=c.p.g.n;
   PetscCall(create_solver(c,x,r,J,snes));
   std::string tag(prefix);PetscViewer viewer;PetscCall(PetscViewerASCIIOpen(PETSC_COMM_SELF,(tag+".options.txt").c_str(),&viewer));

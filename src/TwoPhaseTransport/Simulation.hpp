@@ -5,12 +5,10 @@
 PetscErrorCode run() {
   PetscFunctionBeginUser;
   PetscMPIInt ranks;PetscCallMPI(MPI_Comm_size(PETSC_COMM_WORLD,&ranks));
-  PetscCheck(ranks==1,PETSC_COMM_WORLD,PETSC_ERR_SUP,"Initial verification driver requires one MPI rank");
+  PetscCheck(ranks==1,PETSC_COMM_WORLD,PETSC_ERR_SUP,"Transport driver requires one MPI rank");
   char graph[4096]="",model[4096]="",method[32]="srdm",prefix[4096]="transport",initialfile[4096]="";
   PetscBool check=PETSC_FALSE;PetscInt threads=8,maxsteps=100000,maxcuts=12;
   PetscReal factor=1,initial=0,flux_exponent=2.;PetscBool exponent_set=PETSC_FALSE;
-  PetscReal reaction_rate=0,reaction_equilibrium=.5,reaction_width=.01;
-  PetscInt reaction_type=1;
   PetscCall(PetscOptionsGetString(nullptr,nullptr,"-graph",graph,sizeof(graph),nullptr));
   PetscCall(PetscOptionsGetString(nullptr,nullptr,"-model",model,sizeof(model),nullptr));
   PetscCall(PetscOptionsGetString(nullptr,nullptr,"-method",method,sizeof(method),nullptr));
@@ -23,17 +21,10 @@ PetscErrorCode run() {
   PetscCall(PetscOptionsGetReal(nullptr,nullptr,"-dt_scale",&factor,nullptr));
   PetscCall(PetscOptionsGetReal(nullptr,nullptr,"-initial",&initial,nullptr));
   PetscCall(PetscOptionsGetReal(nullptr,nullptr,"-flux_exponent",&flux_exponent,&exponent_set));
-  PetscCall(PetscOptionsGetReal(nullptr,nullptr,"-reaction_rate",&reaction_rate,nullptr));
-  PetscCall(PetscOptionsGetReal(nullptr,nullptr,"-reaction_equilibrium",&reaction_equilibrium,nullptr));
-  PetscCall(PetscOptionsGetReal(nullptr,nullptr,"-reaction_width",&reaction_width,nullptr));
-  PetscCall(PetscOptionsGetInt(nullptr,nullptr,"-reaction_type",&reaction_type,nullptr));
-  PetscCheck(reaction_type==1||reaction_type==2,PETSC_COMM_SELF,PETSC_ERR_ARG_OUTOFRANGE,"Unknown reaction type");
   PetscCheck(std::string(method)=="srdm"||std::string(method)=="learned",PETSC_COMM_SELF,PETSC_ERR_ARG_WRONG,"Unknown method");
   PetscCheck(threads>0 && factor>0 && maxsteps>=0 && maxcuts>=0,PETSC_COMM_SELF,PETSC_ERR_ARG_OUTOFRANGE,"Invalid execution controls");
   omp_set_num_threads(threads); Context c(graph,model,std::string(method)=="learned");
   if(exponent_set)c.p.set_flux_exponent(flux_exponent);
-  c.p.set_reaction(reaction_rate,reaction_equilibrium,reaction_width);
-  c.p.reaction_type=reaction_type;
   Vec x,r;Mat J;SNES snes;PetscInt n=c.p.g.n;
   PetscCall(create_solver(c,x,r,J,snes));
   std::string tag(prefix);PetscViewer viewer;PetscCall(PetscViewerASCIIOpen(PETSC_COMM_SELF,(tag+".options.txt").c_str(),&viewer));
@@ -48,7 +39,7 @@ PetscErrorCode run() {
     tag=base_tag+"_r"+std::to_string(repeat);
     std::fill(c.p.old.begin(),c.p.old.end(),initial);
     if(initialfile[0]){std::ifstream file(initialfile,std::ios::binary);c.p.old=transport::read<double>(file,n);}
-    const auto initial_state=c.p.old;
+
     c.feval=c.jeval=0;c.fseconds=c.jseconds=0;
     std::vector<SavedAttempt> attempts;
     double time=0,solve_seconds=0,advance_seconds=0,snapshot_seconds=0,device_check_seconds=0;
@@ -96,35 +87,12 @@ PetscErrorCode run() {
     }
     events.close();{std::ofstream field(tag+".field",std::ios::binary);field.write(reinterpret_cast<char*>(final_state.data()),n*sizeof(double));}
     double output_seconds=seconds(output_start);
-    // Deferred CPU audit on EVERY trial, advancing its old state only on acceptance.
-    auto audit_start=Clock::now();c.p.old=initial_state;double worst_r=0,worst_p=0;int audit_warnings=0,acceptance_mismatches=0;
-    std::ofstream diagnostics(tag+".audit.jsonl");diagnostics<<std::setprecision(17);
-    for(const auto& a:attempts){
-      c.p.dt=a.dt;c.p.evaluate(a.u.data(),c.scratch.data(),false);
-      double inf=0;bool finite=true;for(int i=0;i<n;i++){finite=finite&&std::isfinite(a.u[i])&&std::isfinite(c.scratch[i]);inf=std::max(inf,std::abs(c.scratch[i]));}
-      double physical=finite?c.p.physical(a.u.data()):std::numeric_limits<double>::infinity();
-      bool cpu_ok=a.reason>0&&finite&&std::isfinite(physical);
-      if(cpu_ok!=a.accepted){
-        acceptance_mismatches++;
-        diagnostics<<"{\"kind\":\"acceptance_mismatch\",\"schedule_step\":"<<a.schedule<<",\"time_before\":"<<a.time<<",\"dt\":"<<a.dt<<"}\n";
-      }
-      if(finite&&a.finite){
-        double re=std::abs(inf-a.inf)/std::max(1.,inf),pe=std::abs(physical-a.physical)/std::max(1.,physical);
-        worst_r=std::max(worst_r,re);worst_p=std::max(worst_p,pe);
-        if(!(re<2e-11&&pe<2e-11)){
-          audit_warnings++;
-          diagnostics<<"{\"kind\":\"residual_discrepancy\",\"schedule_step\":"<<a.schedule<<",\"time_before\":"<<a.time<<",\"dt\":"<<a.dt<<",\"residual_relative\":"<<re<<",\"physical_relative\":"<<pe<<",\"cpu_physical_inf\":"<<physical<<",\"gpu_physical_inf\":"<<a.physical<<"}\n";
-        }
-      }
-      if(a.accepted)c.p.old=a.u;
-    }
-    diagnostics.close();double audit_seconds=seconds(audit_start);c.p.old=final_state;
     std::ofstream summary(tag+".summary.json");summary<<std::setprecision(17)
       <<"{\"complete_requested_steps\":"<<(complete?"true":"false")<<",\"time\":"<<time<<",\"accepted\":"<<accepted<<",\"cuts\":"<<cuts<<",\"newton\":"<<nonlinear<<",\"krylov\":"<<linear
-      <<",\"snes_seconds\":"<<solve_seconds<<",\"advance_seconds\":"<<advance_seconds<<",\"trajectory_wall_seconds\":"<<trajectory_wall<<",\"snapshot_seconds\":"<<snapshot_seconds<<",\"cpu_audit_seconds\":"<<audit_seconds<<",\"field_output_seconds\":"<<output_seconds
-      <<",\"device_check_seconds\":"<<device_check_seconds<<",\"residual_calls\":"<<c.feval<<",\"jacobian_calls\":"<<c.jeval<<",\"residual_seconds\":"<<c.fseconds<<",\"jacobian_seconds\":"<<c.jseconds<<",\"audit_residual_relative\":"<<worst_r<<",\"audit_physical_relative\":"<<worst_p<<",\"audit_warning_count\":"<<audit_warnings<<",\"acceptance_mismatches\":"<<acceptance_mismatches<<",\"all_trial_acceptance_parity\":"<<(acceptance_mismatches==0?"true":"false")<<"}\n";
+      <<",\"snes_seconds\":"<<solve_seconds<<",\"advance_seconds\":"<<advance_seconds<<",\"trajectory_wall_seconds\":"<<trajectory_wall<<",\"snapshot_seconds\":"<<snapshot_seconds<<",\"field_output_seconds\":"<<output_seconds
+      <<",\"device_check_seconds\":"<<device_check_seconds<<",\"residual_calls\":"<<c.feval<<",\"jacobian_calls\":"<<c.jeval<<",\"residual_seconds\":"<<c.fseconds<<",\"jacobian_seconds\":"<<c.jseconds<<"}\n";
     std::cout<<tag<<" complete="<<complete<<" accepted="<<accepted<<" advance_seconds="<<advance_seconds<<" snes_seconds="<<solve_seconds<<std::endl;
-    if(!complete||acceptance_mismatches)break; // A changed model may stop; do not repeat a stopped trajectory for timings.
+    if(!complete)break; // A changed model may stop; do not repeat a stopped trajectory for timings.
   }
   PetscCall(SNESDestroy(&snes));PetscCall(MatDestroy(&J));PetscCall(VecDestroy(&x));PetscCall(VecDestroy(&r));PetscFunctionReturn(PETSC_SUCCESS);
 }

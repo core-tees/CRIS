@@ -14,7 +14,7 @@ struct TrialCheck {
   explicit TrialCheck(int n){physical.allocate(n);maxima.allocate(2);bad.allocate(1);}
   void evaluate(Evaluator& e,const double* u,double& residual_inf,double& physical_inf,bool& finite,cudaStream_t stream){
     e.evaluate(u,e.r.p,false,stream);
-    original_kernel<<<(e.g.n+255)/256,256,0,stream>>>(e.g,u,e.old.p,e.f.p,e.cpu.dt,e.cpu.reaction_rate,e.cpu.reaction_equilibrium,e.cpu.reaction_width,e.cpu.reaction_type,physical.p);
+    original_kernel<<<(e.g.n+255)/256,256,0,stream>>>(e.g,u,e.old.p,e.f.p,e.cpu.dt,physical.p);
     cuda_check(cudaMemsetAsync(maxima.p,0,2*sizeof(unsigned long long),stream));
     cuda_check(cudaMemsetAsync(bad.p,0,sizeof(int),stream));
     check_trial_kernel<<<(e.g.n+255)/256,256,0,stream>>>(e.g.n,u,e.r.p,physical.p,maxima.p,bad.p);
