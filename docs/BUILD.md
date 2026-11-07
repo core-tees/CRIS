@@ -1,6 +1,6 @@
 # Building
 
-The default C++17/OpenMP build provides the column accuracy solvers, Case C reference solver and inverse-export checks:
+The default C++17/OpenMP build provides the inverse-export checks:
 
 ```bash
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
@@ -20,7 +20,7 @@ cmake -S . -B build-linux -DCRIS_PETSC=ON -DCMAKE_BUILD_TYPE=Release
 cmake --build build-linux -j 4
 ```
 
-This builds `petsc_transport` and `labels_cpu`. PETSc installed by a package manager may already be discoverable without setting `PKG_CONFIG_PATH`.
+This builds `petsc_transport` and `labels_cpu`. Transport comparisons, column accuracy studies and Case C references all use `petsc_transport`. PETSc installed by a package manager may already be discoverable without setting `PKG_CONFIG_PATH`.
 
 For CUDA, PETSc must support CUDA vectors and matrices:
 

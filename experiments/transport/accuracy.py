@@ -3,8 +3,8 @@
 from pathlib import Path
 import argparse
 import json
-import subprocess
 import numpy as np
+from accuracy_solver import column, norne
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -21,7 +21,7 @@ def error(a, b):
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("study", choices=["checkpoints", "refinement", "norne-reference"])
-    ap.add_argument("--build", type=Path, default=ROOT / "build")
+    ap.add_argument("--build", type=Path, default=ROOT / "build-linux")
     ap.add_argument("--out", type=Path)
     ap.add_argument(
         "--limit", type=int, help="Only first N configurations, for a quick check"
@@ -44,67 +44,32 @@ def main():
     if a.study == "checkpoints":
         stage = json.loads((ROOT / "models/transport/STAGES.json").read_text())
         reference = out / "original"
-        subprocess.run(
-            [
-                exe("column_chebyshev"),
-                "original",
-                "256",
-                "150",
-                str(reference),
-                "1000",
-                "front",
-            ],
-            check=True,
-        )
+        column(exe("petsc_transport"), "original", 256, 150, reference, front=True)
         ref = np.fromfile(str(reference) + ".t50.field", dtype="<f8")
         configs = [(s["leaves"], s) for s in stage]
         for n, s in configs[: a.limit]:
             prefix = out / f"leaves{n}"
-            cmd = [
-                exe("column_chebyshev"),
-                str(ROOT / f"models/transport/cheb_{n}.tree"),
-                "256",
-                "150",
-                str(prefix),
-                "1000",
-                "front",
-            ]
-            subprocess.run(cmd, check=True)
-            summary = json.loads(prefix.with_suffix(".summary.json").read_text())
+            summary = column(exe("petsc_transport"),
+                             ROOT / f"models/transport/cheb_{n}.tree",
+                             256, 150, prefix, front=True)
             summary.update(
                 leaves=n,
                 local=s["scores"]["quadratic"],
                 field=error(np.fromfile(str(prefix) + ".t50.field", "<f8"), ref),
             )
             rows.append(summary)
+            print(f"Completed {prefix.name}", flush=True)
     elif a.study == "refinement":
         configs = json.loads(
             (ROOT / "experiments/transport/refinement.json").read_text()
         )
         for c in configs[: a.limit]:
             prefix = out / f"beta{c['beta']:g}_N{c['N']}"
-            cmd = [
-                exe("column_neural"),
-                str(ROOT / "models/transport/shared976_quadratic.model"),
-                str(c["N"]),
-                str(c["beta"]),
-                str(prefix),
-                "1000",
-            ]
-            subprocess.run(cmd, check=True)
-            summary = json.loads(prefix.with_suffix(".summary.json").read_text())
+            summary = column(exe("petsc_transport"),
+                             ROOT / "models/transport/shared976_quadratic.model",
+                             c["N"], c["beta"], prefix)
             reference = out / f"original_beta{c['beta']:g}_N{c['N']}"
-            subprocess.run(
-                [
-                    exe("column_chebyshev"),
-                    "original",
-                    str(c["N"]),
-                    str(c["beta"]),
-                    str(reference),
-                    "1000",
-                ],
-                check=True,
-            )
+            column(exe("petsc_transport"), "original", c["N"], c["beta"], reference)
             discrete = np.fromfile(str(reference) + ".t200.field", "<f8")
             u = np.fromfile(str(prefix) + ".t200.field", "<f8")
             flux = lambda v: v * v / (v * v + 0.4 * (1 - v) ** 2)
@@ -120,19 +85,11 @@ def main():
                 discretization=error(discrete, analytic),
             )
             rows.append(summary)
+            print(f"Completed {prefix.name}", flush=True)
     else:
         for cap in [1000, 500][: a.limit]:
             prefix = out / f"dt{cap}"
-            cmd = [
-                exe("norne_reference"),
-                str(ROOT / "data/transport/norne_singular.bin"),
-                str(ROOT / "data/transport/norne_singular.initial"),
-                str(ROOT / "models/transport/cheb_quadratic.model"),
-                str(cap),
-                str(prefix),
-            ]
-            subprocess.run(cmd, check=True)
-            rows.append(json.loads(prefix.with_suffix(".summary.json").read_text()))
+            rows.append(norne(exe("petsc_transport"), cap, prefix))
     (out / "RESULTS.json").write_text(json.dumps(rows, indent=2))
     if a.study != "norne-reference":
         import matplotlib

@@ -68,12 +68,9 @@ Omit `--steps` for complete trajectories. For GPU runs, pass `--executable build
 
 ## 4. Accuracy and refinement
 
-Build the small C++ accuracy solvers (no PETSc or CUDA required):
+The accuracy studies use the same CPU PETSc transport solver. Build it following [the build instructions](docs/BUILD.md), then run:
 
 ```bash
-cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
-cmake --build build --config Release
-ctest --test-dir build -C Release --output-on-failure
 python experiments/transport/accuracy.py checkpoints
 python experiments/transport/accuracy.py refinement --limit 3
 ```
