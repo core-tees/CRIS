@@ -21,13 +21,13 @@ python training/transport/train_impl.py --data runs/targets --out runs/network -
 python tools/export_transport.py --checkpoint runs/network/best.npz --out runs/exported_models
 ```
 
-This demonstrates the pipeline; its short budget is not intended to recover the published accuracy. For the reported architecture and full fitting budget:
+This short run introduces fitting and export. To train the reported architecture with the full dataset and 30-minute budget:
 
 ```bash
 python training/transport/train_impl.py --data data/fitting --out runs/network_full --device cuda --active 65536 --seconds 1800 --width 13 --method br --growth
 ```
 
-The six width-13 hidden layers give 976 parameters. Export folds the chosen constitutive exponent into the first layer and checks values and derivatives against the three-input checkpoint. The quadratic, intermediate and singular exports all derive from the same fit. Use `--verify-paper` with the bundled checkpoint to check the frozen exports.
+The six width-13 hidden layers give 976 parameters. Export folds the chosen constitutive exponent into the first layer and checks values and derivatives against the three-input checkpoint. The quadratic, intermediate and singular exports all derive from the same fit. Use `--verify-paper` with the bundled checkpoint to check the supplied exports.
 
 ## Chebyshev fit
 
@@ -38,12 +38,13 @@ python training/transport/fit_chebyshev.py --data data/fitting --samples 4096 --
 python tools/export_chebyshev.py --tree runs/chebyshev/inverse.tree --exponent 2 --out runs/chebyshev/quadratic.model
 ```
 
-The fitter selects the leaf with the largest training squared error and chooses the best median-coordinate split. Each leaf has a tensor-product cubic polynomial fitted by linear least squares. CPU fitting uses rank-revealing least squares; `--device cuda` uses GPU QR. For the full-size construction, omit `--samples` and use `--leaves 1024 --device cuda`. The frozen model remains supplied for exact comparison with the paper.
+The fitter selects the leaf with the largest training squared error and chooses the best median-coordinate split. Each leaf has a tensor-product cubic polynomial fitted by linear least squares. CPU fitting uses rank-revealing least squares; `--device cuda` uses GPU QR. For the full fitting run, omit `--samples` and use `--leaves 1024 --device cuda`. The fitted model used in the paper is supplied in `models/`.
 
 ## Evaluate and simulate
 
 ```bash
 python experiments/transport/local_accuracy.py --network runs/network/best.npz --tree runs/chebyshev/inverse.tree --out runs/local_errors
+python tools/run_transport.py --case column --method neural --model runs/exported_models/shared976_quadratic.model --steps 1 --out runs/new_network
 python tools/run_transport.py --case column --method chebyshev --model runs/chebyshev/quadratic.model --steps 1 --out runs/new_chebyshev
 ```
 

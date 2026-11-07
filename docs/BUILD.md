@@ -29,7 +29,7 @@ cmake -S . -B build-gpu -DCRIS_CUDA=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_CUDA_A
 cmake --build build-gpu -j 4
 ```
 
-Set the CUDA architecture for your GPU. The paper used an A100, PETSc 3.24.0, GCC 12.3 and CUDA 12.6. The code has no FASTER-specific dependency. GPU fitting uses PyTorch independently of PETSc.
+Set the CUDA architecture for your GPU. The paper used an A100, PETSc 3.24.0, GCC 12.3 and CUDA 12.6. GPU fitting uses PyTorch independently of PETSc.
 
 ## Bratu training
 

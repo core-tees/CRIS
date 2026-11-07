@@ -1,20 +1,25 @@
 # CRIS (Coupled Recurrence Inverse System)
 
-CRIS approximates an elemental nonlinear inverse and couples its evaluations into a global solve. This repository provides four numerical workflows: Bratu branch selection and convergence, inverse construction, transport comparisons, and accuracy under refinement.
+CRIS approximates the solution of a recurring elemental nonlinear equation, then couples these local predictions into a global solve. The examples compare the original discretized equations with the approximate CRIS reformulation using the same physical model and grid.
+
+Four workflows cover Bratu branch selection and convergence, inverse construction, transport comparisons, and accuracy under refinement. Start with the Python-only Bratu example, then build the transport solver. Supplied models let you run the simulations without retraining.
 
 ## Setup
 
-Use Python 3.11 or later in a fresh environment:
+Install Python 3.11 or later, Git and Git LFS. Clone the repository and create a Python environment:
 
 ```bash
+git lfs install
+git clone https://github.com/core-tees/CRIS.git
+cd CRIS
+git lfs pull
 python -m venv .venv
 # Linux/macOS: source .venv/bin/activate
 # Windows PowerShell: .venv/Scripts/Activate.ps1
 python -m pip install -r requirements.txt
-git lfs pull
 ```
 
-Git LFS supplies the fitted models, training data and benchmark grids. Retraining is optional. New calculations write to `runs/`, which is excluded from Git.
+Git LFS downloads the fitted models, training data and benchmark grids. Run the commands below from the repository root. New calculations write to `runs/`; choose a new output directory for each transport comparison.
 
 ## 1. Bratu: branch selection and convergence
 
@@ -50,7 +55,7 @@ python tools/run_transport.py --case column --steps 1 --executable build-linux/p
 
 The command runs the original formulation, neural CRIS and Chebyshev CRIS, then writes work counts, field differences and a comparison plot. Use `--method original`, `neural` or `chebyshev` to run one formulation. `--newton ordinary` selects ordinary Newton; the default is backtracking. `--dry-run` prints the commands.
 
-The same inverses support the fractured grid (`edfm`, Case A), million-cell Cartesian grid (`spe10`, Case B), faulted corner-point grid (`norne`, Case C), and Cartesian slices (`layer50`, `layer75`, `layer84`). The released laws use `--exponent 2`, `0.8` or `0.2`; not every case/policy combination was benchmarked. Unsupported combinations are identified before running.
+The same inverses support the fractured grid (`edfm`, Case A), million-cell Cartesian grid (`spe10`, Case B), faulted corner-point grid (`norne`, Case C), and Cartesian slices (`layer50`, `layer75`, `layer84`). Select the constitutive exponent with `--exponent 2`, `0.8` or `0.2`. Supported case, exponent and solver configurations are listed in [cases.json](experiments/transport/cases.json); the launcher checks your selection before running.
 
 ```bash
 python tools/run_transport.py --case edfm --exponent 0.8 --out runs/edfm
@@ -59,13 +64,7 @@ python tools/run_transport.py --case norne --exponent 0.2 --newton ordinary --ou
 python tools/run_transport.py --case edfm --dt 1000 --out runs/step1000
 ```
 
-Omit `--steps` for complete trajectories. For GPU runs, pass `--executable build-gpu/petsc_transport_gpu`. The stored presets preserve the reported solver controls. CPU examples establish functionality; the paper's timing measurements used the GPU implementation. Field differences between adaptive trajectories can include temporal-discretization differences.
-
-A newly exported inverse is selected directly:
-
-```bash
-python tools/run_transport.py --case column --method neural --model runs/exported_models/shared976_quadratic.model --steps 1 --out runs/new_network
-```
+Omit `--steps` for complete trajectories. For GPU runs, pass `--executable build-gpu/petsc_transport_gpu`. The paper's timing measurements used the GPU implementation. Field differences between adaptive trajectories can include temporal-discretization differences.
 
 ## 4. Accuracy and refinement
 
@@ -79,7 +78,7 @@ python experiments/transport/accuracy.py checkpoints
 python experiments/transport/accuracy.py refinement --limit 3
 ```
 
-The checkpoint study compares three Chebyshev fits at fixed discretization. Refinement holds the neural inverse fixed and changes the mesh and timestep together. Both studies solve the original balance for their discrete reference; analytic shock cell averages supply the continuum reference for refinement. Results and plots are written to `runs/checkpoints/` and `runs/refinement/`. Omit `--limit` for all 19 refinement pairs. The optional `norne-reference` study constructs time-refined Case C references on its fixed spatial mesh.
+The checkpoint study shows how improving the local inverse changes field accuracy at fixed resolution. The refinement study holds the neural inverse fixed to distinguish approximation error from discretization error as the mesh and timestep shrink. Results and plots are written to `runs/checkpoints/` and `runs/refinement/`. Omit `--limit` for all 19 refinement pairs. The optional `norne-reference` study constructs time-refined Case C references on the same spatial mesh.
 
 ## Simulator organization
 
@@ -93,6 +92,6 @@ The checkpoint study compares three Chebyshev fits at fixed discretization. Refi
 | Time advancement | `src/TwoPhaseTransport/Simulation.hpp`, `CpuSimulation.hpp` |
 | GPU evaluation | `src/TwoPhaseTransport/CUDA/` |
 
-`experiments/` holds the example calculations and settings; `training/` constructs the inverses; `models/` contains deployable fits; `data/` contains inputs. `results/` retains reference measurements and final fields for comparison. Publication artwork and historical campaign records are not part of these workflows.
+`experiments/` holds the example calculations and settings; `training/` constructs the inverses; `models/` contains deployable fits; `data/` contains inputs. `results/` retains reference measurements and final fields for comparison.
 
 The supplied graphs contain cell storage, directed flow connections, source terms and timestep schedules. The pressure solve and reservoir mesh preprocessing precede these transport calculations. The graph format is documented in [BUILD.md](docs/BUILD.md).
