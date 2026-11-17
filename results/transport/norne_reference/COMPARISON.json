@@ -2,588 +2,549 @@
   {
     "time": 10000.0,
     "reference_change": {
-      "rmse": 0.0036398658674134166,
-      "maximum": 0.06045870949317085,
+      "rmse": 0.0036307886753083763,
+      "maximum": 0.05833820834064922,
       "median": 0.0,
-      "p95": 0.006119510905601968
+      "p95": 0.006078302033691574
     },
-    "reference_watercut_change": 1.3451475405828982e-18,
+    "reference_watercut_change": 1.325491554581007e-18,
     "methods": {
       "nn": {
         "field": {
-          "rmse": 0.04102651016052757,
-          "maximum": 0.2937010320484891,
+          "rmse": 0.041019653993474174,
+          "maximum": 0.29397252587944045,
           "median": 4.55242094471453e-06,
-          "p95": 0.08879752919781869
+          "p95": 0.08875037756462817
         },
-        "watercut_error": 9.724917446713552e-12,
-        "source": "results/transport/fields/norne_p08/norne_p08_nn_r1.step1.field"
+        "watercut_error": 9.724917466369922e-12
       },
       "cheb": {
         "field": {
-          "rmse": 0.04102767618300279,
-          "maximum": 0.29371735677845223,
+          "rmse": 0.04102082023462403,
+          "maximum": 0.2939888506094036,
           "median": 1.179389668401171e-10,
-          "p95": 0.0888086440946423
+          "p95": 0.08873872807423565
         },
-        "watercut_error": 2.694460790343632e-17,
-        "source": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step1.field"
+        "watercut_error": 2.692495153291049e-17
       },
       "srdm": {
         "field": {
-          "rmse": 0.024250286291777227,
-          "maximum": 0.19544275887027096,
+          "rmse": 0.024241909024416437,
+          "maximum": 0.1933375940957609,
           "median": 0.0,
-          "p95": 0.05005387471407224
+          "p95": 0.05008140992259778
         },
-        "watercut_error": 1.273590931132387e-17,
-        "source": "archive:transport_additions_20261020/downloaded/results/norne_p08_srdm_bt.step2.field"
+        "watercut_error": 1.2716252940798042e-17
       }
     }
   },
   {
     "time": 30000.0,
     "reference_change": {
-      "rmse": 0.002238671750085054,
-      "maximum": 0.043906356390797346,
+      "rmse": 0.0022374746302258226,
+      "maximum": 0.04388874832692452,
       "median": 0.0,
-      "p95": 0.005663168979128815
+      "p95": 0.005661162663382529
     },
-    "reference_watercut_change": 8.389589118521893e-19,
+    "reference_watercut_change": 8.384781226591615e-19,
     "methods": {
       "nn": {
         "field": {
-          "rmse": 0.04457502592962695,
-          "maximum": 0.2437801364926176,
+          "rmse": 0.044574238348259985,
+          "maximum": 0.2437769354099361,
           "median": 7.135625887555452e-06,
-          "p95": 0.12673052719995712
+          "p95": 0.12672806105015105
         },
-        "watercut_error": 8.725727062501376e-11,
-        "source": "results/transport/fields/norne_p08/norne_p08_nn_r1.step2.field"
+        "watercut_error": 8.725727062549456e-11
       },
       "cheb": {
         "field": {
-          "rmse": 0.044577948916005875,
-          "maximum": 0.2437775881256873,
+          "rmse": 0.04457716143448743,
+          "maximum": 0.24377438704300583,
           "median": 6.166681136941999e-10,
-          "p95": 0.1267396811084488
+          "p95": 0.1267352755622024
         },
-        "watercut_error": 2.511861354018593e-17,
-        "source": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step2.field"
+        "watercut_error": 2.5118132749575813e-17
       },
       "srdm": {
         "field": {
-          "rmse": 0.04060993210334163,
-          "maximum": 0.23518245500361687,
+          "rmse": 0.04060906573925105,
+          "maximum": 0.2351792539209354,
           "median": 0.0,
-          "p95": 0.11639265335347915
+          "p95": 0.11638888124523503
         },
-        "watercut_error": 2.3578164842133615e-17,
-        "source": "archive:transport_additions_20261020/downloaded/results/norne_p08_srdm_bt.step3.field"
+        "watercut_error": 2.3577684051523497e-17
       }
     }
   },
   {
     "time": 70000.0,
     "reference_change": {
-      "rmse": 0.0018270586234318098,
-      "maximum": 0.042886385730129796,
-      "median": 7.672681249293508e-287,
-      "p95": 0.003550312959322286
+      "rmse": 0.0018268131258743533,
+      "maximum": 0.04288418136833748,
+      "median": 7.672676378712152e-287,
+      "p95": 0.0035501081210521724
     },
-    "reference_watercut_change": 3.398635498932499e-19,
+    "reference_watercut_change": 3.398277460586863e-19,
     "methods": {
       "nn": {
         "field": {
-          "rmse": 0.05866186450730896,
-          "maximum": 0.2564301161333672,
+          "rmse": 0.058661685097847235,
+          "maximum": 0.25643004858475194,
           "median": 1.2002844404446211e-05,
-          "p95": 0.141195365586984
+          "p95": 0.14119469713592536
         },
-        "watercut_error": 1.022793048241361e-10,
-        "source": "results/transport/fields/norne_p08/norne_p08_nn_r1.step3.field"
+        "watercut_error": 1.022793048241719e-10
       },
       "cheb": {
         "field": {
-          "rmse": 0.05866472821309799,
-          "maximum": 0.25641825856710454,
+          "rmse": 0.058664548803468636,
+          "maximum": 0.2564181910184893,
           "median": 1.6315669607688231e-07,
-          "p95": 0.1411923484590283
+          "p95": 0.14119176591188023
         },
-        "watercut_error": 2.5179295448944168e-17,
-        "source": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step3.field"
+        "watercut_error": 2.5179331254035683e-17
       },
       "srdm": {
         "field": {
-          "rmse": 0.057753938996766986,
-          "maximum": 0.2545074100274906,
-          "median": 9.763557531576134e-08,
-          "p95": 0.1390802300303109
+          "rmse": 0.05775376008822196,
+          "maximum": 0.25450734247887535,
+          "median": 9.776573779214232e-08,
+          "p95": 0.1390800797502193
         },
-        "watercut_error": 2.2262928640046157e-17,
-        "source": "archive:transport_additions_20261020/downloaded/results/norne_p08_srdm_bt.step4.field"
+        "watercut_error": 2.2262892834954642e-17
       }
     }
   },
   {
     "time": 100000.0,
     "reference_change": {
-      "rmse": 0.0017137651016142985,
-      "maximum": 0.03347015860774387,
-      "median": 1.6557135424185035e-30,
-      "p95": 0.002876656924687847
+      "rmse": 0.0017136234759458978,
+      "maximum": 0.03346850932169594,
+      "median": 1.754716660559733e-30,
+      "p95": 0.0028759217068545285
     },
-    "reference_watercut_change": 4.3242122349550323e-19,
+    "reference_watercut_change": 4.3239603017922645e-19,
     "methods": {
       "nn": {
         "field": {
-          "rmse": 0.058679325213564545,
-          "maximum": 0.2672735614305153,
-          "median": 0.0007000514855137382,
-          "p95": 0.1268087449677187
+          "rmse": 0.05867921227455561,
+          "maximum": 0.26727328147343216,
+          "median": 0.0007000513573719535,
+          "p95": 0.12680859347525886
         },
-        "watercut_error": 0.0001359821891167967,
-        "source": "results/transport/fields/norne_p08/norne_p08_nn_r1.step4.field"
+        "watercut_error": 0.0001359821891167967
       },
       "cheb": {
         "field": {
-          "rmse": 0.05867743326774758,
-          "maximum": 0.2672519900633652,
+          "rmse": 0.058677320321955634,
+          "maximum": 0.26725171010628207,
           "median": 0.0006884416322888109,
-          "p95": 0.12683025744729284
+          "p95": 0.12682914828270894
         },
-        "watercut_error": 0.00013496952920131035,
-        "source": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step4.field"
+        "watercut_error": 0.00013496952920131035
       },
       "srdm": {
         "field": {
-          "rmse": 0.058061227132157396,
-          "maximum": 0.26601334761130846,
-          "median": 0.0006164015020917871,
-          "p95": 0.12550701090316857
+          "rmse": 0.05806111454897346,
+          "maximum": 0.26601306765422533,
+          "median": 0.0006164015020917865,
+          "p95": 0.12550648322299188
         },
-        "watercut_error": 0.00012648525484544666,
-        "source": "archive:transport_additions_20261020/downloaded/results/norne_p08_srdm_bt.step5.field"
+        "watercut_error": 0.00012648525484544666
       }
     }
   },
   {
     "time": 180000.0,
     "reference_change": {
-      "rmse": 0.0013488976350930681,
-      "maximum": 0.026905556998706975,
-      "median": 0.00013721518786391496,
-      "p95": 0.0020525756757150946
+      "rmse": 0.001348833532264218,
+      "maximum": 0.026904676892497092,
+      "median": 0.00013718009520191643,
+      "p95": 0.0020524740971611926
     },
-    "reference_watercut_change": 0.0003156740306545225,
+    "reference_watercut_change": 0.00031565769313633696,
     "methods": {
       "nn": {
         "field": {
-          "rmse": 0.07003995725503034,
-          "maximum": 0.2657056039998739,
-          "median": 0.036903284134366054,
-          "p95": 0.1317120099497687
+          "rmse": 0.07003990924652309,
+          "maximum": 0.2657055777942593,
+          "median": 0.036903267150131924,
+          "p95": 0.13171186905357735
         },
-        "watercut_error": 0.03223210095741602,
-        "source": "results/transport/fields/norne_p08/norne_p08_nn_r1.step5.field"
+        "watercut_error": 0.032232084620339656
       },
       "cheb": {
         "field": {
-          "rmse": 0.0700448675565744,
-          "maximum": 0.26567515167568856,
-          "median": 0.03690283183091836,
-          "p95": 0.13175081064493604
+          "rmse": 0.07004481955104966,
+          "maximum": 0.26567512547007394,
+          "median": 0.03690289109363282,
+          "p95": 0.13175073178613567
         },
-        "watercut_error": 0.03219174908097494,
-        "source": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step5.field"
+        "watercut_error": 0.032191732743898575
       },
       "srdm": {
         "field": {
-          "rmse": 0.05461907063989798,
-          "maximum": 0.27535590983251745,
-          "median": 0.020734711300938846,
-          "p95": 0.10475633237154719
+          "rmse": 0.05461901745968135,
+          "maximum": 0.27535588362690283,
+          "median": 0.020734668068059126,
+          "p95": 0.1047560752401657
         },
-        "watercut_error": 0.029060661391280898,
-        "source": "archive:transport_additions_20261020/downloaded/results/norne_p08_srdm_bt.step7.field"
+        "watercut_error": 0.029060645054204533
       }
     }
   },
   {
     "time": 200000.0,
     "reference_change": {
-      "rmse": 0.001262540588603131,
-      "maximum": 0.0351473134670551,
-      "median": 0.00021210304092245114,
-      "p95": 0.0018689459774752224
+      "rmse": 0.0012624847101760793,
+      "maximum": 0.035146205977903855,
+      "median": 0.000212101127005343,
+      "p95": 0.0018688279075475653
     },
-    "reference_watercut_change": 0.0010275205812123184,
+    "reference_watercut_change": 0.0010274746497406367,
     "methods": {
       "nn": {
         "field": {
-          "rmse": 0.06324940322293734,
-          "maximum": 0.2866276874390709,
-          "median": 0.03265808921443075,
-          "p95": 0.11934365428263649
+          "rmse": 0.06324935856053912,
+          "maximum": 0.28662751123591484,
+          "median": 0.03265807452515401,
+          "p95": 0.1193435951682903
         },
-        "watercut_error": 0.03376103027416204,
-        "source": "results/transport/fields/norne_p08/norne_p08_nn_r1.step6.field"
+        "watercut_error": 0.03376098434476624
       },
       "cheb": {
         "field": {
-          "rmse": 0.06325113235949589,
-          "maximum": 0.2865967350826339,
-          "median": 0.032648136184150855,
-          "p95": 0.11941217332208426
+          "rmse": 0.0632510877000117,
+          "maximum": 0.2865965588794778,
+          "median": 0.032648145372241144,
+          "p95": 0.11941198566080463
         },
-        "watercut_error": 0.03371893647613462,
-        "source": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step6.field"
+        "watercut_error": 0.03371889054673882
       },
       "srdm": {
         "field": {
-          "rmse": 0.0490853038373315,
-          "maximum": 0.29442461001173875,
-          "median": 0.019561236761834393,
-          "p95": 0.09367374810385745
+          "rmse": 0.04908525494080831,
+          "maximum": 0.2944244338085827,
+          "median": 0.019561236657678383,
+          "p95": 0.09367354037201411
         },
-        "watercut_error": 0.03505206401808737,
-        "source": "archive:transport_additions_20261020/downloaded/results/norne_p08_srdm_bt.step8.field"
+        "watercut_error": 0.03505201808869157
       }
     }
   },
   {
     "time": 300000.0,
     "reference_change": {
-      "rmse": 0.0006980470377233456,
-      "maximum": 0.0094245488967628,
-      "median": 0.00027776538848867105,
-      "p95": 0.0012571884111947198
+      "rmse": 0.000698023079347405,
+      "maximum": 0.009424463685746426,
+      "median": 0.0002777587732888387,
+      "p95": 0.0012571251797608533
     },
-    "reference_watercut_change": 0.0004636469414240896,
+    "reference_watercut_change": 0.000463652965545458,
     "methods": {
       "nn": {
         "field": {
-          "rmse": 0.06125185607445666,
-          "maximum": 0.22612095419479905,
-          "median": 0.0434040498852003,
-          "p95": 0.11285311133309193
+          "rmse": 0.061251834026148186,
+          "maximum": 0.22612095147644773,
+          "median": 0.04340405083161297,
+          "p95": 0.1128530892410503
         },
-        "watercut_error": 0.052803611602815326,
-        "source": "results/transport/fields/norne_p08/norne_p08_nn_r1.step7.field"
+        "watercut_error": 0.05280361762899016
       },
       "cheb": {
         "field": {
-          "rmse": 0.06126507397031895,
-          "maximum": 0.22609726813283343,
-          "median": 0.04340745921899358,
-          "p95": 0.11291328476553941
+          "rmse": 0.061265051920801415,
+          "maximum": 0.2260972654144821,
+          "median": 0.04340744965878374,
+          "p95": 0.11291326719519644
         },
-        "watercut_error": 0.052872049344725225,
-        "source": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step7.field"
+        "watercut_error": 0.05287205537090006
       },
       "srdm": {
         "field": {
-          "rmse": 0.037543505673237505,
-          "maximum": 0.20983186324729997,
-          "median": 0.020770635320630615,
-          "p95": 0.07144654148814454
+          "rmse": 0.03754348210272006,
+          "maximum": 0.20983179104483574,
+          "median": 0.020770615972646622,
+          "p95": 0.07144643559148625
         },
-        "watercut_error": 0.026266889990656572,
-        "source": "archive:transport_additions_20261020/downloaded/results/norne_p08_srdm_bt.step11.field"
+        "watercut_error": 0.02626689601683141
       }
     }
   },
   {
     "time": 400000.0,
     "reference_change": {
-      "rmse": 0.0005373896945134394,
-      "maximum": 0.009145645151433887,
-      "median": 0.00023781254683763464,
-      "p95": 0.0009266564747502204
+      "rmse": 0.0005373753179640745,
+      "maximum": 0.009145882890221113,
+      "median": 0.00023781574826869933,
+      "p95": 0.0009265953722771056
     },
-    "reference_watercut_change": 0.0004378404963197302,
+    "reference_watercut_change": 0.00043782935892511254,
     "methods": {
       "nn": {
         "field": {
-          "rmse": 0.05620301916401767,
-          "maximum": 0.24644747939317524,
-          "median": 0.041866014030396914,
-          "p95": 0.10131940441971973
+          "rmse": 0.05620300513004121,
+          "maximum": 0.24644741856808922,
+          "median": 0.041866010831604905,
+          "p95": 0.10131933678058061
         },
-        "watercut_error": 0.05485273770039367,
-        "source": "results/transport/fields/norne_p08/norne_p08_nn_r1.step8.field"
+        "watercut_error": 0.054852726564379395
       },
       "cheb": {
         "field": {
-          "rmse": 0.056216591695110806,
-          "maximum": 0.24642283893603695,
-          "median": 0.04187548204715286,
-          "p95": 0.10137544516770156
+          "rmse": 0.056216577658798936,
+          "maximum": 0.24642277811095092,
+          "median": 0.04187547374583078,
+          "p95": 0.10137540887292375
         },
-        "watercut_error": 0.05494540232958256,
-        "source": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step8.field"
+        "watercut_error": 0.05494539119356828
       },
       "srdm": {
         "field": {
-          "rmse": 0.032575345303064406,
-          "maximum": 0.21792404953431027,
-          "median": 0.020563407290118685,
-          "p95": 0.06059332300449351
+          "rmse": 0.03257533093611975,
+          "maximum": 0.21792398870922425,
+          "median": 0.020563407033119985,
+          "p95": 0.06059328918943944
         },
-        "watercut_error": 0.029966419522823307,
-        "source": "archive:transport_additions_20261020/downloaded/results/norne_p08_srdm_bt.step13.field"
+        "watercut_error": 0.02996640838680903
       }
     }
   },
   {
     "time": 500000.0,
     "reference_change": {
-      "rmse": 0.00041760263264623454,
-      "maximum": 0.008476104530455913,
-      "median": 0.0002066044717642379,
-      "p95": 0.0007050474215179565
+      "rmse": 0.0004175936013260722,
+      "maximum": 0.008476041750912044,
+      "median": 0.000206604601200977,
+      "p95": 0.0007050189710536832
     },
-    "reference_watercut_change": 0.0002892797268247982,
+    "reference_watercut_change": 0.0002892706272803469,
     "methods": {
       "nn": {
         "field": {
-          "rmse": 0.04962606200295735,
-          "maximum": 0.25041583954346675,
-          "median": 0.038116175791614665,
-          "p95": 0.0883435787926123
+          "rmse": 0.049626053138337824,
+          "maximum": 0.2504158313744513,
+          "median": 0.03811616513053076,
+          "p95": 0.08834356272003713
         },
-        "watercut_error": 0.04251829406620278,
-        "source": "results/transport/fields/norne_p08/norne_p08_nn_r1.step9.field"
+        "watercut_error": 0.042518284964155884
       },
       "cheb": {
         "field": {
-          "rmse": 0.04963865463276841,
-          "maximum": 0.2503970775256453,
-          "median": 0.03814079822280414,
-          "p95": 0.08836130070289182
+          "rmse": 0.04963864576651071,
+          "maximum": 0.2503970693566298,
+          "median": 0.03814079117407543,
+          "p95": 0.08836128572011985
         },
-        "watercut_error": 0.04260495465920955,
-        "source": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step9.field"
+        "watercut_error": 0.042604945557162655
       },
       "srdm": {
         "field": {
-          "rmse": 0.03305377893741177,
-          "maximum": 0.20629642129798137,
-          "median": 0.024042013474185997,
-          "p95": 0.05847434664661386
+          "rmse": 0.03305377043628882,
+          "maximum": 0.2062964131289659,
+          "median": 0.024042003519122557,
+          "p95": 0.05847432543210662
         },
-        "watercut_error": 0.027235442766183393,
-        "source": "archive:transport_additions_20261020/downloaded/results/norne_p08_srdm_bt.step14.field"
+        "watercut_error": 0.0272354336641365
       }
     }
   },
   {
     "time": 600000.0,
     "reference_change": {
-      "rmse": 0.0003648372264410754,
-      "maximum": 0.01778555396037191,
-      "median": 0.0001731644572223745,
-      "p95": 0.0005514717402757216
+      "rmse": 0.00036483155009538215,
+      "maximum": 0.01778549080523069,
+      "median": 0.00017315772866888235,
+      "p95": 0.0005514647806039938
     },
-    "reference_watercut_change": 0.00017248329384245142,
+    "reference_watercut_change": 0.00017247834442402077,
     "methods": {
       "nn": {
         "field": {
-          "rmse": 0.04485207709274424,
-          "maximum": 0.23988468778024793,
-          "median": 0.03376420361940524,
-          "p95": 0.07759346754337522
+          "rmse": 0.04485207134231292,
+          "maximum": 0.23988468748038105,
+          "median": 0.03376419928765306,
+          "p95": 0.07759345098780533
         },
-        "watercut_error": 0.033103646916059604,
-        "source": "results/transport/fields/norne_p08/norne_p08_nn_r1.step10.field"
+        "watercut_error": 0.03310364196459714
       },
       "cheb": {
         "field": {
-          "rmse": 0.04486445517532139,
-          "maximum": 0.23984068590246443,
-          "median": 0.03379852009786253,
-          "p95": 0.07759859912556358
+          "rmse": 0.04486444942383481,
+          "maximum": 0.23984068560259755,
+          "median": 0.03379852004537715,
+          "p95": 0.07759859257658212
         },
-        "watercut_error": 0.03319213262774934,
-        "source": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step10.field"
+        "watercut_error": 0.033192127676286876
       },
       "srdm": {
         "field": {
-          "rmse": 0.033270962751233,
-          "maximum": 0.2191134632427878,
-          "median": 0.02418226914704802,
-          "p95": 0.05558740677083481
+          "rmse": 0.033270957372352854,
+          "maximum": 0.21911346294292092,
+          "median": 0.024182265152078775,
+          "p95": 0.055587386737580395
         },
-        "watercut_error": 0.023056957974072256,
-        "source": "archive:transport_additions_20261020/downloaded/results/norne_p08_srdm_bt.step15.field"
+        "watercut_error": 0.023056953022609794
       }
     }
   },
   {
     "time": 700000.0,
     "reference_change": {
-      "rmse": 0.0003064097337371137,
-      "maximum": 0.011751750373727249,
-      "median": 0.00014944756704993178,
-      "p95": 0.00046235435768874586
+      "rmse": 0.000306405554128286,
+      "maximum": 0.011751693614280433,
+      "median": 0.0001494455317595511,
+      "p95": 0.0004623434823794816
     },
-    "reference_watercut_change": 0.0001505714479222986,
+    "reference_watercut_change": 0.00015056855851247608,
     "methods": {
       "nn": {
         "field": {
-          "rmse": 0.04006033178134206,
-          "maximum": 0.23859138552955406,
-          "median": 0.029342981400776624,
-          "p95": 0.0680535691603899
+          "rmse": 0.04006032762028026,
+          "maximum": 0.23859137619692447,
+          "median": 0.02934297438606337,
+          "p95": 0.06805355679421769
         },
-        "watercut_error": 0.028146668923599627,
-        "source": "results/transport/fields/norne_p08/norne_p08_nn_r1.step11.field"
+        "watercut_error": 0.028146666032937695
       },
       "cheb": {
         "field": {
-          "rmse": 0.04006732773944034,
-          "maximum": 0.23852864772559348,
-          "median": 0.02935749009681038,
-          "p95": 0.06801540752424104
+          "rmse": 0.0400673235779578,
+          "maximum": 0.2385286383929639,
+          "median": 0.029357489807367576,
+          "p95": 0.06801540150081471
         },
-        "watercut_error": 0.028258150614494437,
-        "source": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step11.field"
+        "watercut_error": 0.028258147723832505
       },
       "srdm": {
         "field": {
-          "rmse": 0.028080116870035633,
-          "maximum": 0.22393313210851654,
-          "median": 0.018906442570699955,
-          "p95": 0.04617915981623845
+          "rmse": 0.028080112804874175,
+          "maximum": 0.22393312277588695,
+          "median": 0.01890643787982471,
+          "p95": 0.04617914876939639
         },
-        "watercut_error": 0.018188065568380263,
-        "source": "archive:transport_additions_20261020/downloaded/results/norne_p08_srdm_bt.step18.field"
+        "watercut_error": 0.01818806267771833
       }
     }
   },
   {
     "time": 800000.0,
     "reference_change": {
-      "rmse": 0.00027795487414334627,
-      "maximum": 0.012485127739896833,
-      "median": 0.00012895242911670213,
-      "p95": 0.00039803435735851194
+      "rmse": 0.00027795175726868306,
+      "maximum": 0.012485080857751758,
+      "median": 0.00012894935590446188,
+      "p95": 0.0003980264985018465
     },
-    "reference_watercut_change": 0.00011674252082038983,
+    "reference_watercut_change": 0.00011674068000733229,
     "methods": {
       "nn": {
         "field": {
-          "rmse": 0.03511240694436173,
-          "maximum": 0.26498151497826933,
-          "median": 0.025798088846313183,
-          "p95": 0.06001983137552822
+          "rmse": 0.03511240374680535,
+          "maximum": 0.2649815146986517,
+          "median": 0.02579808728767874,
+          "p95": 0.06001981979939477
         },
-        "watercut_error": 0.0233620396572356,
-        "source": "results/transport/fields/norne_p08/norne_p08_nn_r1.step12.field"
+        "watercut_error": 0.023362037815617298
       },
       "cheb": {
         "field": {
-          "rmse": 0.03510335120186956,
-          "maximum": 0.264922198283773,
-          "median": 0.02576766633210892,
-          "p95": 0.059994685907978886
+          "rmse": 0.03510334800463088,
+          "maximum": 0.2649221980041554,
+          "median": 0.02576766435462463,
+          "p95": 0.059994682513664334
         },
-        "watercut_error": 0.023486903180475416,
-        "source": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step12.field"
+        "watercut_error": 0.023486901338857114
       },
       "srdm": {
         "field": {
-          "rmse": 0.025443802130335293,
-          "maximum": 0.24003401091376395,
-          "median": 0.01776596287289478,
-          "p95": 0.042709935445181056
+          "rmse": 0.025443799024704696,
+          "maximum": 0.24003399389016014,
+          "median": 0.017765960954299054,
+          "p95": 0.04270992781621296
         },
-        "watercut_error": 0.01602668648280936,
-        "source": "archive:transport_additions_20261020/downloaded/results/norne_p08_srdm_bt.step19.field"
+        "watercut_error": 0.016026684641191058
       }
     }
   },
   {
     "time": 900000.0,
     "reference_change": {
-      "rmse": 0.00020605619013325206,
-      "maximum": 0.004291125303812898,
-      "median": 0.00011170221782175194,
-      "p95": 0.0003484372423018883
+      "rmse": 0.00020605375651162102,
+      "maximum": 0.004291096299562425,
+      "median": 0.00011169975029623469,
+      "p95": 0.00034842743636675496
     },
-    "reference_watercut_change": 0.00011368425565194684,
+    "reference_watercut_change": 0.00011368289446989088,
     "methods": {
       "nn": {
         "field": {
-          "rmse": 0.030981682860779736,
-          "maximum": 0.24736716906291972,
-          "median": 0.0228113364295619,
-          "p95": 0.05436725787641571
+          "rmse": 0.030981680401143793,
+          "maximum": 0.24736716827644645,
+          "median": 0.02281133642375255,
+          "p95": 0.05436725186466008
         },
-        "watercut_error": 0.02246643945305371,
-        "source": "results/transport/fields/norne_p08/norne_p08_nn_r1.step13.field"
+        "watercut_error": 0.022466438091496066
       },
       "cheb": {
         "field": {
-          "rmse": 0.030950413782774844,
-          "maximum": 0.24725000250548046,
-          "median": 0.022722914858496646,
-          "p95": 0.05432830869744962
+          "rmse": 0.03095041132395873,
+          "maximum": 0.24725000171900718,
+          "median": 0.022722916871177112,
+          "p95": 0.05432830436057903
         },
-        "watercut_error": 0.022597119081522177,
-        "source": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step13.field"
+        "watercut_error": 0.022597117719964532
       },
       "srdm": {
         "field": {
-          "rmse": 0.021288552639859248,
-          "maximum": 0.23325142532782395,
-          "median": 0.014356588110651214,
-          "p95": 0.03696648144568782
+          "rmse": 0.021288550213731272,
+          "maximum": 0.23325140543737605,
+          "median": 0.014356587193503523,
+          "p95": 0.036966478226195296
         },
-        "watercut_error": 0.014414921854799978,
-        "source": "archive:transport_additions_20261020/downloaded/results/norne_p08_srdm_bt.step22.field"
+        "watercut_error": 0.014414920493242334
       }
     }
   },
   {
     "time": 1000000.0,
     "reference_change": {
-      "rmse": 0.0001790530781293649,
-      "maximum": 0.004558419334592334,
-      "median": 9.780289155547628e-05,
-      "p95": 0.00031226424212303915
+      "rmse": 0.00017905110932897494,
+      "maximum": 0.004558408481780921,
+      "median": 9.779928240916114e-05,
+      "p95": 0.00031225800806872195
     },
-    "reference_watercut_change": 9.613898060090165e-05,
+    "reference_watercut_change": 9.613780519179826e-05,
     "methods": {
       "nn": {
         "field": {
-          "rmse": 0.02812422289346437,
-          "maximum": 0.20890668483437314,
-          "median": 0.020272780709692073,
-          "p95": 0.050020196482176774
+          "rmse": 0.028124220883908202,
+          "maximum": 0.2089066774364384,
+          "median": 0.020272780425661274,
+          "p95": 0.050020194284381626
         },
-        "watercut_error": 0.020198043229787244,
+        "watercut_error": 0.020198042054155763,
         "source": "results/transport/fields/norne_p08/norne_p08_nn_r1.step14.field"
       },
       "cheb": {
         "field": {
-          "rmse": 0.028070414680209148,
-          "maximum": 0.20888147061197382,
-          "median": 0.020142667803706993,
-          "p95": 0.0499878037879646
+          "rmse": 0.028070412671758343,
+          "maximum": 0.20888146321403908,
+          "median": 0.02014266703893175,
+          "p95": 0.049987799660273335
         },
-        "watercut_error": 0.020329047031065195,
+        "watercut_error": 0.020329045855433714,
         "source": "results/transport/fields/norne_p08/norne_p08_cheb_r1.step14.field"
       },
       "srdm": {
         "field": {
-          "rmse": 0.019828253690408203,
-          "maximum": 0.18041968746504408,
-          "median": 0.013475926337997213,
-          "p95": 0.03519875857273284
+          "rmse": 0.019828251718985477,
+          "maximum": 0.18041968006710934,
+          "median": 0.013475925749899198,
+          "p95": 0.03519875464938565
         },
-        "watercut_error": 0.013817406205512639,
-        "source": "archive:transport_additions_20261020/downloaded/results/norne_p08_srdm_bt.step23.field"
+        "watercut_error": 0.013817405029881158,
+        "source": "results/transport/fields/norne_p08/norne_p08_srdm_bt.step23.field"
       }
     }
   }
