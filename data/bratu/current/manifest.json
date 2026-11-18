@@ -1,0 +1,32 @@
+{
+  "description": "Grids and desired-branch references for the Bratu comparisons",
+  "spatial_shape": [
+    19,
+    19,
+    9
+  ],
+  "parameters": "case 0 = (36, 150); cases 1-15 = remaining combinations of Lambda 30, 32, 34, 36 and Q 100, 125, 150, 175 in order",
+  "references": "Original-equation roots initialized from fitted solutions",
+  "reference_sha256": {
+    "state_0.bin": "01786444c97c185c72813657090d79d1f200d1c7b53eaf9621077df180f357a4",
+    "state_1.bin": "b07080dbe7577d346be437c53547766bf63221010a94b1669a886f1503429517",
+    "state_10.bin": "7661a098a9dd82baa277b34257aaedf899079b4ea1c4e389eb804ef9170f2bf1",
+    "state_11.bin": "dc7c3328692f43a7819df5bd23ed6c16e5ef86692b9611abc577e3c660597f9d",
+    "state_12.bin": "e1f22bb8224d7029c8084237a62f0df3cd406901b183a2af5565ab1be91b1095",
+    "state_13.bin": "e106bb0b5bb05c5d3788de3b20c803393f4b25418b2f9d0cd0e3b0f0fac74bde",
+    "state_14.bin": "cec9985f2cd58a2d66318dad2fc5a6e8f851c53d6ee7cf7b10795d456f641159",
+    "state_15.bin": "68822ef26298ac25bf4047f5db9eff5d4fc148ec99e18a532949b93df6918bf8",
+    "state_2.bin": "f72c9af7df32ac0d2dbd9c2fc8c199de5234251a886d045658a92d43a68190b5",
+    "state_3.bin": "797eeb9d722e5524e69639741613152dc2c8333b3b407aed942f3fd4c71bf2ef",
+    "state_4.bin": "175a049abc26d559ccfc50263ece1c6089842b3d9806a248b700aa7222ef40b5",
+    "state_5.bin": "1e524bb1f9c48448c64000880104a3b7fd34f8d64a77fcb6073f1cb37fee6155",
+    "state_6.bin": "0f198192350a7426ba4a974b218e014d6ab30631b21bd2369f3fd1211c4a24be",
+    "state_7.bin": "9992d245907cfc1cc899bb123954d411a80a29f47f39c507ba33d50dc1b02eef",
+    "state_8.bin": "6c1f6ce6fa888476a74060280c7ed671a02f78bb0ee8a8f67df5ebb5282fdbeb",
+    "state_9.bin": "b8d2de0c4beabe3bbb0277e977a31ea5260fe35cae4c931135370f30b7fed27a"
+  },
+  "grid_sha256": {
+    "two_cell.bin": "25eba2e2200892cda4675822ae7bb90633041e7738d89c64c620f27b0a7c0bfb",
+    "spatial.bin": "8aeab93399f6221e960fe7cb551907e4e3ae3781ef0ce42e7473d2f8247fad0a"
+  }
+}

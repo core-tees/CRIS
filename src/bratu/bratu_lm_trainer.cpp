@@ -14,6 +14,7 @@
 #include <map>
 
 namespace fs = std::filesystem;
+int train_regularized_bratu(const std::map<std::string,std::string>& args);
 using Model = native_lm::ScalarTanhNetwork<2>;
 using Data = std::vector<bratu::Sample>;
 using Clock = std::chrono::steady_clock;
@@ -215,6 +216,13 @@ int main(int argc,char** argv) {
     try {
         std::map<std::string,std::string> args;
         for(int i=1;i<argc;++i) {std::string key=argv[i];if(key=="--self-test"){test();return 0;}if(i+1==argc)throw std::runtime_error("Missing argument");args[key]=argv[++i];}
+        if(args.count("--data-dir")) {
+            if(args.count("--train") || args.count("--validation") || args.count("--resume") || args.count("--weight"))
+                throw std::runtime_error("Cannot mix regularized data settings with legacy Bratu options");
+            return train_regularized_bratu(args);
+        }
+        for(const auto* key:{"--regularization","--slope-min","--slope-max","--slope-weight","--curvature-weight"})
+            if(args.count(key))throw std::runtime_error("Regularity settings require --data-dir");
         auto value=[&](const std::string& key,const std::string& fallback){auto it=args.find(key);return it==args.end()?fallback:it->second;};
         int threads=std::stoi(value("--threads","16")); at::set_num_threads(threads);omp_set_dynamic(0);omp_set_num_threads(threads);mkl_set_num_threads_local(threads);
         auto data=load(args.at("--train")),validation=load(args.at("--validation"));const fs::path dir=args.at("--run-dir");

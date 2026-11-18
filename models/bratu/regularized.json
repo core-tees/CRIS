@@ -1,0 +1,22 @@
+{
+  "model": "regularized.bin",
+  "sha256": "d1efe25f5356434a228436b9f9b239f6067d2b424fff87c8d70920eea59582c8",
+  "parameter_count": 1425,
+  "architecture": [
+    2,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    1
+  ],
+  "inputs": [
+    "alpha",
+    "beta"
+  ],
+  "checkpoint_iteration": 800,
+  "training": "data/bratu/regularized_training",
+  "deployment": "asinh alpha input, residual skip and bounded far-field input transformation; see src/bratu/petsc_bratu.cpp"
+}

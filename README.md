@@ -2,7 +2,7 @@
 
 CRIS approximates the solution of a recurring elemental nonlinear equation, then couples these local predictions into a global solve. The examples compare the original discretized equations with the approximate CRIS reformulation using the same physical model and grid.
 
-Four workflows cover Bratu branch selection and convergence, inverse construction, transport comparisons, and accuracy under refinement. Start with the Python-only Bratu example, then build the transport solver. Supplied models let you run the simulations without retraining.
+Four workflows cover Bratu branch selection and convergence, inverse construction, transport comparisons, and accuracy under refinement. Supplied models let you run the simulations without retraining.
 
 ## Setup
 
@@ -23,17 +23,26 @@ Git LFS downloads the fitted models, training data and benchmark grids. Run the 
 
 ## 1. Bratu: branch selection and convergence
 
+Build the PETSc executables following [the build instructions](docs/BUILD.md), then run:
+
 ```bash
 python experiments/bratu/two_cell.py
 ```
 
-This solves the two-cell problem from a grid of initial states and compares the original formulation with learned CRIS. The analytic inverse checks the selected branch. The command saves convergence outcomes, Newton counts and `runs/bratu/convergence.png`.
+This compares classical Newton, cellwise ASPIN and neural CRIS from 8,281 initial states using full Newton steps. The same two-input fit is used in both the two-cell and three-dimensional examples. The command saves the solver outcomes, Newton counts and `runs/bratu/convergence.png`.
 
-For the spatial error example:
+For a short installation check, run `python experiments/bratu/two_cell.py --limit 100 --out runs/bratu_smoke`.
+
+For the three-dimensional example or the 16 reaction--forcing combinations:
 
 ```bash
-python experiments/bratu/field_accuracy.py
+python tools/run_bratu.py --case spatial --out runs/bratu_spatial
+python tools/run_bratu.py --case sweep --jobs 4 --out runs/bratu_sweep
 ```
+
+Use `--method original`, `neural` or `aspin` for one formulation, `--limit` for a short check and `--newton backtracking` to select a different outer Newton policy. The default `ordinary` setting reproduces the full-step comparisons. Both cases use the same saved fit and desired-branch reference solutions. `--dry-run` prints the commands.
+
+To independently check the packaged map and its derivative, run `python experiments/bratu/verify.py` after building PETSc.
 
 ## 2. Construct an inverse
 
@@ -64,7 +73,7 @@ python tools/run_transport.py --case norne --exponent 0.2 --newton ordinary --ou
 python tools/run_transport.py --case edfm --dt 1000 --out runs/step1000
 ```
 
-Omit `--steps` for complete trajectories. For GPU runs, pass `--executable build-gpu/petsc_transport_gpu`. The paper's timing measurements used the GPU implementation. Field differences between adaptive trajectories can include temporal-discretization differences.
+Omit `--steps` for complete trajectories. For CUDA-capable GPUs, build the GPU executable and pass `--executable build-gpu/petsc_transport_gpu`. The paper's timing measurements used the GPU implementation. Field differences between adaptive trajectories can include temporal-discretization differences.
 
 ## 4. Accuracy and refinement
 

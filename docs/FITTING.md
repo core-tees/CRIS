@@ -14,11 +14,17 @@ This small example generates 256 inputs per split. Omit `--smoke` for the full d
 
 ## Neural fit
 
-Install PyTorch with `python -m pip install -r requirements-training.txt`. A short CPU example:
+Install the training dependencies with `python -m pip install -r requirements-training.txt`. For GPU fitting, also ensure that the installed PyTorch build supports CUDA and is compatible with the NVIDIA driver. Check this with `python -c "import torch; print(torch.cuda.is_available(), torch.version.cuda)"`. A short CPU example:
 
 ```bash
 python training/transport/train_impl.py --data runs/targets --out runs/network --device cpu --active 64 --seconds 20 --width 13 --method lm
 python tools/export_transport.py --checkpoint runs/network/best.npz --out runs/exported_models
+```
+
+For a short CUDA check using the supplied data, run:
+
+```bash
+python training/transport/train_impl.py --data data/fitting --out runs/network_gpu_smoke --device cuda --active 64 --seconds 20 --width 13 --method lm --smoke
 ```
 
 This short run introduces fitting and export. To train the reported architecture with the full dataset and 30-minute budget:
@@ -52,8 +58,16 @@ Select the corresponding exponent when exporting and running a model. Local eval
 
 ## Bratu
 
-`training/bratu/regenerate_targets.py` generates labels at the supplied Bratu inputs using the native target solver. With the optional native trainer built:
+The current two-input Bratu fit uses labeled roots and a slope-and-curvature regularity penalty. Its supplied training and validation rows, exterior regularity samples and cold-start initialization are in `data/bratu/regularized_training/`. With the optional native trainer built:
 
 ```bash
-build-train/bratu_lm_trainer --train data/bratu/train.bin --validation data/bratu/validation.bin --run-dir runs/bratu_training --weight 0 --max-accepted 10000 --threads 16
+python training/bratu/regenerate_targets.py --out runs/bratu_targets
+mkdir -p runs/bratu_training
+build-train/bratu_lm_trainer --data-dir runs/bratu_targets --run-dir runs/bratu_training --regularization 1e-8 --max-proposals 800
 ```
+
+The same LM executable supports both Bratu objectives. Set `--regularization 0` to turn both penalties off. To control them separately, use `--slope-weight` and `--curvature-weight`; `--slope-min` and `--slope-max` set the desired slope interval. The trainer writes the best validation checkpoint, latest weights and resumable optimizer state. The supplied `models/bratu/regularized.bin` is the checkpoint used by the manuscript; it is shared by the two-cell and 3D runs. The deployment evaluator also applies the input transformation used in those runs. Training can be repeated independently, but numerical differences between systems can change the selected checkpoint.
+
+To continue an interrupted run, pass its latest `optimizer_state_0.bin` or `optimizer_state_1.bin` with `--resume-state`, along with the same data directory and regularity settings. `--max-proposals` is the total iteration limit, including the recovered iterations.
+
+The label generator evaluates the principal Lambert-W branch at the supplied inputs and retains the supplied regularity samples and initialization. The executable also retains the earlier Bratu data and objective interface (`--train`, `--validation` and optional `--weight`).

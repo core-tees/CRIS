@@ -1,7 +1,7 @@
 [
   {
     "leaves": 64,
-    "source": "archive:transport_cheb_a100_cost_20261022/results/3216764/repeat1_leaves64.pkl",
+    "source_file": "repeat1_leaves64.pkl",
     "sha256": "59594fde6a0339e0567353bcd54955211e22a039b82ecdcc0c3ebf6a8fcd13ec",
     "scores": {
       "validation": {
@@ -28,7 +28,7 @@
   },
   {
     "leaves": 256,
-    "source": "archive:transport_cheb_a100_cost_20261022/results/3216764/repeat1_leaves256.pkl",
+    "source_file": "repeat1_leaves256.pkl",
     "sha256": "c6d8974ae9eaa02bf36146a3a9ad53833f8d1318e3c32173b40dfa80a9dbf533",
     "scores": {
       "validation": {
@@ -55,7 +55,7 @@
   },
   {
     "leaves": 1024,
-    "source": "archive:transport_cheb_a100_cost_20261022/results/3216764/repeat1_leaves1024.pkl",
+    "source_file": "repeat1_leaves1024.pkl",
     "sha256": "cc01d4e61a5b12bd9629685b050aa4b0d56df2a8507edd71e457a19c91fbe8fa",
     "scores": {
       "validation": {

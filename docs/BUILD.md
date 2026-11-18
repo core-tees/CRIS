@@ -20,25 +20,26 @@ cmake -S . -B build-linux -DCRIS_PETSC=ON -DCMAKE_BUILD_TYPE=Release
 cmake --build build-linux -j 4
 ```
 
-This builds `petsc_transport` and `labels_cpu`. Transport comparisons, column accuracy studies and Case C references all use `petsc_transport`. PETSc installed by a package manager may already be discoverable without setting `PKG_CONFIG_PATH`.
+This builds `petsc_transport`, `petsc_bratu` and `labels_cpu`. Transport comparisons, column accuracy studies and Case C references use `petsc_transport`; the Bratu comparisons use `petsc_bratu`. PETSc installed by a package manager may already be discoverable without setting `PKG_CONFIG_PATH`.
 
-For CUDA, PETSc must support CUDA vectors and matrices:
+For GPU execution, use a CUDA-capable NVIDIA GPU and a compatible CUDA-enabled PETSc installation. Set `CUDA_ARCH` to the compute capability of the target GPU (for example, `86`):
 
 ```bash
-cmake -S . -B build-gpu -DCRIS_CUDA=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_CUDA_ARCHITECTURES=80
+export CUDA_ARCH=86  # Replace with the target GPU's compute capability.
+cmake -S . -B build-gpu -DCRIS_CUDA=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_CUDA_ARCHITECTURES="$CUDA_ARCH"
 cmake --build build-gpu -j 4
 ```
 
-Set the CUDA architecture for your GPU. The paper used an A100, PETSc 3.24.0, GCC 12.3 and CUDA 12.6. GPU fitting uses PyTorch independently of PETSc.
+The GPU solver uses double precision; GPU fitting uses CUDA-enabled PyTorch independently of PETSc. Runtime depends on the hardware and software used.
 
 ## Bratu training
 
-The optional native Bratu trainer requires LibTorch and Intel MKL. Set `CMAKE_PREFIX_PATH` to their CMake package directories and configure with `-DCRIS_BRATU_TRAINING=ON`. The supplied Python Bratu examples use saved weights and do not require these libraries.
+The optional native Bratu trainer requires LibTorch and Intel MKL. Set `CMAKE_PREFIX_PATH` to their CMake package directories and configure with `-DCRIS_BRATU_TRAINING=ON`. The Bratu simulations use saved weights and do not require these libraries.
 
 ## Stored inputs
 
 `data/transport/*.bin` starts with five little-endian 64-bit integers: format magic, cell count, connection count, scheduled-step count and law marker. The payload contains cell storage, outgoing flow, injection, compressed upstream adjacency, edge flow rates and timesteps. `TransportGraph.hpp` specifies the ordering. `.initial` and `.field` contain one little-endian double per active cell.
 
-Bratu datasets start with `BRATUD01` and a 64-bit count, followed by rows of `a`, beta, root and local slope as little-endian doubles. Transport fitting `.npz` files store raw inputs, normalized inputs (`x`), root targets (`y`) and sampling membership. Model exports are read by `LocalInverse.hpp`; Chebyshev trees contain 74 doubles per node.
+The older Bratu datasets start with `BRATUD01` and a 64-bit count, followed by rows of `a`, beta, root and local slope as little-endian doubles. The regularized Bratu training data contain raw rows of four little-endian doubles: input, reaction coefficient, target and weight. Transport fitting `.npz` files store raw inputs, normalized inputs (`x`), root targets (`y`) and sampling membership. Model exports are read by `LocalInverse.hpp`; Chebyshev trees contain 74 doubles per node.
 
 Build directories and generated runs are ignored by Git. Use a new output directory for each comparison.

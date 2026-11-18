@@ -35,6 +35,14 @@ struct LmControl {
     double damping_max{1.0e10};
     bool diagonal_damping{false};
     bool synchronize_cuda_after_solve{false};
+    // Optional scaled Cholesky and trial-step policy; defaults preserve the
+    // original one-proposal LM behavior.
+    bool scaled_cholesky{false};
+    int max_damping_trials{1};
+    int max_step_trials{1};
+    double step_reduction{0.5};
+    double damping_min{1.0e-15};
+    bool stop_on_damping_max{false};
     int max_iterations{0};
     int max_accepted_updates{0};
     int max_validation_failures{0};
@@ -97,6 +105,9 @@ LmRunResult<Model> optimize(Model model, const LmControl& control,
                             MakeCandidate&& make_candidate,
                             EvaluateCandidate&& evaluate_candidate,
                             ObserveIteration&& observe_iteration) {
+    if (control.max_damping_trials < 1 || control.max_step_trials < 1 ||
+        !(control.step_reduction > 0.0 && control.step_reduction <= 1.0))
+        throw std::invalid_argument("Invalid LM trial settings");
     LmLinearization linearization;
     bool refresh_required = true;
     LmRunResult<Model> result{std::move(model), state, "max_iterations"};
@@ -127,56 +138,75 @@ LmRunResult<Model> optimize(Model model, const LmControl& control,
         }
 
         LmTimings timings = linearization_refreshed ? linearization.timings : LmTimings{};
-        torch::Tensor hessian = linearization.hessian.clone();
-        if (control.diagonal_damping) {
-            torch::Tensor diagonal = hessian.diag().clamp_min(1.0e-12);
-            hessian.diagonal(0, 0, 1).add_(result.state.damping * diagonal);
-        } else {
-            // `damping` is expressed in sample-mean loss units while the
-            // stored normal equations are sums of residual products.
-            hessian.diagonal(0, 0, 1).add_(
-                result.state.damping * static_cast<double>(linearization.sample_count));
-        }
-        const auto solve_started = std::chrono::steady_clock::now();
-        torch::Tensor step = torch::linalg_solve(hessian, -linearization.gradient);
-        if (control.synchronize_cuda_after_solve) torch::cuda::synchronize();
-        timings.solve_seconds = std::chrono::duration<double>(
-            std::chrono::steady_clock::now() - solve_started).count();
-
-        Model candidate = make_candidate(result.model, step);
-        CandidateEvaluation evaluation = evaluate_candidate(candidate);
-        timings.candidate_seconds = evaluation.timings.candidate_seconds;
-        timings.candidate_train_seconds = evaluation.timings.candidate_train_seconds;
-        timings.candidate_validation_seconds = evaluation.timings.candidate_validation_seconds;
-
+        torch::Tensor hessian;
         LmIteration event;
         event.linearization_refreshed = linearization_refreshed;
-        if (std::isfinite(evaluation.objective_loss) &&
-            evaluation.objective_loss < result.state.objective_loss) {
-            result.model = std::move(candidate);
-            result.state.objective_loss = evaluation.objective_loss;
-            result.state.training_mse = evaluation.training_mse;
-            result.state.validation_mse = evaluation.validation_mse;
-            result.state.damping = std::max(result.state.damping / control.damping_decrease, 1.0e-15);
-            ++result.state.accepted_updates;
-            event.status = LmIteration::Status::Accepted;
-            if (result.state.validation_mse < result.state.best_validation_mse) {
-                result.state.best_validation_mse = result.state.validation_mse;
-                result.state.validation_failures = 0;
-                event.validation_improved = true;
+        bool accepted = false;
+        for (int attempt = 0; attempt < control.max_damping_trials && !accepted; ++attempt) {
+            const auto solve_started = std::chrono::steady_clock::now();
+            torch::Tensor step;
+            bool valid_step = true;
+            if (control.scaled_cholesky) {
+                auto diagonal = torch::sqrt(linearization.hessian.diag().clamp_min(1.0e-16));
+                auto matrix = linearization.hessian / diagonal.unsqueeze(1) / diagonal.unsqueeze(0);
+                matrix.diagonal().add_(result.state.damping);
+                auto factorization = torch::linalg_cholesky_ex(matrix);
+                if (std::get<1>(factorization).item<int>() != 0) valid_step = false;
+                else step = torch::cholesky_solve(-linearization.gradient / diagonal.unsqueeze(1),
+                                                   std::get<0>(factorization)).squeeze(1) / diagonal;
             } else {
-                ++result.state.validation_failures;
+                // Rebuild when the damping changes; preserve existing default behavior.
+                hessian = linearization.hessian.clone();
+                if (control.diagonal_damping) {
+                    auto diagonal = hessian.diag().clamp_min(1.0e-12);
+                    hessian.diagonal(0, 0, 1).add_(result.state.damping * diagonal);
+                } else {
+                    hessian.diagonal(0, 0, 1).add_(result.state.damping * static_cast<double>(linearization.sample_count));
+                }
+                step = torch::linalg_solve(hessian, -linearization.gradient);
             }
-            refresh_required = true;
-        } else {
-            result.state.damping = std::min(
-                result.state.damping * control.damping_increase, control.damping_max);
+            if (control.synchronize_cuda_after_solve) torch::cuda::synchronize();
+            timings.solve_seconds += std::chrono::duration<double>(std::chrono::steady_clock::now() - solve_started).count();
+            if (valid_step) {
+                double scale = 1.0;
+                for (int trial = 0; trial < control.max_step_trials; ++trial, scale *= control.step_reduction) {
+                    Model candidate = make_candidate(result.model, scale == 1.0 ? step : step * scale);
+                    CandidateEvaluation evaluation = evaluate_candidate(candidate);
+                    timings.candidate_seconds += evaluation.timings.candidate_seconds;
+                    timings.candidate_train_seconds += evaluation.timings.candidate_train_seconds;
+                    timings.candidate_validation_seconds += evaluation.timings.candidate_validation_seconds;
+                    if (std::isfinite(evaluation.objective_loss) && evaluation.objective_loss < result.state.objective_loss) {
+                        result.model = std::move(candidate);
+                        result.state.objective_loss = evaluation.objective_loss;
+                        result.state.training_mse = evaluation.training_mse;
+                        result.state.validation_mse = evaluation.validation_mse;
+                        result.state.damping = std::max(result.state.damping / control.damping_decrease, control.damping_min);
+                        ++result.state.accepted_updates;
+                        event.status = LmIteration::Status::Accepted;
+                        if (result.state.validation_mse < result.state.best_validation_mse) {
+                            result.state.best_validation_mse = result.state.validation_mse;
+                            result.state.validation_failures = 0;
+                            event.validation_improved = true;
+                        } else ++result.state.validation_failures;
+                        refresh_required = true;
+                        accepted = true;
+                        break;
+                    }
+                }
+            }
+            if (!accepted) result.state.damping = std::min(result.state.damping * control.damping_increase, control.damping_max);
+        }
+        if (!accepted) {
             event.status = LmIteration::Status::Rejected;
             refresh_required = false;
         }
         event.state = result.state;
         event.timings = timings;
         observe_iteration(result.model, event);
+        if (!accepted && control.stop_on_damping_max && result.state.damping >= control.damping_max) {
+            result.stopping_reason = "damping_limit";
+            return result;
+        }
 
         if (control.max_validation_failures > 0 &&
             result.state.validation_failures >= control.max_validation_failures) {

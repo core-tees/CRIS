@@ -1,0 +1,9 @@
+{
+  "warm_start": false,
+  "initialization": "seeded Xavier, zero biases",
+  "seed": 20261116,
+  "trusted_samples": 24000,
+  "regularity_samples": 24000,
+  "full_batch": true,
+  "lambda": 1e-08
+}
