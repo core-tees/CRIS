@@ -9,8 +9,8 @@
 
 namespace native_lm {
 
-// Opt-in, physics-independent recovery envelope. Physics, data and executable
-// identity are checked by the launch manifest; this file protects optimizer
+// Physics-independent recovery envelope. Callers are responsible for checking
+// physics, data and executable compatibility; this file protects optimizer
 // state and both weight vectors against partial writes and accidental damage.
 struct Recovery {
     LmState state;

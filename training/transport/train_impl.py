@@ -1,6 +1,6 @@
 """Three-input FCN: full-data FP64 scaled Cholesky LM."""
 
-import argparse, hashlib, json, math, os, signal, time, traceback
+import argparse, json, math, os, signal, time, traceback
 from pathlib import Path
 import numpy as np
 import torch
@@ -23,8 +23,9 @@ def configure():
 
 
 def sync(device):
-    if str(device).startswith("cuda"):
-        torch.cuda.synchronize()
+    device = torch.device(device)
+    if device.type == "cuda":
+        torch.cuda.synchronize(device)
 
 
 @torch.no_grad()
@@ -72,7 +73,7 @@ def preflight(device):
     step, lr = core.direction(G, g, 0.1)
     assert step is not None and lr < 1e-8
     ds = step * 0.001
-    new, _ = core.objective(v + ds, x, y)
+    new = core.objective(v + ds, x, y)
     assert new < old
     reg = 0.03
     small = G[:7, :7]
@@ -143,20 +144,21 @@ def save(out, name, v, iteration, accepted, active, mu):
 
 
 def run(a):
+    device = torch.device(a.device)
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=False)
-    core.atomic(out / "PREFLIGHT_PASSED.json", preflight(a.device))
+    core.atomic(out / "PREFLIGHT_PASSED.json", preflight(device))
     sets = {}
     for name in ("train", "validation", "endpoint", "quadratic", "singular"):
         z = np.load(Path(a.data) / (name + ".npz"))
         sets[name] = (
-            torch.as_tensor(z["x"], device=a.device),
-            torch.as_tensor(z["y"], device=a.device),
-            torch.as_tensor(z["endpoint"], device=a.device),
+            torch.as_tensor(z["x"], device=device),
+            torch.as_tensor(z["y"], device=device),
+            torch.as_tensor(z["endpoint"], device=device),
         )
     x, physical_y, train_mask = sets["train"]
     y = 2 * physical_y - 1
-    v = core.initial(a.seed, a.device)
+    v = core.initial(a.seed, device)
     n = min(a.active, len(x))
     mu = 0.01
     iteration = accepted = 0
@@ -191,14 +193,13 @@ def run(a):
             else "fixed active set"
         ),
         stopping="budget, explicit STOP, numerical failure or damping ceiling 1e16; no RMSE or slow-progress stop",
-        gpu=torch.cuda.get_device_name() if a.device == "cuda" else "cpu",
-        no_automatic_successor=True,
+        gpu=torch.cuda.get_device_name(device) if device.type == "cuda" else "cpu",
     )
     core.atomic(out / "IDENTITY.json", identity)
     save(out, "initial", v, iteration, accepted, n, mu)
-    if a.device == "cuda":
-        torch.cuda.reset_peak_memory_stats()
-    sync(a.device)
+    if device.type == "cuda":
+        torch.cuda.reset_peak_memory_stats(device)
+    sync(device)
     start = time.perf_counter()
 
     def record(extra):
@@ -268,10 +269,10 @@ def run(a):
         attempts = []
         took = False
         if a.method == "br" and accepted - last_evidence >= 25:
-            sync(a.device)
+            sync(device)
             te = time.perf_counter()
             reg, ev = evidence(G, v, 2 * old, reg, n)
-            sync(a.device)
+            sync(device)
             timings["evidence_seconds"] = time.perf_counter() - te
             last_evidence = accepted
         if reg:
@@ -284,7 +285,7 @@ def run(a):
             used_mu = mu
             ts = time.perf_counter()
             step, lr = core.direction(G, g, mu)
-            sync(a.device)
+            sync(device)
             solve_seconds = time.perf_counter() - ts
             if step is None or not bool(torch.isfinite(step).all()):
                 attempts.append(dict(mu=mu, failure="factorization_or_nonfinite"))
@@ -296,7 +297,7 @@ def run(a):
             for back in range(7):
                 ds = step * alpha
                 predicted = float(-g @ ds - 0.5 * ds @ (G @ ds))
-                candidate, _ = core.objective(v + ds, x[:n], y[:n], False, 65536)
+                candidate = core.objective(v + ds, x[:n], y[:n], 65536)
                 candidate += 0.5 * reg * float((v + ds) @ (v + ds))
                 rho = (
                     (old - candidate) / predicted
@@ -385,7 +386,7 @@ def run(a):
             final_validation=row["validation"],
             active=n,
             peak_gpu_memory_bytes=(
-                torch.cuda.max_memory_allocated() if a.device == "cuda" else None
+                torch.cuda.max_memory_allocated(device) if device.type == "cuda" else None
             ),
         ),
     )

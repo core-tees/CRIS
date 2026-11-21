@@ -143,8 +143,8 @@ PetscErrorCode create_solver(Context& c, Vec& x, Vec& r, Mat& J, SNES& snes) {
 #ifdef CRIS_PETSC_CUDA
   PetscCall(PCFactorSetMatSolverType(pc,MATSOLVERCUSPARSE));
 #endif
-  // Retain genuine linear failures. Iteration-budget exhaustion is separately
-  // accepted through -ksp_converged_maxits true in every final command.
+  // Retain genuine linear failures. Set -ksp_converged_maxits true to accept
+  // iteration-budget exhaustion separately through PETSc's options.
   PetscCall(SNESSetMaxLinearSolveFailures(snes,1));
   PetscCall(SNESSetFromOptions(snes));
   PetscFunctionReturn(PETSC_SUCCESS);

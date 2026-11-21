@@ -8,7 +8,7 @@ cmake --build build --config Release
 ctest --test-dir build -C Release --output-on-failure
 ```
 
-On Windows, CMake can use Visual Studio; the example scripts find executables under `build/Release`. On Linux, install a C++ compiler, CMake and OpenMP.
+On Windows, CMake can use Visual Studio; `--config Release` and `-C Release` select the Release configuration for the build and tests. On Linux, install a C++ compiler, CMake and OpenMP.
 
 ## PETSc transport
 
@@ -21,6 +21,8 @@ cmake --build build-linux -j 4
 ```
 
 This builds `petsc_transport`, `petsc_bratu` and `labels_cpu`. Transport comparisons, column accuracy studies and Case C references use `petsc_transport`; the Bratu comparisons use `petsc_bratu`. PETSc installed by a package manager may already be discoverable without setting `PKG_CONFIG_PATH`.
+
+The transport and Bratu launchers default to executables directly in `build-linux/`. For a Visual Studio PETSc build in that directory, build with `cmake --build build-linux --config Release`, then pass `--executable build-linux/Release/petsc_transport.exe` to `tools/run_transport.py` or `--executable build-linux/Release/petsc_bratu.exe` to `tools/run_bratu.py`, `experiments/bratu/two_cell.py` and `experiments/bratu/verify.py`. The accuracy driver, `experiments/transport/accuracy.py`, accepts `--build build-linux` and searches both that directory and its `Release` subdirectory. Adjust these paths if you choose another build directory.
 
 For GPU execution, use a CUDA-capable NVIDIA GPU and a compatible CUDA-enabled PETSc installation. Set `CUDA_ARCH` to the compute capability of the target GPU (for example, `86`):
 

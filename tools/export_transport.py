@@ -8,7 +8,6 @@ a.add_argument("--checkpoint", type=Path, required=True)
 a.add_argument("--out", type=Path, default=Path("runs/exported_models"))
 a.add_argument("--verify-paper", action="store_true")
 args = a.parse_args()
-P = Path(__file__).resolve().parents[1]
 O = args.out
 O.mkdir(parents=True, exist_ok=True)
 source = args.checkpoint

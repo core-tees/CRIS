@@ -67,7 +67,7 @@ __global__ void matrix_kernel(GraphView g,const double* u,const double* df,const
   for(long long k=g.ptr[i];k<g.ptr[i+1];k++)values[i+1+k]=-(learned?da[i]:dt/g.vol[i])*g.q[k]*df[g.up[k]];
 }
 // Matrices are batch-by-feature, column major. Dense layers are FP64 cuBLAS GEMMs.
-// No Python, host packing, or per-query allocation occurs in an evaluation.
+// Evaluation reuses device workspaces allocated by the constructor.
 
 __global__ void cheb_kernel(GraphView g,const double* tree,double exponent,const double* old,const double* beta,const double* f,const double* u,double* r,double* da,bool grad){
  int i=blockIdx.x*blockDim.x+threadIdx.x;if(i>=g.n)return;double a=g.inj[i];
@@ -88,11 +88,14 @@ struct Evaluator {
     g={p.g.n,ptr.p,up.p,vol.p,out.p,inj.p,q.p};
     for(int j=0;j<3;j++){s.lo[j]=p.model.low[j];s.scale[j]=p.model.scale[j];s.tr[j]=p.model.transform[j];}
     s.outlo=p.model.outlow;s.outscale=p.model.outscale;
-    int n=g.n,width=*std::max_element(p.model.width.begin(),p.model.width.end());
+    int n=g.n;
     old.allocate(n);beta.allocate(n);fixed.allocate(2*n);f.allocate(n);df.allocate(n);da.allocate(n);r.allocate(n);coo.allocate(n+p.g.q.size());
-    x0.allocate(size_t(n)*width);x1.allocate(size_t(n)*width);d0.allocate(size_t(n)*width);d1.allocate(size_t(n)*width);
-    for(size_t l=0;l<p.model.activation.size();l++){w.push_back(new Buffer<double>);b.push_back(new Buffer<double>);w.back()->upload(p.model.weights[l]);b.back()->upload(p.model.bias[l]);}
-    blas_check(cublasCreate(&handle));blas_check(cublasSetMathMode(handle,CUBLAS_DEFAULT_MATH));
+    if(p.learned && !tree.count){
+      int width=*std::max_element(p.model.width.begin(),p.model.width.end());
+      x0.allocate(size_t(n)*width);x1.allocate(size_t(n)*width);d0.allocate(size_t(n)*width);d1.allocate(size_t(n)*width);
+      for(size_t l=0;l<p.model.activation.size();l++){w.push_back(new Buffer<double>);b.push_back(new Buffer<double>);w.back()->upload(p.model.weights[l]);b.back()->upload(p.model.bias[l]);}
+      blas_check(cublasCreate(&handle));blas_check(cublasSetMathMode(handle,CUBLAS_DEFAULT_MATH));
+    }
   }
   ~Evaluator(){if(handle)cublasDestroy(handle);for(auto a:w)delete a;for(auto a:b)delete a;}
   void timestep(cudaStream_t stream=0){

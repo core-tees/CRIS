@@ -1,5 +1,5 @@
 {
-  "timing_definition": "CRIS synchronized advancement warm median (2 observations); existing SRDM complete-loop median (3 archived observations) retained by author decision. All accepted and rejected attempts counted. No audit subtraction; no SRDM reruns.",
+  "timing_definition": "CRIS synchronized advancement warm median (2 observations); SRDM complete-loop median (3 archived observations). All accepted and rejected attempts counted.",
   "rows": [
     {
       "id": "edfm_quadratic_nn",
@@ -31,9 +31,7 @@
       "native": {
         "path": "archive:petsc_gpu_20261016/tpt_five_input_v1/edfm5_v1/build/petsc_transport_gpu",
         "expected_sha256": "850671c6ca6637026327713c72d7b53a3011aa2acd9a909c63b1a39bd48cfda9",
-        "hash_evidence": "archive:tpt_three_input_v1/simulation_v1/results/3207935/EXECUTION.json",
-        "remote_audit_required": false,
-        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+        "hash_evidence": "archive:tpt_three_input_v1/simulation_v1/results/3207935/EXECUTION.json"
       },
       "inputs": {
         "graph": {
@@ -50,7 +48,7 @@
         }
       },
       "control_profile": "C1d8f50c9ed",
-      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "policy_note": "Linear-failure handling and omitted solver options vary across configurations.",
       "previous_fresh_process_timing": {
         "loop_seconds": [
           1.353433061,
@@ -130,9 +128,7 @@
       "native": {
         "path": "archive:transport_final_20261019/build/petsc_transport_gpu",
         "expected_sha256": "4309a451a5a46518cefb6cb8c0dddb4677ea32e7ab68feff1ae10159d83af1b4",
-        "hash_evidence": "Prior authorized frozen-executable record; reverify current remote binary before repetition",
-        "remote_audit_required": false,
-        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+        "hash_evidence": "Prior frozen-executable record"
       },
       "inputs": {
         "graph": {
@@ -149,7 +145,7 @@
         }
       },
       "control_profile": "Ce1b48e01d7",
-      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "policy_note": "Linear-failure handling and omitted solver options vary across configurations.",
       "timing_basis": "Synchronized timestep advancement, trajectories 2 and 3 of one process",
       "timing_n": 3,
       "first_trajectory_seconds": 1.047105229,
@@ -220,9 +216,7 @@
       "native": {
         "path": "archive:petsc_gpu_20261016/build/petsc_transport_gpu",
         "expected_sha256": "c88f10ed75bbe2d2e6503498fb2346dcfb4e0101f5d02d90e33be18865ce8086",
-        "hash_evidence": "archive:petsc_gpu_20261016/executables-3204146.sha256 (also quadratic-3204147 batch log)",
-        "remote_audit_required": false,
-        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+        "hash_evidence": "archive:petsc_gpu_20261016/executables-3204146.sha256 (also quadratic-3204147 batch log)"
       },
       "inputs": {
         "graph": {
@@ -239,7 +233,7 @@
         }
       },
       "control_profile": "Ca898df707e",
-      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "policy_note": "Linear-failure handling and omitted solver options vary across configurations.",
       "timing_basis": "Three archived independent-process observations",
       "timing_n": 3
     },
@@ -273,9 +267,7 @@
       "native": {
         "path": "archive:petsc_gpu_20261016/build/petsc_transport_gpu",
         "expected_sha256": "c88f10ed75bbe2d2e6503498fb2346dcfb4e0101f5d02d90e33be18865ce8086",
-        "hash_evidence": "archive:petsc_gpu_20261016/executables-3204146.sha256 (also quadratic-3204147 batch log)",
-        "remote_audit_required": false,
-        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+        "hash_evidence": "archive:petsc_gpu_20261016/executables-3204146.sha256 (also quadratic-3204147 batch log)"
       },
       "inputs": {
         "graph": {
@@ -292,7 +284,7 @@
         }
       },
       "control_profile": "Ca898df707e",
-      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "policy_note": "Linear-failure handling and omitted solver options vary across configurations.",
       "previous_fresh_process_timing": {
         "loop_seconds": [
           1.657462288,
@@ -372,9 +364,7 @@
       "native": {
         "path": "archive:transport_final_20261019/build/petsc_transport_gpu",
         "expected_sha256": "4309a451a5a46518cefb6cb8c0dddb4677ea32e7ab68feff1ae10159d83af1b4",
-        "hash_evidence": "Prior authorized frozen-executable record; reverify current remote binary before repetition",
-        "remote_audit_required": false,
-        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+        "hash_evidence": "Prior frozen-executable record"
       },
       "inputs": {
         "graph": {
@@ -391,7 +381,7 @@
         }
       },
       "control_profile": "Ce1b48e01d7",
-      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "policy_note": "Linear-failure handling and omitted solver options vary across configurations.",
       "timing_basis": "Synchronized timestep advancement, trajectories 2 and 3 of one process",
       "timing_n": 3,
       "first_trajectory_seconds": 1.2063140609999998,
@@ -462,9 +452,7 @@
       "native": {
         "path": "archive:petsc_gpu_20261016/build/petsc_transport_gpu",
         "expected_sha256": "c88f10ed75bbe2d2e6503498fb2346dcfb4e0101f5d02d90e33be18865ce8086",
-        "hash_evidence": "archive:petsc_gpu_20261016/executables-3204146.sha256 (also quadratic-3204147 batch log)",
-        "remote_audit_required": false,
-        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+        "hash_evidence": "archive:petsc_gpu_20261016/executables-3204146.sha256 (also quadratic-3204147 batch log)"
       },
       "inputs": {
         "graph": {
@@ -481,7 +469,7 @@
         }
       },
       "control_profile": "Ca898df707e",
-      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "policy_note": "Linear-failure handling and omitted solver options vary across configurations.",
       "timing_basis": "Three archived independent-process observations",
       "timing_n": 3
     },
@@ -515,9 +503,7 @@
       "native": {
         "path": "archive:petsc_gpu_20261016/build/petsc_transport_gpu",
         "expected_sha256": "c88f10ed75bbe2d2e6503498fb2346dcfb4e0101f5d02d90e33be18865ce8086",
-        "hash_evidence": "archive:petsc_gpu_20261016/executables-3204146.sha256 (also quadratic-3204147 batch log)",
-        "remote_audit_required": false,
-        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+        "hash_evidence": "archive:petsc_gpu_20261016/executables-3204146.sha256 (also quadratic-3204147 batch log)"
       },
       "inputs": {
         "graph": {
@@ -534,7 +520,7 @@
         }
       },
       "control_profile": "Cb2e404dd10",
-      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "policy_note": "Linear-failure handling and omitted solver options vary across configurations.",
       "previous_fresh_process_timing": {
         "loop_seconds": [
           12.478853762,
@@ -614,9 +600,7 @@
       "native": {
         "path": "archive:transport_final_20261019/build/petsc_transport_gpu",
         "expected_sha256": "4309a451a5a46518cefb6cb8c0dddb4677ea32e7ab68feff1ae10159d83af1b4",
-        "hash_evidence": "Prior authorized frozen-executable record; reverify current remote binary before repetition",
-        "remote_audit_required": false,
-        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+        "hash_evidence": "Prior frozen-executable record"
       },
       "inputs": {
         "graph": {
@@ -633,7 +617,7 @@
         }
       },
       "control_profile": "Ce1b48e01d7",
-      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "policy_note": "Linear-failure handling and omitted solver options vary across configurations.",
       "timing_basis": "Synchronized timestep advancement, trajectories 2 and 3 of one process",
       "timing_n": 3,
       "first_trajectory_seconds": 10.558254905,
@@ -704,9 +688,7 @@
       "native": {
         "path": "archive:petsc_gpu_20261016/build/petsc_transport_gpu",
         "expected_sha256": "c88f10ed75bbe2d2e6503498fb2346dcfb4e0101f5d02d90e33be18865ce8086",
-        "hash_evidence": "archive:petsc_gpu_20261016/executables-3204146.sha256 (also quadratic-3204147 batch log)",
-        "remote_audit_required": false,
-        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+        "hash_evidence": "archive:petsc_gpu_20261016/executables-3204146.sha256 (also quadratic-3204147 batch log)"
       },
       "inputs": {
         "graph": {
@@ -723,7 +705,7 @@
         }
       },
       "control_profile": "Ca898df707e",
-      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "policy_note": "Linear-failure handling and omitted solver options vary across configurations.",
       "timing_basis": "Three archived independent-process observations",
       "timing_n": 3
     },
@@ -757,9 +739,7 @@
       "native": {
         "path": "archive:transport_final_20261019/build/petsc_transport_gpu",
         "expected_sha256": "4309a451a5a46518cefb6cb8c0dddb4677ea32e7ab68feff1ae10159d83af1b4",
-        "hash_evidence": "Prior authorized frozen-executable record; reverify current remote binary before repetition",
-        "remote_audit_required": false,
-        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+        "hash_evidence": "Prior frozen-executable record"
       },
       "inputs": {
         "graph": {
@@ -776,7 +756,7 @@
         }
       },
       "control_profile": "C30ef0f4f22",
-      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "policy_note": "Linear-failure handling and omitted solver options vary across configurations.",
       "previous_fresh_process_timing": {
         "loop_seconds": [
           2.264192596,
@@ -856,9 +836,7 @@
       "native": {
         "path": "archive:transport_final_20261019/build/petsc_transport_gpu",
         "expected_sha256": "4309a451a5a46518cefb6cb8c0dddb4677ea32e7ab68feff1ae10159d83af1b4",
-        "hash_evidence": "Prior authorized frozen-executable record; reverify current remote binary before repetition",
-        "remote_audit_required": false,
-        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+        "hash_evidence": "Prior frozen-executable record"
       },
       "inputs": {
         "graph": {
@@ -875,7 +853,7 @@
         }
       },
       "control_profile": "C30ef0f4f22",
-      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "policy_note": "Linear-failure handling and omitted solver options vary across configurations.",
       "timing_basis": "Synchronized timestep advancement, trajectories 2 and 3 of one process",
       "timing_n": 3,
       "first_trajectory_seconds": 3.60227443,
@@ -946,9 +924,7 @@
       "native": {
         "path": "archive:petsc_gpu_20261016/exponent_screen_v1/build/petsc_transport_gpu",
         "expected_sha256": "67650aa4d6593826d61c1436142eb4719206d565a2bb1e88c2ef4293f361e73b",
-        "hash_evidence": "archive:training/petsc_gpu_20261016/exponent_records/executables-3204386.sha256",
-        "remote_audit_required": false,
-        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+        "hash_evidence": "archive:training/petsc_gpu_20261016/exponent_records/executables-3204386.sha256"
       },
       "inputs": {
         "graph": {
@@ -965,7 +941,7 @@
         }
       },
       "control_profile": "C3c02347928",
-      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "policy_note": "Linear-failure handling and omitted solver options vary across configurations.",
       "timing_basis": "Three archived independent-process observations",
       "timing_n": 3
     },
@@ -999,9 +975,7 @@
       "native": {
         "path": "archive:transport_final_20261019/build/petsc_transport_gpu",
         "expected_sha256": "4309a451a5a46518cefb6cb8c0dddb4677ea32e7ab68feff1ae10159d83af1b4",
-        "hash_evidence": "Prior authorized frozen-executable record; reverify current remote binary before repetition",
-        "remote_audit_required": false,
-        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+        "hash_evidence": "Prior frozen-executable record"
       },
       "inputs": {
         "graph": {
@@ -1018,7 +992,7 @@
         }
       },
       "control_profile": "permissive_max_linear_failures_100000_converged_maxits_true",
-      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "policy_note": "Linear-failure handling and omitted solver options vary across configurations.",
       "previous_fresh_process_timing": {
         "loop_seconds": [
           2.033958693,
@@ -1098,9 +1072,7 @@
       "native": {
         "path": "archive:transport_final_20261019/build/petsc_transport_gpu",
         "expected_sha256": "4309a451a5a46518cefb6cb8c0dddb4677ea32e7ab68feff1ae10159d83af1b4",
-        "hash_evidence": "Prior authorized frozen-executable record; reverify current remote binary before repetition",
-        "remote_audit_required": false,
-        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+        "hash_evidence": "Prior frozen-executable record"
       },
       "inputs": {
         "graph": {
@@ -1117,7 +1089,7 @@
         }
       },
       "control_profile": "permissive_max_linear_failures_100000_converged_maxits_true",
-      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "policy_note": "Linear-failure handling and omitted solver options vary across configurations.",
       "timing_basis": "Synchronized timestep advancement, trajectories 2 and 3 of one process",
       "timing_n": 3,
       "first_trajectory_seconds": 1.1554196800000003,
@@ -1188,9 +1160,7 @@
       "native": {
         "path": "archive:transport_final_20261019/build/petsc_transport_gpu",
         "expected_sha256": "4309a451a5a46518cefb6cb8c0dddb4677ea32e7ab68feff1ae10159d83af1b4",
-        "hash_evidence": "Prior authorized frozen-executable record; reverify current remote binary before repetition",
-        "remote_audit_required": false,
-        "remote_audit_confirmation": "Root agent reports current and archived remote native hashes match, 2026-10-20; remote record preserved by root runner."
+        "hash_evidence": "Prior frozen-executable record"
       },
       "inputs": {
         "graph": {
@@ -1207,7 +1177,7 @@
         }
       },
       "control_profile": "permissive_max_linear_failures_100000_converged_maxits_true",
-      "policy_note": "Original options preserved, including omitted options; do not normalize linear-failure handling across configurations.",
+      "policy_note": "Linear-failure handling and omitted solver options vary across configurations.",
       "timing_basis": "Three archived independent-process observations",
       "timing_n": 3
     }

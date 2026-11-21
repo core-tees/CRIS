@@ -1,6 +1,6 @@
 """Scaled Levenberg–Marquardt kernels for the transport inverse."""
 
-import argparse, hashlib, json, math, os, platform, struct, time
+import json, math
 from pathlib import Path
 import torch
 
@@ -17,10 +17,6 @@ def atomic(path, value):
     q = p.with_suffix(p.suffix + ".tmp")
     q.write_text(json.dumps(value, indent=2))
     q.replace(p)
-
-
-def digest(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
 def forward(v, x, jacobian=False):
@@ -59,27 +55,14 @@ def initial(seed, device):
     return torch.cat(p).to(device)
 
 
-def objective(v, x, y, gradient=False, block=65536):
-    loss = v.new_zeros(())
-    g = torch.zeros_like(v) if gradient else None
-    for i in range(0, len(x), block):
-        with torch.set_grad_enabled(gradient):
-            vv = v.detach().requires_grad_(gradient)
-            r = forward(vv, x[i : i + block]) - y[i : i + block]
-            part = 0.5 * r.square().sum() / len(x)
-            if gradient:
-                g.add_(torch.autograd.grad(part, vv)[0])
-            loss.add_(part.detach())
-    return float(loss), g
-
-
 @torch.no_grad()
-def normal(v, x, block):
-    G = v.new_zeros((SIZE, SIZE))
+def objective(v, x, y, block=65536):
+    loss = v.new_zeros(())
     for i in range(0, len(x), block):
-        _, J = forward(v, x[i : i + block], True)
-        G.addmm_(J.T, J, beta=1, alpha=1 / len(x))
-    return G
+        r = forward(v, x[i : i + block]) - y[i : i + block]
+        part = 0.5 * r.square().sum() / len(x)
+        loss.add_(part)
+    return float(loss)
 
 
 def direction(G, g, mu):

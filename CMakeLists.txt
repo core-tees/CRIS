@@ -40,6 +40,9 @@ if(CRIS_CUDA)
   target_link_libraries(labels_gpu PRIVATE PkgConfig::PETSC MPI::MPI_CXX)
   add_executable(parity_coordinates src/labels/parity_coordinates.cu)
   set_target_properties(parity_coordinates PROPERTIES CUDA_STANDARD 17)
+  add_executable(test_cuda_evaluator tests/test_cuda_evaluator.cu)
+  set_target_properties(test_cuda_evaluator PROPERTIES CUDA_STANDARD 17)
+  target_link_libraries(test_cuda_evaluator PRIVATE CUDA::cublas)
 endif()
 if(CRIS_BRATU_TRAINING)
   find_package(Torch REQUIRED)
@@ -55,11 +58,21 @@ if(CRIS_BRATU_TRAINING)
 endif()
 
 enable_testing()
+if(CRIS_CUDA)
+  add_test(NAME cuda_evaluator COMMAND test_cuda_evaluator
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/transport/column_quadratic.bin
+    ${CMAKE_CURRENT_SOURCE_DIR}/models/transport/shared976_quadratic.model
+    ${CMAKE_CURRENT_SOURCE_DIR}/models/transport/cheb_quadratic.model)
+endif()
 if(CRIS_BRATU_TRAINING)
   add_test(NAME shared_lm COMMAND test_shared_lm)
+  add_test(NAME bratu_self_test COMMAND bratu_lm_trainer --self-test)
+  add_test(NAME bratu_cli COMMAND ${CMAKE_COMMAND}
+    -DTRAINER=$<TARGET_FILE:bratu_lm_trainer>
+    -P ${CMAKE_CURRENT_SOURCE_DIR}/tests/test_bratu_cli.cmake)
   if(WIN32 AND CMAKE_VERSION VERSION_GREATER_EQUAL 3.22)
     get_filename_component(CRIS_TORCH_LIB_DIR "${Torch_DIR}/../../../lib" ABSOLUTE)
-    set_tests_properties(shared_lm PROPERTIES
+    set_tests_properties(shared_lm bratu_self_test bratu_cli PROPERTIES
       ENVIRONMENT_MODIFICATION "PATH=path_list_prepend:${CRIS_TORCH_LIB_DIR}")
   endif()
 endif()

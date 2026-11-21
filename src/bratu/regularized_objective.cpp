@@ -18,7 +18,7 @@
 #include <chrono>
 
 namespace bratu_regularized {
-constexpr int P=1425, H=16, L=7;
+constexpr int P=1425, L=7;
 struct Row { double a,b,y,w; };
 struct Jet {double v=0,d=0,dd=0;};
 Jet operator+(Jet x,Jet y){return {x.v+y.v,x.d+y.d,x.dd+y.dd};}
@@ -44,13 +44,12 @@ struct Net {
  }
 };
 std::vector<Row> readrows(const std::string& p){std::ifstream f(p,std::ios::binary|std::ios::ate);if(!f)throw std::runtime_error("Cannot open training data: "+p);auto size=static_cast<std::streamoff>(f.tellg());if(size<0 || size%sizeof(Row)!=0)throw std::runtime_error("Invalid training data: "+p);size_t n=static_cast<size_t>(size)/sizeof(Row);std::vector<Row> a(n);f.seekg(0);f.read((char*)a.data(),n*sizeof(Row));if(!f)throw std::runtime_error("Cannot read training data: "+p);return a;}
-constexpr double h=.001;
-struct Metrics {double loss=0, rmse=0, maxerr=0;};
+struct Metrics {double loss=0, rmse=0;};
 Metrics loss(const Net& net,const std::vector<Row>& in,const std::vector<Row>& reg,int ni,int nr,double lambda,double slope_min,double slope_max,double slope_weight,double curvature_weight){
- double s=0,err=0,mx=0;for(int i=0;i<ni;i++){auto q=in[i];double r=net.eval(q.a,q.b)-q.y;s+=q.w*r*r;err+=r*r;mx=std::max(mx,std::abs(r));}
+ double s=0,err=0;for(int i=0;i<ni;i++){auto q=in[i];double r=net.eval(q.a,q.b)-q.y;s+=q.w*r*r;err+=r*r;}
  const bool active=lambda>0&&(slope_weight>0||curvature_weight>0);
  double t=0;if(active)for(int i=0;i<nr;i++){auto q=reg[i];double p,d,c;net.derivs(q.a,q.b,p,d,c);double excess=d<slope_min?d-slope_min:(d>slope_max?d-slope_max:0.);t+=slope_weight*excess*excess+curvature_weight*c*c;}
- return {.5*(s/ni+(active?lambda*t/nr:0)),std::sqrt(err/ni),mx};
+ return {.5*(s/ni+(active?lambda*t/nr:0)),std::sqrt(err/ni)};
 }
 
 using Args = std::map<std::string,std::string>;
@@ -135,10 +134,9 @@ int run(const Args& args) {
 #pragma omp parallel for schedule(static)
      for(int k=0;k<count;k++) {
       Row q=rows[start+k];double* j=jj+size_t(k*terms)*P;double base[P],slope_grad[P],curv_grad[P];
-      double y=model.eval(q.a,q.b,base);
-      if(!typ){double scale=std::sqrt(q.w/ni);rr[k]=scale*(y-q.y);for(int t=0;t<P;t++)j[t]=scale*base[t];}
+      if(!typ){double y=model.eval(q.a,q.b,base);double scale=std::sqrt(q.w/ni);rr[k]=scale*(y-q.y);for(int t=0;t<P;t++)j[t]=scale*base[t];}
       else {
-       double slope,curv;model.derivs(q.a,q.b,y,slope,curv,base,slope_grad,curv_grad);
+       double y,slope,curv;model.derivs(q.a,q.b,y,slope,curv,base,slope_grad,curv_grad);
        double excess=slope<slope_min?slope-slope_min:(slope>slope_max?slope-slope_max:0.);
        double ss=std::sqrt(lambda*slope_weight/nr),cs=std::sqrt(lambda*curvature_weight/nr);
        rr[2*k]=ss*excess;rr[2*k+1]=cs*curv;double active=(slope>slope_max||slope<slope_min)?1:0;

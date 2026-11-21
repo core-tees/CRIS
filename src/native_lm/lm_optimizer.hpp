@@ -35,8 +35,7 @@ struct LmControl {
     double damping_max{1.0e10};
     bool diagonal_damping{false};
     bool synchronize_cuda_after_solve{false};
-    // Optional scaled Cholesky and trial-step policy; defaults preserve the
-    // original one-proposal LM behavior.
+    // Optional scaled Cholesky and trial-step policy; defaults use one proposal.
     bool scaled_cholesky{false};
     int max_damping_trials{1};
     int max_step_trials{1};
@@ -95,8 +94,7 @@ struct LmRunResult {
 // Jacobian/normal-equation builder, candidate construction, and loss
 // evaluation. This driver owns damping, acceptance, cached-linearization
 // retries, validation-based early stopping, and the dense linear solve.
-// All callbacks are templates, so none introduces a virtual call or Python
-// transition in the training loop.
+// Template callbacks permit inlining in the training loop.
 template <class Model, class RefreshLinearization, class MakeCandidate,
           class EvaluateCandidate, class ObserveIteration>
 LmRunResult<Model> optimize(Model model, const LmControl& control,
@@ -155,7 +153,7 @@ LmRunResult<Model> optimize(Model model, const LmControl& control,
                 else step = torch::cholesky_solve(-linearization.gradient / diagonal.unsqueeze(1),
                                                    std::get<0>(factorization)).squeeze(1) / diagonal;
             } else {
-                // Rebuild when the damping changes; preserve existing default behavior.
+                // Rebuild from the undamped Hessian when the damping changes.
                 hessian = linearization.hessian.clone();
                 if (control.diagonal_damping) {
                     auto diagonal = hessian.diag().clamp_min(1.0e-12);

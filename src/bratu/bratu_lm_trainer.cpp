@@ -12,6 +12,7 @@
 #include <iomanip>
 #include <iostream>
 #include <map>
+#include <set>
 
 namespace fs = std::filesystem;
 int train_regularized_bratu(const std::map<std::string,std::string>& args);
@@ -212,17 +213,42 @@ template<class Objective> int train(const Data& data,const Data& validation,cons
         <<",\n\"cumulative_phase_seconds\":"<<cumulative<<"\n}\n";
     std::cout<<"stopping_reason="<<result.stopping_reason<<std::endl;return 0;
 }
+std::map<std::string,std::string> training_options(int argc,char** argv) {
+    const std::set<std::string> common{"--run-dir","--threads","--max-accepted","--max-proposals",
+        "--patience","--block-size","--resume-state","--initial-checkpoint"};
+    const std::set<std::string> earlier{"--train","--validation","--resume","--weight","--portable-recovery"};
+    const std::set<std::string> regularized{"--data-dir","--regularization","--slope-min","--slope-max",
+        "--slope-weight","--curvature-weight"};
+    std::map<std::string,std::string> args;
+    for(int i=1;i<argc;++i) {
+        const std::string key=argv[i];
+        if(key=="--self-test"){args[key]="";continue;}
+        if(!common.count(key)&&!earlier.count(key)&&!regularized.count(key))
+            throw std::runtime_error("Unknown option: "+key);
+        if(i+1==argc)throw std::runtime_error("Missing value for "+key);
+        args[key]=argv[++i];
+    }
+    if(args.count("--self-test")) {
+        if(args.size()!=1)throw std::runtime_error("--self-test cannot be combined with training options");
+        return args;
+    }
+    const bool regularized_mode=args.count("--data-dir")!=0;
+    for(const auto& option:args) {
+        if(regularized_mode&&earlier.count(option.first))
+            throw std::runtime_error("Option "+option.first+" is not supported with --data-dir");
+        if(!regularized_mode&&regularized.count(option.first))
+            throw std::runtime_error("Option "+option.first+" requires --data-dir");
+    }
+    if(!args.count("--run-dir"))throw std::runtime_error("Missing required option: --run-dir");
+    if(!regularized_mode)for(const auto* key:{"--train","--validation"})
+        if(!args.count(key))throw std::runtime_error(std::string("Missing required option: ")+key);
+    return args;
+}
 int main(int argc,char** argv) {
     try {
-        std::map<std::string,std::string> args;
-        for(int i=1;i<argc;++i) {std::string key=argv[i];if(key=="--self-test"){test();return 0;}if(i+1==argc)throw std::runtime_error("Missing argument");args[key]=argv[++i];}
-        if(args.count("--data-dir")) {
-            if(args.count("--train") || args.count("--validation") || args.count("--resume") || args.count("--weight"))
-                throw std::runtime_error("Cannot mix regularized data settings with legacy Bratu options");
-            return train_regularized_bratu(args);
-        }
-        for(const auto* key:{"--regularization","--slope-min","--slope-max","--slope-weight","--curvature-weight"})
-            if(args.count(key))throw std::runtime_error("Regularity settings require --data-dir");
+        const auto args=training_options(argc,argv);
+        if(args.count("--self-test")){test();return 0;}
+        if(args.count("--data-dir"))return train_regularized_bratu(args);
         auto value=[&](const std::string& key,const std::string& fallback){auto it=args.find(key);return it==args.end()?fallback:it->second;};
         int threads=std::stoi(value("--threads","16")); at::set_num_threads(threads);omp_set_dynamic(0);omp_set_num_threads(threads);mkl_set_num_threads_local(threads);
         auto data=load(args.at("--train")),validation=load(args.at("--validation"));const fs::path dir=args.at("--run-dir");

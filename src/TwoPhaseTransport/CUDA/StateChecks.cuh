@@ -1,5 +1,5 @@
 #pragma once
-// Device reductions only. The evaluator and physics kernels remain unchanged.
+// Device reductions for residual norms and finite-state checks.
 namespace transport_gpu {
 __global__ void check_trial_kernel(int n,const double* u,const double* r,const double* physical,unsigned long long* maxima,int* bad){
   int i=blockIdx.x*blockDim.x+threadIdx.x;if(i>=n)return;

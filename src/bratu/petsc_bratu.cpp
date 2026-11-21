@@ -12,10 +12,9 @@
 #include <iomanip>
 using Array=std::vector<double>;
 template<class T>void read(std::ifstream&f,std::vector<T>&a,size_t n){a.resize(n);f.read((char*)a.data(),n*sizeof(T));if(!f)throw std::runtime_error("read failed");}
-struct Problem{int64_t n,m;std::vector<int64_t>ptr,col;Array w,rate,src,vol,inc,old,beta;double inj=0,q=3;};
+struct Problem{int64_t n,m;std::vector<int64_t>ptr,col;Array w,old,beta;};
 struct Cell{Problem*p;PetscInt i;};
 std::vector<Cell> cells;
-long long local_evals=0,local_updates=0;
 PetscErrorCode globalFunction(SNES snes,Vec x,Vec f,void*ctx){
  auto&p=*(Problem*)ctx;const PetscScalar*u;PetscScalar*r;PetscCall(VecGetArrayRead(x,&u));PetscCall(VecGetArray(f,&r));
 
@@ -34,7 +33,7 @@ PetscErrorCode toLocal(DM,Vec x,InsertMode,Vec l){const PetscScalar*u;PetscScala
 PetscErrorCode noOp(DM,Vec,InsertMode,Vec){return 0;}
 PetscErrorCode cellFunction(SNES s,Vec x,Vec f,void*ctx){
  auto&c=*(Cell*)ctx;auto&p=*c.p;auto i=c.i;DM dm;Vec l;PetscCall(SNESGetDM(s,&dm));PetscCall(DMGetLocalVector(dm,&l));PetscCall(DMGlobalToLocalBegin(dm,x,INSERT_VALUES,l));PetscCall(DMGlobalToLocalEnd(dm,x,INSERT_VALUES,l));
- const PetscScalar*u;PetscScalar*r;PetscCall(VecGetArrayRead(l,&u));PetscCall(VecGetArray(f,&r));double a=p.old[i];for(auto k=p.ptr[i];k<p.ptr[i+1];k++)a+=p.w[k]*u[1+k-p.ptr[i]];r[0]=u[0]-a-p.beta[i]*std::exp(u[0]);if(!std::isfinite(r[0]))PetscCall(SNESSetFunctionDomainError(s));local_evals++;
+ const PetscScalar*u;PetscScalar*r;PetscCall(VecGetArrayRead(l,&u));PetscCall(VecGetArray(f,&r));double a=p.old[i];for(auto k=p.ptr[i];k<p.ptr[i+1];k++)a+=p.w[k]*u[1+k-p.ptr[i]];r[0]=u[0]-a-p.beta[i]*std::exp(u[0]);if(!std::isfinite(r[0]))PetscCall(SNESSetFunctionDomainError(s));
  PetscCall(VecRestoreArrayRead(l,&u));PetscCall(VecRestoreArray(f,&r));PetscCall(DMRestoreLocalVector(dm,&l));return 0;
 }
 PetscErrorCode cellJacobian(SNES,Vec x,Mat A,Mat B,void*ctx){auto&c=*(Cell*)ctx;const PetscScalar*u;PetscCall(VecGetArrayRead(x,&u));PetscInt z=0;PetscScalar v=1-c.p->beta[c.i]*std::exp(u[0]);PetscCall(MatSetValues(B,1,&z,1,&z,&v,INSERT_VALUES));PetscCall(VecRestoreArrayRead(x,&u));PetscCall(MatAssemblyBegin(B,MAT_FINAL_ASSEMBLY));PetscCall(MatAssemblyEnd(B,MAT_FINAL_ASSEMBLY));return 0;}
@@ -83,7 +82,7 @@ PetscErrorCode convergence(SNES s,PetscInt it,PetscReal xn,PetscReal sn,PetscRea
 int main(int argc,char**argv){
  PetscCall(PetscInitialize(&argc,&argv,nullptr,nullptr));if(argc<6)return 2;std::string input=argv[1],graph=argv[2],method=argv[3],casesfile=argv[4],out=argv[5];std::filesystem::create_directories(out);Problem p;
  {std::ifstream f(input+"/"+graph+".bin",std::ios::binary);f.read((char*)&p.n,8);f.read((char*)&p.m,8);read(f,p.ptr,p.n+1);read(f,p.col,p.m);read(f,p.w,p.m);}p.old.resize(p.n);p.beta.resize(p.n);char model[4096];PetscBool hasmodel=PETSC_FALSE;PetscCall(PetscOptionsGetString(nullptr,nullptr,"-bratu_model",model,sizeof(model),&hasmodel));if(!hasmodel)throw std::runtime_error("-bratu_model is required");Fit fit(model);fit.numerical=method=="selected";Context ctx{&p,&fit,method=="learned"||method=="selected"};
- // An optional read-only evaluator validates the exported spline without training.
+ // An optional read-only evaluator validates the local-inverse model without training.
  char query[4096];PetscBool hasquery=PETSC_FALSE;PetscCall(PetscOptionsGetString(nullptr,nullptr,"-fit_queries",query,sizeof(query),&hasquery));if(hasquery){std::ifstream f(query);double a,b;std::ofstream z(out+"/fit_values.csv");z<<std::setprecision(17);while(f>>a>>b){auto [v,d]=fit.eval(a,b);z<<v<<','<<d<<'\n';}PetscCall(PetscFinalize());return 0;}
  auto begin=std::chrono::steady_clock::now();Vec x,f;Mat J;DM dm;SNES s;PetscCall(VecCreateSeq(PETSC_COMM_SELF,p.n,&x));PetscCall(VecDuplicate(x,&f));std::vector<PetscInt>nnz(p.n);for(int64_t i=0;i<p.n;i++)nnz[i]=1+p.ptr[i+1]-p.ptr[i];PetscCall(MatCreateSeqAIJ(PETSC_COMM_SELF,p.n,p.n,0,nnz.data(),&J));PetscCall(VecSet(x,0));PetscCall(globalJacobian(nullptr,x,J,J,&p));PetscCall(SNESCreate(PETSC_COMM_SELF,&s));
  if(method=="aspin"){

@@ -17,20 +17,6 @@
     "-max_cuts": "20"
   },
   "presets": {
-    "edfm_p08_nn": {
-      "-graph": "data/transport/edfm_singular.bin",
-      "-model": "models/transport/shared976_intermediate.model",
-      "-initial_file": "data/transport/edfm_singular.initial",
-      "-method": "learned",
-      "-flux_exponent": "0.8",
-      "-verify": null,
-      "-snes_linesearch_type": "basic",
-      "-snes_divergence_tolerance": "1e100",
-      "-ksp_converged_maxits": "true",
-      "-ksp_converged_reason": null,
-      "-snes_max_linear_solve_fail": "1",
-      "-trajectory_repeats": "3"
-    },
     "edfm_quadratic_nn": {
       "-graph": "data/transport/edfm_quadratic.bin",
       "-model": "models/transport/shared976_quadratic.model",
@@ -40,20 +26,6 @@
       "-snes_linesearch_type": "basic",
       "-snes_divergence_tolerance": "1e100",
       "-snes_max_linear_solve_fail": "100000",
-      "-trajectory_repeats": "3"
-    },
-    "norne_p08_nn": {
-      "-graph": "data/transport/norne_singular.bin",
-      "-initial_file": "data/transport/norne_singular.initial",
-      "-model": "models/transport/shared976_intermediate.model",
-      "-method": "learned",
-      "-flux_exponent": "0.8",
-      "-verify": null,
-      "-snes_linesearch_type": "bt",
-      "-snes_divergence_tolerance": "1e100",
-      "-snes_max_linear_solve_fail": "100000",
-      "-ksp_converged_maxits": "true",
-      "-ksp_converged_reason": null,
       "-trajectory_repeats": "3"
     },
     "norne_quadratic_nn": {
@@ -74,76 +46,6 @@
       "-verify": null,
       "-snes_linesearch_type": "basic",
       "-log_view": ":runs/transport/spe10_quadratic_nn.petsc.log",
-      "-trajectory_repeats": "3"
-    },
-    "edfm_p08_cheb": {
-      "-graph": "data/transport/edfm_singular.bin",
-      "-model": "models/transport/cheb_intermediate.model",
-      "-initial_file": "data/transport/edfm_singular.initial",
-      "-method": "learned",
-      "-flux_exponent": "0.8",
-      "-verify": null,
-      "-snes_linesearch_type": "basic",
-      "-snes_divergence_tolerance": "1e100",
-      "-ksp_converged_maxits": "true",
-      "-ksp_converged_reason": null,
-      "-snes_max_linear_solve_fail": "1",
-      "-trajectory_repeats": "3"
-    },
-    "edfm_quadratic_cheb": {
-      "-graph": "data/transport/edfm_quadratic.bin",
-      "-model": "models/transport/cheb_quadratic.model",
-      "-initial_file": "data/transport/edfm_quadratic.initial",
-      "-method": "learned",
-      "-flux_exponent": "2.0",
-      "-verify": null,
-      "-snes_linesearch_type": "bt",
-      "-snes_divergence_tolerance": "1e100",
-      "-ksp_converged_maxits": "true",
-      "-ksp_converged_reason": null,
-      "-snes_max_linear_solve_fail": "1",
-      "-trajectory_repeats": "3"
-    },
-    "norne_p08_cheb": {
-      "-graph": "data/transport/norne_singular.bin",
-      "-initial_file": "data/transport/norne_singular.initial",
-      "-model": "models/transport/cheb_intermediate.model",
-      "-method": "learned",
-      "-flux_exponent": "0.8",
-      "-verify": null,
-      "-snes_linesearch_type": "bt",
-      "-snes_divergence_tolerance": "1e100",
-      "-snes_max_linear_solve_fail": "100000",
-      "-ksp_converged_maxits": "true",
-      "-ksp_converged_reason": null,
-      "-trajectory_repeats": "3"
-    },
-    "norne_quadratic_cheb": {
-      "-graph": "data/transport/norne_quadratic.bin",
-      "-model": "models/transport/cheb_quadratic.model",
-      "-initial_file": "data/transport/norne_quadratic.initial",
-      "-method": "learned",
-      "-flux_exponent": "2.0",
-      "-verify": null,
-      "-snes_linesearch_type": "bt",
-      "-snes_divergence_tolerance": "1e100",
-      "-ksp_converged_maxits": "true",
-      "-ksp_converged_reason": null,
-      "-snes_max_linear_solve_fail": "1",
-      "-trajectory_repeats": "3"
-    },
-    "spe10_quadratic_cheb": {
-      "-graph": "data/transport/spe10_quadratic.bin",
-      "-model": "models/transport/cheb_quadratic.model",
-      "-initial_file": "data/transport/spe10_quadratic.initial",
-      "-method": "learned",
-      "-flux_exponent": "2.0",
-      "-verify": null,
-      "-snes_linesearch_type": "bt",
-      "-snes_divergence_tolerance": "1e100",
-      "-ksp_converged_maxits": "true",
-      "-ksp_converged_reason": null,
-      "-snes_max_linear_solve_fail": "1",
       "-trajectory_repeats": "3"
     },
     "edfm_quadratic_nn_bt": {
