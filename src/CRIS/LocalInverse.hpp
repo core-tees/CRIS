@@ -12,7 +12,7 @@
 #include "CRIS/ChebyshevInverse.hpp"
 
 namespace transport {
-// The archive uses row-major layer weights followed by biases, and [-1,1]
+// Neural archives use row-major layer weights followed by biases, and [-1,1]
 // normalization after any log1p transformation. Forward derivatives include it.
 struct LocalInverse {
   std::vector<double> tree;double exponent=2;

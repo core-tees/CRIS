@@ -19,8 +19,7 @@ struct Recurrence {
         const double u = physical(y);
         const double reaction = s.beta == 0 ? 0 : s.beta * std::exp(u);
         // Fixed output-scale normalization, without root-Jacobian division.
-        // Remains finite at the fold and deliberately retains weak physical
-        // sensitivity there. The outer smooth cap only limits cold-start tails.
+        // Remains finite at the fold and retains weak physical sensitivity there.
         residual[0] = (s.a - u + reaction) / 4.5;
         derivative[0] = -1 + reaction;
     }

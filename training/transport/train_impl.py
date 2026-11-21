@@ -1,4 +1,4 @@
-"""Three-input FCN: full-data FP64 scaled Cholesky LM."""
+"""Three-input FCN: FP64 scaled Cholesky LM over the active data set."""
 
 import argparse, json, math, os, signal, time, traceback
 from pathlib import Path

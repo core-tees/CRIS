@@ -9,11 +9,8 @@
 
 namespace native_lm {
 
-// A pointwise LM objective is represented as a fixed-size stack of residuals.
-// Each term returns both its residual and the derivative of that residual with
-// respect to the scalar network output. The trainer supplies du/dtheta, so
-// dr/dtheta follows by the chain rule without numerical differences or a
-// virtual call in the per-sample hot loop.
+// Terms return residuals and derivatives with respect to scalar network output.
+// The trainer combines them with the network parameter Jacobian.
 template <class Target>
 class SupervisedMseTerm {
 public:
@@ -63,10 +60,8 @@ private:
     double scale_;
 };
 
-// Smoothly bounds a residual block while preserving its value and derivative
-// at the origin.  It is useful when a physics defect has a meaningful local
-// error interpretation but can grow by orders of magnitude away from a root;
-// the cap prevents those cold-start outliers from monopolizing the objective.
+// Bound residuals smoothly with unit slope at zero, limiting the influence
+// of large cold-start errors.
 template <class Term>
 class SoftClippedResidualTerm {
 public:
@@ -97,9 +92,7 @@ private:
     double cap_;
 };
 
-// Terms are statically composed. This is intentionally a template rather
-// than a polymorphic loss interface: the compiler can inline every term and
-// the residual count is known when the Jacobian storage is allocated.
+// Static composition fixes the residual count used to allocate Jacobian storage.
 template <class... Terms>
 class StackedResiduals {
 public:

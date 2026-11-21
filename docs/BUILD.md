@@ -32,7 +32,7 @@ cmake -S . -B build-gpu -DCRIS_CUDA=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_CUDA_A
 cmake --build build-gpu -j 4
 ```
 
-The GPU solver uses double precision; GPU fitting uses CUDA-enabled PyTorch independently of PETSc. Runtime depends on the hardware and software used.
+The GPU solver uses double precision; GPU fitting uses CUDA-enabled PyTorch independently of PETSc.
 
 ## Bratu training
 

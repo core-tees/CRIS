@@ -72,5 +72,5 @@
       "sha256": "e4d2d46d581c117f89d83fcaac5a3cb331ce15d37faa0a4a8d6c4fb376367328"
     }
   },
-  "caveat": "No exact labels exist beyond the fold. Network extension there is tested later, not supervised as a real branch."
+  "caveat": "Supervised targets cover the real lower branch; inputs beyond its fold have no real root target."
 }

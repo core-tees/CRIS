@@ -13,8 +13,7 @@
 
 namespace native_lm {
 
-// Timing fields deliberately describe numerical phases rather than any
-// governing equation. A problem adapter can populate only the phases it uses.
+// Adapters populate timing fields for the phases they use; unused fields remain zero.
 struct LmTimings {
     double normal_seconds{0.0};
     double jacobian_seconds{0.0};
@@ -94,7 +93,6 @@ struct LmRunResult {
 // Jacobian/normal-equation builder, candidate construction, and loss
 // evaluation. This driver owns damping, acceptance, cached-linearization
 // retries, validation-based early stopping, and the dense linear solve.
-// Template callbacks permit inlining in the training loop.
 template <class Model, class RefreshLinearization, class MakeCandidate,
           class EvaluateCandidate, class ObserveIteration>
 LmRunResult<Model> optimize(Model model, const LmControl& control,

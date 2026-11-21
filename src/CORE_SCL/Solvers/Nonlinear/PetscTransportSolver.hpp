@@ -115,7 +115,6 @@ PetscErrorCode verify(SNES snes,Vec x,Vec r,Mat J,Context& c,const std::string& 
   PetscCall(VecDestroy(&v));PetscCall(VecDestroy(&jv));PetscFunctionReturn(PETSC_SUCCESS);
 }
 
-// PETSc vectors, matrix structure, callbacks and solver options.
 PetscErrorCode create_solver(Context& c, Vec& x, Vec& r, Mat& J, SNES& snes) {
   PetscFunctionBeginUser;
   PetscInt n=c.p.g.n;

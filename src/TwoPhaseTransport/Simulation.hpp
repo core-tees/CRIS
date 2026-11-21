@@ -63,7 +63,7 @@ PetscErrorCode run() {
         device_check_seconds+=seconds(device_check_start);
         PetscCall(VecCUDARestoreArrayRead(x,&device_u));
         bool ok=reason>0&&finite;
-        // Transfer is retained and charged: the existing timestep setup uses host old state.
+        // Copy the host state needed for the next timestep; this transfer is included in advance timing.
         const PetscScalar* u;PetscCall(VecGetArrayRead(x,&u));std::copy(u,u+n,solution.begin());PetscCall(VecRestoreArrayRead(x,&u));
         double before=time,dt=c.p.dt;
         if(ok){time+=dt;remaining-=dt;accepted++;c.p.old=solution;trial=std::min(2*trial,remaining);}
@@ -92,7 +92,7 @@ PetscErrorCode run() {
       <<",\"snes_seconds\":"<<solve_seconds<<",\"advance_seconds\":"<<advance_seconds<<",\"trajectory_wall_seconds\":"<<trajectory_wall<<",\"snapshot_seconds\":"<<snapshot_seconds<<",\"field_output_seconds\":"<<output_seconds
       <<",\"device_check_seconds\":"<<device_check_seconds<<",\"residual_calls\":"<<c.feval<<",\"jacobian_calls\":"<<c.jeval<<",\"residual_seconds\":"<<c.fseconds<<",\"jacobian_seconds\":"<<c.jseconds<<"}\n";
     std::cout<<tag<<" complete="<<complete<<" accepted="<<accepted<<" advance_seconds="<<advance_seconds<<" snes_seconds="<<solve_seconds<<std::endl;
-    if(!complete)break; // A changed model may stop; do not repeat a stopped trajectory for timings.
+    if(!complete)break; // Do not repeat incomplete trajectories for timing.
   }
   PetscCall(SNESDestroy(&snes));PetscCall(MatDestroy(&J));PetscCall(VecDestroy(&x));PetscCall(VecDestroy(&r));PetscFunctionReturn(PETSC_SUCCESS);
 }

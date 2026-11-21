@@ -1,4 +1,4 @@
-"""Evaluate the frozen Bratu inverse on independent saved input sets."""
+"""Evaluate the supervised Bratu model (final_checkpoint.bin) on independent saved inputs."""
 
 from pathlib import Path
 import json, numpy as np

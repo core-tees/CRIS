@@ -1211,7 +1211,7 @@
     {
       "dt": 1,
       "model": "cheb",
-      "comparison": "prepared full-step versus original SRDM backtracking, same initial state and single dt",
+      "comparison": "Chebyshev ordinary Newton versus SRDM backtracking; identical initial state and timestep",
       "rmse": 8.363139191154449e-08,
       "max_error": 4.9258627347063995e-06,
       "reference_summary": {
@@ -1263,7 +1263,7 @@
     {
       "dt": 2,
       "model": "cheb",
-      "comparison": "prepared full-step versus original SRDM backtracking, same initial state and single dt",
+      "comparison": "Chebyshev ordinary Newton versus SRDM backtracking; identical initial state and timestep",
       "rmse": 9.561075353907891e-08,
       "max_error": 6.7957080139788035e-06,
       "reference_summary": {
@@ -1315,7 +1315,7 @@
     {
       "dt": 5,
       "model": "cheb",
-      "comparison": "prepared full-step versus original SRDM backtracking, same initial state and single dt",
+      "comparison": "Chebyshev ordinary Newton versus SRDM backtracking; identical initial state and timestep",
       "rmse": 6.618103052334744e-08,
       "max_error": 4.672540816404516e-06,
       "reference_summary": {
@@ -1367,7 +1367,7 @@
     {
       "dt": 10,
       "model": "cheb",
-      "comparison": "prepared full-step versus original SRDM backtracking, same initial state and single dt",
+      "comparison": "Chebyshev ordinary Newton versus SRDM backtracking; identical initial state and timestep",
       "rmse": 8.762588325124827e-08,
       "max_error": 4.567363409441021e-06,
       "reference_summary": {
@@ -1419,7 +1419,7 @@
     {
       "dt": 20,
       "model": "cheb",
-      "comparison": "prepared full-step versus original SRDM backtracking, same initial state and single dt",
+      "comparison": "Chebyshev ordinary Newton versus SRDM backtracking; identical initial state and timestep",
       "rmse": 3.293092095115223e-08,
       "max_error": 2.0794634740353463e-06,
       "reference_summary": {
@@ -1471,7 +1471,7 @@
     {
       "dt": 50,
       "model": "cheb",
-      "comparison": "prepared full-step versus original SRDM backtracking, same initial state and single dt",
+      "comparison": "Chebyshev ordinary Newton versus SRDM backtracking; identical initial state and timestep",
       "rmse": 4.654100670245568e-08,
       "max_error": 1.8566871605415255e-06,
       "reference_summary": {
@@ -1523,7 +1523,7 @@
     {
       "dt": 100,
       "model": "cheb",
-      "comparison": "prepared full-step versus original SRDM backtracking, same initial state and single dt",
+      "comparison": "Chebyshev ordinary Newton versus SRDM backtracking; identical initial state and timestep",
       "rmse": 1.014731463021543e-07,
       "max_error": 3.7622243715118575e-06,
       "reference_summary": {
@@ -1575,7 +1575,7 @@
     {
       "dt": 200,
       "model": "cheb",
-      "comparison": "prepared full-step versus original SRDM backtracking, same initial state and single dt",
+      "comparison": "Chebyshev ordinary Newton versus SRDM backtracking; identical initial state and timestep",
       "rmse": 1.2030276756545883e-07,
       "max_error": 3.8139341472682997e-06,
       "reference_summary": {
@@ -1627,7 +1627,7 @@
     {
       "dt": 500,
       "model": "cheb",
-      "comparison": "prepared full-step versus original SRDM backtracking, same initial state and single dt",
+      "comparison": "Chebyshev ordinary Newton versus SRDM backtracking; identical initial state and timestep",
       "rmse": 9.599510043382838e-08,
       "max_error": 3.7752891032805103e-06,
       "reference_summary": {
@@ -1679,7 +1679,7 @@
     {
       "dt": 1000,
       "model": "cheb",
-      "comparison": "prepared full-step versus original SRDM backtracking, same initial state and single dt",
+      "comparison": "Chebyshev ordinary Newton versus SRDM backtracking; identical initial state and timestep",
       "rmse": 1.6289403858428341e-07,
       "max_error": 7.347274182001318e-06,
       "reference_summary": {
@@ -1731,7 +1731,7 @@
     {
       "dt": 2000,
       "model": "cheb",
-      "comparison": "prepared full-step versus original SRDM backtracking, same initial state and single dt",
+      "comparison": "Chebyshev ordinary Newton versus SRDM backtracking; identical initial state and timestep",
       "rmse": 2.1720644104502264e-07,
       "max_error": 9.077979308744905e-06,
       "reference_summary": {
@@ -1783,7 +1783,7 @@
     {
       "dt": 5000,
       "model": "cheb",
-      "comparison": "prepared full-step versus original SRDM backtracking, same initial state and single dt",
+      "comparison": "Chebyshev ordinary Newton versus SRDM backtracking; identical initial state and timestep",
       "rmse": 3.585004982996274e-07,
       "max_error": 9.156053195125136e-06,
       "reference_summary": {
@@ -1835,7 +1835,7 @@
     {
       "dt": 10000,
       "model": "cheb",
-      "comparison": "prepared full-step versus original SRDM backtracking, same initial state and single dt",
+      "comparison": "Chebyshev ordinary Newton versus SRDM backtracking; identical initial state and timestep",
       "rmse": 5.599902946461574e-07,
       "max_error": 2.00709137351332e-05,
       "reference_summary": {
@@ -1887,7 +1887,7 @@
     {
       "dt": 20000,
       "model": "cheb",
-      "comparison": "prepared full-step versus original SRDM backtracking, same initial state and single dt",
+      "comparison": "Chebyshev ordinary Newton versus SRDM backtracking; identical initial state and timestep",
       "rmse": 5.455613634885148e-07,
       "max_error": 9.327677339021623e-06,
       "reference_summary": {
@@ -1939,7 +1939,7 @@
     {
       "dt": 50000,
       "model": "cheb",
-      "comparison": "prepared full-step versus original SRDM backtracking, same initial state and single dt",
+      "comparison": "Chebyshev ordinary Newton versus SRDM backtracking; identical initial state and timestep",
       "rmse": 6.701392020269086e-07,
       "max_error": 1.465420423996111e-05,
       "reference_summary": {
@@ -1991,7 +1991,7 @@
     {
       "dt": 100000,
       "model": "cheb",
-      "comparison": "prepared full-step versus original SRDM backtracking, same initial state and single dt",
+      "comparison": "Chebyshev ordinary Newton versus SRDM backtracking; identical initial state and timestep",
       "rmse": 8.297065766045053e-07,
       "max_error": 1.5377516528913837e-05,
       "reference_summary": {
@@ -2043,7 +2043,7 @@
     {
       "dt": 200000,
       "model": "cheb",
-      "comparison": "prepared full-step versus original SRDM backtracking, same initial state and single dt",
+      "comparison": "Chebyshev ordinary Newton versus SRDM backtracking; identical initial state and timestep",
       "rmse": 7.820018550036085e-07,
       "max_error": 1.3285703504672952e-05,
       "reference_summary": {
@@ -2095,7 +2095,7 @@
     {
       "dt": 500000,
       "model": "cheb",
-      "comparison": "prepared full-step versus original SRDM backtracking, same initial state and single dt",
+      "comparison": "Chebyshev ordinary Newton versus SRDM backtracking; identical initial state and timestep",
       "rmse": 9.007083018067233e-07,
       "max_error": 1.578449078731836e-05,
       "reference_summary": {
@@ -2147,7 +2147,7 @@
     {
       "dt": 1000000,
       "model": "cheb",
-      "comparison": "prepared full-step versus original SRDM backtracking, same initial state and single dt",
+      "comparison": "Chebyshev ordinary Newton versus SRDM backtracking; identical initial state and timestep",
       "rmse": 1.1313051298919392e-06,
       "max_error": 2.3442734716883074e-05,
       "reference_summary": {

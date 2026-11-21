@@ -21,8 +21,8 @@ __device__ inline void quadratic(double u,double& f,double& df){
   double w=u*u,o=(1-u)*(1-u),dw=2*u,doo=-2*(1-u),d=w+.4*o;
   f=w/d;df=(dw*d-w*(dw+.4*doo))/(d*d);
 }
-// Match the archived CPU endpoint convention exactly, including its zero
-// derivative at u==1. The one-sided mathematical derivative is singular.
+// Match the CPU zero-derivative convention at u==1. For 0 < exponent < 1,
+// the mathematical one-sided derivative diverges.
 __device__ inline void power_flux(double u,double exponent,double& f,double& df){
   if(u<0){f=df=0;return;} if(u>1){f=1;df=0;return;}
   double w=pow(u,2.),o=pow(1.-u,exponent);

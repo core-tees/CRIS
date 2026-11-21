@@ -49,7 +49,7 @@ inline void write_recovery(const std::filesystem::path& path, const double* curr
         out.flush();
         if (!out) throw std::runtime_error("Recovery write failed");
     }
-    // Only replace this slot; the other committed proposal remains recoverable.
+    // With alternating filenames, this replacement leaves any other slot untouched.
     std::filesystem::remove(path);
     std::filesystem::rename(temporary, path);
 }
